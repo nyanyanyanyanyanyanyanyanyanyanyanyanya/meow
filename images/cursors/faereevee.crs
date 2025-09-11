@@ -1,0 +1,27 @@
+﻿[IBeam]
+Path=Sylveon - Text Select.ani
+
+[No]
+Path=Sylveon - Unavailable.ani
+
+[SizeNS]
+Path=Sylveon - Vertical.ani
+
+[Arrow]
+Path=Sylveon - Normal.ani
+
+[Help]
+Path=Sylveon - Help.ani
+
+[AppStarting]
+Path=Sylveon - Working in the Background.ani
+
+[SizeNWSE]
+Path=Sylveon - Diagonal 1.ani
+
+[SizeNESW]
+Path=Sylveon - Diagonal 2.ani
+
+[Hand]
+Path=Sylveon - Link Select.ani
+
