@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends - Diantha</title>
+    <style>
+        .friends-container {
+            display: flex;
+            font-family: 'MS Gothic', monospace;
+            background: #fff;
+            color: #6a6a6a;
+            width: 600px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        body.theme-evil .friends-container {
+            background: #2e2e2e;
+            color: #cccccc;
+        }
+
+        .left-column {
+            width: 100px;
+            border-right: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body.theme-evil .left-column {
+            border-right: 1px solid #800000;
+        }
+
+        .right-column {
+            width: 500px;
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .separator-box {
+            height: 10px;
+            background: #ccc;
+        }
+
+        body.theme-evil .separator-box {
+            background: #800000;
+        }
+
+        .character-image {
+            text-align: center;
+        }
+
+        .character-image img {
+            width: 180px;
+            height: auto;
+            max-height: 200px;
+            object-fit: contain;
+        }
+
+        .character-names {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .character-names li {
+            font-family: "MS Gothic", monospace;
+            font-size: 12px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+        }
+
+        .character-names li:hover {
+            background: #f0f0f0;
+        }
+
+        body.theme-evil .character-names li {
+            border-bottom: 1px solid #3c3c3c;
+        }
+
+        body.theme-evil .character-names li:hover {
+            background: #3c3c3c;
+        }
+
+        .empty-footer {
+            height: 10px;
+            background: #ccc;
+            margin-top: auto;
+        }
+
+        body.theme-evil .empty-footer {
+            background: #800000;
+        }
+
+        .relationship-info {
+            font-family: "MS Gothic", monospace;
+            font-size: 12px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        body.theme-evil .relationship-info {
+            background: #3c3c3c;
+            color: #cccccc;
+        }
+
+        .theme-bar {
+            display: flex;
+            align-items: center;
+            border-radius: 4px;
+            background: #4682B4; /* SteelBlue for default theme */
+        }
+
+        body.theme-evil .theme-bar {
+            background: #B22222; /* FireBrick for evil theme */
+        }
+
+        .theme-bar .icon img {
+            margin-right: 10px;
+            object-fit: contain;
+        }
+
+        .theme-bar .name {
+            font-family: "MS Gothic", monospace;
+            font-size: 14px;
+            color: white;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .theme-bar .description {
+            font-family: "MS Gothic", monospace;
+            font-size: 12px;
+            color: white;
+            flex: 1;
+        }
+
+        .dropdown {
+            font-family: "MS Gothic", monospace;
+            font-size: 12px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+
+        body.theme-evil .dropdown {
+            border-color: #800000;
+            background: #3c3c3c;
+            color: #cccccc;
+        }
+
+        .article-content {
+            font-family: "MS Gothic", monospace;
+            font-size: 12px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 4px solid #6a9ccc;
+            overflow-y: auto;
+        }
+
+        body.theme-evil .article-content {
+            background: #3c3c3c;
+            color: #cccccc;
+            border-left-color: #cc3333;
+        }
+
+        @media screen and (max-width: 768px) {
+            .friends-container {
+                flex-direction: column;
+            }
+            
+            .left-column {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #ccc;
+            }
+            
+            body.theme-evil .left-column {
+                border-bottom: 1px solid #800000;
+            }
+            
+            .right-column {
+                width: 100%;
+                padding-left: 0;
+                padding-top: 10px;
+            }
+            
+            .character-image img {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="friends-container">
+        <div class="left-column">
+            <div class="separator-box"></div>
+            <div class="character-image">
+                <img src="https://south-boulevard.nekoweb.org/Images/dianthapicture.png" alt="Diantha">
+            </div>
+            <ul class="character-names">
+                <li><a href="friends.html">Back</a></li>
+                <li>Diantha</li>
+                <li>Lysandre</li>
+                <li>Shauna</li>
+                <li>Clemont</li>
+                <li>Bonnie</li>
+            </ul>
+            <div class="empty-footer"></div>
+        </div>
+        <div class="right-column">
+            <div class="relationship-info">
+                Close friend and colleague. Champion of the Kalos region with a passion for fashion and Pokemon battles.
+            </div>
+            <div class="theme-bar">
+                <div class="icon">
+                    <img src="https://south-boulevard.nekoweb.org/Images/XY_Diantha_Icon.png" alt="Diantha Icon">
+                </div>
+                <div class="name">Diantha</div>
+                <div class="description">Select a topic to learn more</div>
+            </div>
+            <div class="dropdown">
+                <option value="relationship">Relationship: How do they know each other?</option>
+                <option value="name">Name: What does Sycamore call them?</option>
+                <option value="info">Info: Basic information and background</option>
+                <option value="look">Look: Physical appearance and style</option>
+                <option value="journey">Journey: How did they meet?</option>
+            </div>
+            <div class="article-content">
+                <p>Select a topic above to read more about this character and their relationship with Professor Sycamore.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

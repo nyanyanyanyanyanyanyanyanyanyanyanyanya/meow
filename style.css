@@ -1,0 +1,471 @@
+/* ──────────────── ✦ Fonts ✦ ──────────────── */
+@font-face {
+  font-family: 'Angelface';
+  src: url(https://south-boulevard.nekoweb.org/fonts/Angelface.otf) format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ──────────────── ✦ Theme Variables ✦ ──────────────── */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #4a5c6a;
+  --header-bg: #f5f9fd;
+  --content-bg: #ffffff;
+  --border-color: #c5d8e6;
+  --accent-color: #6a9ccc;
+  --highlight-color: #a0c5e8;
+  --scrollbar-track: #f5f5f5;
+  --scrollbar-thumb: #d0d0d0;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition-speed: 0.3s;
+  --line-height: 1.6;
+  --detail-border: #bbd5e6;
+  --detail-bg: #fff;
+  --quote-bg: #bbd5e6;
+  --quote-text: #000;
+}
+
+/* ──────────────── ✦ Base Reset ✦ ──────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ──────────────── ✦ Body Layout ✦ ──────────────── */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'MS Gothic', 'MSGothic', sans-serif;
+  font-size: 22px;
+  line-height: var(--line-height);
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ──────────────── ✦ Container ✦ ──────────────── */
+.container {
+  width: 40%;
+  max-width: 1000px;
+  background: var(--content-bg);
+  border: 2px ridge black;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: none;
+}
+
+/* ──────────────── ✦ Header ✦ ──────────────── */
+.header {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  flex-shrink: 0;
+}
+
+.header-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  filter: brightness(1.15) contrast(0.7) saturate(0.7) blur(1.2px);
+  opacity: 0.85;
+  box-shadow: 0 0 12px rgba(255, 200, 255, 0.3);
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.header-image:hover {
+  filter: brightness(1.1) contrast(1) saturate(1) blur(0);
+  opacity: 1;
+}
+
+/* ──────────────── ✦ Navigation ✦ ──────────────── */
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  display: block;
+}
+
+.nav-menu li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  background: transparent;
+  transition: background var(--transition-speed), color var(--transition-speed);
+  display: block;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a:focus,
+.nav-menu li a.active {
+  background: #e0e0e0;
+  color: var(--text-color);
+}
+
+/* ──────────────── ✦ Main Content ✦ ──────────────── */
+.main-content {
+  overflow-y: hidden;
+  flex-grow: 1;
+  min-height: 0;
+}
+
+/* ──────────────── ✦ Page Content ✦ ──────────────── */
+.page {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "MS Gothic", Arial, sans-serif;
+  overflow-y: auto;
+  max-height: 600px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.page::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.page h1,
+.page h2,
+.page h3,
+.page h4 {
+  font-family: "MS Gothic", Arial, sans-serif;
+  color: var(--accent-color);
+  font-size: 18px;
+}
+
+.page h1 {
+  font-size: 32px;
+}
+
+.page h2 {
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page img.right,
+.page img.left {
+  max-width: 200px;
+  height: auto;
+  float: right;
+  margin: 0 0 10px 10px;
+  cursor: pointer;
+}
+
+.page img.left {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.page img.right:hover,
+.page img.left:hover {
+  opacity: 0.8;
+}
+
+.page .pkmn-page img {
+  max-width: 150px;
+  height: auto;
+}
+
+.centered-image,
+.divider {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+.divider {
+  border-top: 1px dotted #000;
+}
+
+/* ──────────────── ✦ Scrollbar for Page Content ✦ ──────────────── */
+.page::-webkit-scrollbar {
+  width: 6px;
+}
+
+.page::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.page::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 6px;
+}
+
+.page::-webkit-scrollbar-thumb:hover {
+  background: #c0c0c0;
+}
+
+@supports (scrollbar-width: thin) {
+  .page {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+}
+
+/* ──────────────── ✦ Loader Styles ✦ ──────────────── */
+.loader {
+  text-align: center;
+  color: var(--accent-color);
+  font-size: 1rem;
+  padding: 20px;
+}
+
+.loader img {
+  width: 50px;
+}
+
+/* ──────────────── ✦ Fade-In Animation ✦ ──────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ──────────────── ✦ Quote Boxes ✦ ──────────────── */
+.quote-sycamore {
+  background-color: var(--quote-bg);
+  border: 1px solid #000;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.quote-sycamore:after {
+  content: "♡";
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+  color: var(--quote-text);
+  letter-spacing: 3px;
+}
+
+.quote-sycamore strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--quote-text);
+  font-size: 16px;
+}
+
+/* ──────────────── ✦ Footer ✦ ──────────────── */
+.footer {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-color);
+  flex-shrink: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color var(--transition-speed);
+}
+
+.footer-links a:hover {
+  color: var(--accent-color);
+}
+
+/* ──────────────── ✦ Bio Styles ✦ ──────────────── */
+.bio .clearfix {
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+.bio p {
+  text-align: justify;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+
+.bio h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* ──────────────── ✦ Topics Table ✦ ──────────────── */
+.topics-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: var(--content-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  border-radius: 6px;
+  font-family: 'MS Gothic', 'Courier New', monospace;
+  font-size: 14px;
+}
+
+.topics-table caption {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px;
+  color: var(--text-color);
+}
+
+.topics-table th {
+  background-color: var(--header-bg);
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.topics-table th img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.topics-table th img:hover {
+  opacity: 0.8;
+}
+
+.topics-table td {
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.topics-table ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topics-table li {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.topics-table li:before {
+  content: '❤︎';
+  color: #ff9bb5;
+  position: absolute;
+  left: 0;
+  font-size: 12px;
+}
+
+/* ──────────────── ✦ Topic Dropdown ✦ ──────────────── */
+.topic {
+  cursor: pointer;
+  text-decoration: dotted underline;
+  color: var(--text-color);
+  font-family: 'MS Gothic', 'Courier New', monospace;
+  transition: transform var(--transition-speed) ease-in-out;
+  position: relative;
+  display: inline-block;
+}
+
+.topic:hover {
+  background-color: var(--header-bg);
+  transform: translateY(-2px); /* Reduced lift for delicacy */
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  background: var(--content-bg);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  max-width: 300px;
+  font-family: 'MS Gothic', 'Courier New', monospace;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.dropdown.active {
+  display: block;
+}
+
+/* ──────────────── ✦ About Wrapper ✦ ──────────────── */
+.about-links {
+  list-style: none; 
+}
+
+.about-links li {
+  padding: 0.75rem;
+  background: var(--content-bg); /* Soft white base */
+  transition: background var(--transition-speed);
+  border-radius: 4px;
+    font-size: 1rem; /* Slightly larger than 22px body text */
+}
+
+.about-links li:hover {
+  background: var(--bg-color); /* Light gray hover */
+}
+
+.about-links a {
+  font-weight: 700; /* Lighter for elegance */
+  font-size: 1.2rem; /* Slightly larger than 22px body text */
+  color: var(--text-color); /* Matches body text */
+  text-decoration: none;
+  transition: color var(--transition-speed), letter-spacing var(--transition-speed);
+    background: var(--scrollbar-thumb); 
+}
+
+.about-links a:hover {
+  color: var(--scrollbar-track); /* Soft gray #d0d0d0 */
+  letter-spacing: 0.9em; /* Space out letters */
+}
+
+.about-links a:hover:before {
+  content: ">"; /* Add > after link */
+  margin-left: 0.5em;
+}
+/* ──────────────── ✦ Loader Styles ✦ ──────────────── */
+.loader {
+  display: none; /* Controlled by JS, not inline */
+  text-align: center;
+  color: var(--accent-color);
+  font-size: 1rem;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  z-index: 2000;
+}
+
+.loader img {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* ──────────────── ✦ Fade-In Animation ✦ ──────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Page</title>
+    <style>
+.friends-container{display:flex;font-family:'MS Gothic',monospace;background:#fff;color:#6a6a6a;margin:0 auto;box-sizing:border-box}body.theme-evil .friends-container{background:#2e2e2e;color:#ccc}.friends-container .left-column{width:100px;border-right:1px solid #ccc;display:flex;flex-direction:column}body.theme-evil .friends-container .left-column{border-right:1px solid maroon}.friends-container .right-column{width:500px;padding-left:10px;display:flex;flex-direction:column;flex:1}.friends-container .separator-box{height:10px;background:#ccc}body.theme-evil .friends-container .separator-box{background:maroon}.friends-container .character-image{text-align:center}.friends-container .character-image img{width:180px;height:auto;max-height:200px;object-fit:contain}.friends-container .character-names{list-style:none;padding:0;margin:0;flex:1;overflow-y:auto;max-height:400px}.friends-container .character-names li{font-family:"MS Gothic",monospace;font-size:12px;cursor:pointer;border-bottom:1px solid #eee}.friends-container .character-names li:hover{background:#f0f0f0}body.theme-evil .friends-container .character-names li{border-bottom:1px solid #3c3c3c}body.theme-evil .friends-container .character-names li:hover{background:#3c3c3c}.friends-container .character-names li a{color:#6a6a6a;text-decoration:none;display:block;padding:8px}.friends-container .character-names li a:hover{color:#000}body.theme-evil .friends-container .character-names li a{color:#ccc}body.theme-evil .friends-container .character-names li a:hover{color:#fff}.friends-container .empty-footer{height:10px;background:#ccc;margin-top:auto}body.theme-evil .friends-container .empty-footer{background:maroon}.friends-container .relationship-info{font-family:"MS Gothic",monospace;font-size:12px;background:#f9f9f9;border-radius:4px}body.theme-evil .friends-container .relationship-info{background:#3c3c3c;color:#ccc}.friends-container .theme-bar{display:flex;align-items:center;border-radius:4px;background:#4682B4}body.theme-evil .friends-container .theme-bar{background:#B22222}.friends-container .theme-bar .icon img{margin-right:10px;object-fit:contain}.friends-container .theme-bar .name{font-family:"MS Gothic",monospace;font-size:14px;color:#fff;margin-right:15px;font-weight:700}.friends-container .theme-bar .description{font-family:"MS Gothic",monospace;font-size:12px;color:#fff;flex:1}.friends-container .dropdown{font-family:"MS Gothic",monospace;font-size:12px;padding:5px;border:1px solid #ccc;border-radius:4px;width:100%;overflow-y:auto;background:#f9f9f9}.friends-container .dropdown option{padding:2px 10px;display:flex;justify-content:space-between;cursor:pointer}.friends-container .dropdown option:hover{background:#e6e6e6}body.theme-evil .friends-container .dropdown option:hover{background:#4a4a4a}.friends-container .dropdown option::after{content:attr(data-description);flex-grow:1;text-align:right;padding-left:10px}body.theme-evil .friends-container .dropdown{border-color:maroon;background:#3c3c3c;color:#ccc}.friends-container .article-content{font-family:"MS Gothic",monospace;font-size:12px;background:#f9f9f9;padding:15px;border-radius:4px;overflow-y:auto}body.theme-evil .friends-container .article-content{background:#3c3c3c;color:#ccc}.friends-container .hidden{display:none}@media screen and (max-width:768px){.friends-container{flex-direction:column}.friends-container .left-column{width:100%;border-right:none;border-bottom:1px solid #ccc}body.theme-evil .friends-container .left-column{border-bottom:1px solid maroon}.friends-container .right-column{width:100%;padding-left:0;padding-top:10px}.friends-container .character-image img{width:120px}}
+    </style>
+</head>
+<body>
+    <div class="friends-container">
+        <div class="left-column">
+            <div class="separator-box"></div>
+            <div class="character-image" id="char-image"></div>
+            <ul class="character-names">
+                <li><a href="#" onclick="showSection('empty'); return false;">Default</a></li>
+                <li><a href="#" onclick="showSection('alexa'); return false;">Alexa</a></li>
+                <li><a href="#" onclick="showSection('calem'); return false;">Calem</a></li>
+                <li><a href="#" onclick="showSection('cynthia'); return false;">Cynthia</a></li>
+                <li><a href="#" onclick="showSection('dexio'); return false;">Dexio</a></li>
+                <li><a href="#" onclick="showSection('diantha'); return false;">Diantha</a></li>
+                <li><a href="#" onclick="showSection('grace'); return false;">Grace</a></li>
+                              <li><a href="#" onclick="showSection('lysandre'); return false;">Lysandre</a></li>
+                <li><a href="#" onclick="showSection('rowan'); return false;">Rowan</a></li>
+                <li><a href="#" onclick="showSection('serena'); return false;">Serena</a></li>
+                <li><a href="#" onclick="showSection('shauna'); return false;">Shauna</a></li>
+                <li><a href="#" onclick="showSection('sina'); return false;">Sina</a></li>
+                <li><a href="#" onclick="showSection('tierno'); return false;">Tierno</a></li>
+                <li><a href="#" onclick="showSection('trevor'); return false;">Trevor</a></li>
+                <li><a href="#" onclick="showSection('viola'); return false;">Viola</a></li>
+            </ul>
+            <div class="empty-footer"></div>
+        </div>
+        <div class="right-column">
+            <div id="empty">
+                <div class="relationship-info">
+                    No character selected.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon"></div>
+                    <div class="name">Select a Character</div>
+                    <div class="description">Click a name to learn more</div>
+                </div>
+                <div class="dropdown">
+                    <option value="none">No topics available</option>
+                </div>
+                <div class="article-content">
+                    <p>Please select a character from the left to begin.</p><br> <p>This section is under construction, so check back soon!</p>
+                </div>
+            </div>
+
+            <!-- Alexa -->
+            <div id="alexa" class="hidden">
+                <div class="relationship-info">
+                   Alexa is a journalist from PKMN XY.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/ORAS_Schoolkid_F_Icon.png" alt="ORAS_Schoolkid_F_Icon">
+                    </div>
+                    <div class="name">Alexa</div>
+                <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="alexa-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'alexa')">Relationship:</option>
+                    <option value="name" data-description="how do they refer to one another?" onclick="showTopic('name', 'alexa')">Name:</option>
+                    <option value="info" data-description="basic information" onclick="showTopic('info', 'alexa')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'alexa')">Look:</option>
+                    <option value="journey" data-description="How did they meet?" onclick="showTopic('journey', 'alexa')">Journey:</option>
+                </div>
+                <div class="article-content" id="alexa-content">
+                    <p>Select a topic above to read more.</p>
+                </div>
+            </div>
+
+            <!-- Calem -->
+            <div id="calem" class="hidden">
+                <div class="relationship-info">
+                    Calem is one of Professor Sycamore's most promising pupils.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/XY_Calem_Icon.png" alt="XY_Calem_Icon">
+                    </div>
+                    <div class="name">Calem</div>
+                    <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="calem-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'calem')">Relationship:</option>
+                    <option value="name" data-description="how do they refer to one another?" onclick="showTopic('name', 'calem')">Name:</option>
+                    <option value="info" data-description="Basic information" onclick="showTopic('info', 'calem')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'calem')">Look:</option>
+                    <option value="journey" data-description="How did they meet?" onclick="showTopic('journey', 'calem')">Journey:</option>
+                </div>
+                <div class="article-content" id="calem-content">
+                    <p>Select a topic above to read more.</p>
+                </div>
+            </div>
+
+            <!-- Cynthia -->
+            <div id="cynthia" class="hidden">
+                <div class="relationship-info">
+                    Fellow researcher,  colleague, and friend.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/XY_Ace_Trainer_F_Icon.png" alt="XY_Ace_Trainer_F_Icon">
+                    </div>
+                    <div class="name">Cynthia</div>
+                    <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="cynthia-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'cynthia')">Relationship:</option>
+                    <option value="name" data-description="how do they refer to one another?" onclick="showTopic('name', 'cynthia')">Name:</option>
+                    <option value="info" data-description="basic information" onclick="showTopic('info', 'cynthia')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'cynthia')">Look:</option>
+                    <option value="journey" data-description="How did they meet?" onclick="showTopic('journey', 'cynthia')">Journey:</option>
+                </div>
+                <div class="article-content" id="cynthia-content">
+                    <p>Select a topic above to read more.</p>
+                </div>
+            </div>
+
+            <!-- Dexio -->
+            <div id="dexio" class="hidden">
+                <div class="relationship-info">
+                    Dexio works directly under Professor Sycamore.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/XY_Ace_Trainer_M_Icon.png" alt="XY_Ace_Trainer_M_Icon">
+                    </div>
+                    <div class="name">Dexio</div>
+                    <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="dexio-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'dexio')">Relationship:</option>
+                    <option value="name" data-description="what does Sycamore call them?" onclick="showTopic('name', 'dexio')">Name:</option>
+                    <option value="info" data-description="background" onclick="showTopic('info', 'dexio')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'dexio')">Look:</option>
+                    <option value="journey" data-description="how did they meet?" onclick="showTopic('journey', 'dexio')">Journey:</option>
+                </div>
+                <div class="article-content" id="dexio-content">
+                    <p>Select a topic above to read more.</p>
+                </div>
+            </div>
+
+            <!-- Diantha -->
+            <div id="diantha" class="hidden">
+                <div class="relationship-info">
+                    Friend and Champion of Kalos.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/XY_Diantha_Icon.png" alt="Diantha Icon">
+                    </div>
+                    <div class="name">Diantha</div>
+                  <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="diantha-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'diantha')">Relationship:</option>
+                    <option value="name" data-description="what does Sycamore call them?" onclick="showTopic('name', 'diantha')">Name:</option>
+                    <option value="info" data-description="background" onclick="showTopic('info', 'diantha')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'diantha')">Look:</option>
+                    <option value="journey" data-description="how did they meet?" onclick="showTopic('journey', 'diantha')">Journey:</option>
+                </div>
+                <div class="article-content" id="diantha-content">
+                    <p>Select a topic above to read more.</p>
+                </div>
+            </div>
+
+            <!-- Grace -->
+            <div id="grace" class="hidden">
+                <div class="relationship-info">
+                    Friend, the player character's mother.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/ORAS_Aroma_Lady_Icon.png" alt="ORAS_Aroma_Lady_Icon">
+                    </div>
+                    <div class="name">Grace</div>
+                    <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="grace-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'grace')">Relationship:</option>
+                    <option value="name" data-description="what does Sycamore call them?" onclick="showTopic('name', 'grace')">Name:</option>
+                    <option value="info" data-description="background" onclick="showTopic('info', 'grace')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'grace')">Look:</option>
+                    <option value="journey" data-description="how did they meet?" onclick="showTopic('journey', 'grace')">Journey:</option>
+                </div>
+                <div class="article-content" id="grace-content">
+                    <p>Select a topic above to read more.</p>
+                </div>
+            </div>
+                     <!-- Gurkinn -->
+                     
+                                 <div id="gurkinn" class="hidden">
+                <div class="relationship-info">
+                    The mega evolution guru!
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                   <img src="https://south-boulevard.nekoweb.org/Images/XY_Monsieur_Icon.png" alt="XY_Monsieur_Icon.png">
+                    </div>
+                    <div class="name">gurkinn</div>
+                    <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="gurkinn-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'gurkinn')">Relationship:</option>
+                    <option value="name" data-description="what does Sycamore call them?" onclick="showTopic('name', 'gurkinn')">Name:</option>
+                    <option value="info" data-description="background" onclick="showTopic('info', 'gurkinn')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'gurkinn')">Look:</option>
+                    <option value="journey" data-description="how did they meet?" onclick="showTopic('journey', 'gurkinn')">Journey:</option>
+                </div>
+                <div class="article-content" id="gurkinn-content">
+                    <p>Select a topic above to read more.</p>
+                </div>
+            </div>
+                     
+            <!-- Lysandre -->
+            <div id="lysandre" class="hidden">
+                <div class="relationship-info">
+                    Old colleague, a close friend of Professor Sycamore's.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/Minilys.png" alt="Lysandre Icon">
+                    </div>
+                    <div class="name">Lysandre</div>
+                    <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="lysandre-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'lysandre')">Relationship:</option>
+                    <option value="name" data-description="what does Sycamore call them?" onclick="showTopic('name', 'lysandre')">Name:</option>
+                    <option value="info" data-description="basic information" onclick="showTopic('info', 'lysandre')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'lysandre')">Look:</option>
+                    <option value="journey" data-description="how did they meet?" onclick="showTopic('journey', 'lysandre')">Journey:</option>
+                </div>
+                <div class="article-content" id="lysandre-content">
+                    <p>Select a topic above to read more about this character.</p>
+                </div>
+            </div>
+
+            <!-- Rowan -->
+            <div id="rowan" class="hidden">
+                <div class="relationship-info">
+                    Mentor: Professor Rowan served as a mentor to Sycamore.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/XY_Monsieur_Icon.png" alt="XY_Monsieur_Icon.png">
+                    </div>
+                    <div class="name">Rowan</div>
+               <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="rowan-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'rowan')">Relationship:</option>
+                    <option value="name" data-description="what does Sycamore call them?" onclick="showTopic('name', 'rowan')">Name:</option>
+                    <option value="info" data-description="background" onclick="showTopic('info', 'rowan')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'rowan')">Look:</option>
+                    <option value="journey" data-description="how did they meet?" onclick="showTopic('journey', 'rowan')">Journey:</option>
+                </div>
+                <div class="article-content" id="rowan-content">
+                    <p>Select a topic above to read more.</p>
+                </div>
+            </div>
+
+            <!-- Serena -->
+            <div id="serena" class="hidden">
+                <div class="relationship-info">
+                    Serena is a pupil of Professor Sycamore's, showing fantastic promise.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/XY_Serena_Icon.png" alt="XY_Serena_Icon">
+                    </div>
+                    <div class="name">Serena</div>
+              <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="serena-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'serena')">Relationship:</option>
+                    <option value="name" data-description="what does Sycamore call them?" onclick="showTopic('name', 'serena')">Name:</option>
+                    <option value="info" data-description="background" onclick="showTopic('info', 'serena')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'serena')">Look:</option>
+                    <option value="journey" data-description="how did they meet?" onclick="showTopic('journey', 'serena')">Journey:</option>
+                </div>
+                <div class="article-content" id="serena-content">
+                    <p>Select a topic above to read more.</p>
+                </div>
+            </div>
+
+            <!-- Shauna -->
+            <div id="shauna" class="hidden">
+                <div class="relationship-info">
+                    Shauna is an enthusiastic pupil of Professor Sycamore's.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/XY_Shauna_Icon.png" alt="Shauna Icon">
+                    </div>
+                    <div class="name">Shauna</div>
+                <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="shauna-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'shauna')">Relationship:</option>
+                    <option value="name" data-description="what does Sycamore call them?" onclick="showTopic('name', 'shauna')">Name:</option>
+                    <option value="info" data-description="basic information" onclick="showTopic('info', 'shauna')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'shauna')">Look:</option>
+                    <option value="journey" data-description="how did they meet?" onclick="showTopic('journey', 'shauna')">Journey:</option>
+                </div>
+                <div class="article-content" id="shauna-content">
+                    <p>Select a topic above to read more about this character and their relationship with Professor Sycamore.</p>
+                </div>
+            </div>
+
+            <!-- Sina -->
+            <div id="sina" class="hidden">
+                <div class="relationship-info">
+                   Sina is a research assistant that works under Professor Sycamore.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/XY_Ace_Trainer_F_Icon.png" alt="XY_Ace_Trainer_F_Icon">
+                    </div>
+                    <div class="name">Sina</div>
+               <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="sina-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'sina')">Relationship:</option>
+                    <option value="name" data-description="what does Sycamore call them?" onclick="showTopic('name', 'sina')">Name:</option>
+                    <option value="info" data-description="basic information" onclick="showTopic('info', 'sina')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'sina')">Look:</option>
+                    <option value="journey" data-description="How did they meet?" onclick="showTopic('journey', 'sina')">Journey:</option>
+                </div>
+                <div class="article-content" id="sina-content">
+                    <p>Select a topic above to read more about this character and their relationship with Professor Sycamore.</p>
+                </div>
+            </div>
+
+            <!-- Tierno -->
+            <div id="tierno" class="hidden">
+                <div class="relationship-info">
+                   Tierno is a pupil of Professor Sycamore's, with a unique perspective on what it means to be great!
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/XY_Tierno_Icon.png" alt="Tierno Icon">
+                    </div>
+                    <div class="name">Tierno</div>
+                    <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="tierno-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'tierno')">Relationship:</option>
+                    <option value="name" data-description="what does Sycamore call them?" onclick="showTopic('name', 'tierno')">Name:</option>
+                    <option value="info" data-description="background" onclick="showTopic('info', 'tierno')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'tierno')">Look:</option>
+                    <option value="journey" data-description="how did they meet?" onclick="showTopic('journey', 'tierno')">Journey:</option>
+                </div>
+                <div class="article-content" id="tierno-content">
+                    <p>Select a topic above to read more.</p>
+                </div>
+            </div>
+
+            <!-- Trevor -->
+            <div id="trevor" class="hidden">
+                <div class="relationship-info">
+                    Trevor is a detail-oriented student of Professor Sycamore's.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/XY_Trevor_Icon.png" alt="Trevor Icon">
+                    </div>
+                    <div class="name">Trevor</div>
+                <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="trevor-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'trevor')">Relationship:</option>
+                    <option value="name" data-description="what does Sycamore call them?" onclick="showTopic('name', 'trevor')">Name:</option>
+                    <option value="info" data-description="basic information" onclick="showTopic('info', 'trevor')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'trevor')">Look:</option>
+                    <option value="journey" data-description="how did they meet?" onclick="showTopic('journey', 'trevor')">Journey:</option>
+                </div>
+                <div class="article-content" id="trevor-content">
+                    <p>Select a topic above to read more.</p>
+                </div>
+            </div>
+
+            <!-- Viola -->
+            <div id="viola" class="hidden">
+                <div class="relationship-info">
+                    Gym leader of Santalune City, Viola is Alexa's sister.
+                </div>
+                <div class="theme-bar">
+                    <div class="icon">
+                        <img src="https://south-boulevard.nekoweb.org/Images/XY_Viola_Icon.png" alt="Viola Icon">
+                    </div>
+                    <div class="name">Viola</div>
+                   <div class="description">topics</div>
+                </div>
+                <div class="dropdown" id="viola-topics">
+                    <option value="relationship" data-description="how do they know each other?" onclick="showTopic('relationship', 'viola')">Relationship:</option>
+                    <option value="name" data-description="what does Sycamore call them?" onclick="showTopic('name', 'viola')">Name:</option>
+                    <option value="info" data-description="basic information" onclick="showTopic('info', 'viola')">Info:</option>
+                    <option value="look" data-description="style" onclick="showTopic('look', 'viola')">Look:</option>
+                    <option value="journey" data-description="how did they meet?" onclick="showTopic('journey', 'viola')">Journey:</option>
+                </div>
+                <div class="article-content" id="viola-content">
+                    <p>Select a topic above to read more.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

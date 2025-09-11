@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postcards!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Dancing+Script&family=Pacifico&family=Caveat&family=Kalam&family=Gloria+Hallelujah&family=Patrick+Hand&family=Permanent+Marker&family=Shadows+Into+Light&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <style>
+@font-face{font-family:'Angelface';src:url(https://south-boulevard.nekoweb.org/fonts/Angelface.otf) format('opentype');font-weight:400;font-style:normal}*{margin:0;padding:0;box-sizing:border-box;font-family:'MS Gothic',Arial,Verdana,sans-serif;font-size:16px}body{background-color:#fff;background-image:url('https://south-boulevard.nekoweb.org/Images/chibiwave%20(2).png'),url(https://south-boulevard.nekoweb.org/Images/Backrounds/pattern%20362.jpg);background-repeat:no-repeat,repeat;background-position:left center,center center;background-size:auto,auto;background-attachment:fixed,fixed;position:relative}.bg-decoration{position:absolute;z-index:-1;pointer-events:none}.bg-decoration.pink-bg{top:-73px;right:43px;background-image:url(https://south-boulevard.nekoweb.org/Images/blog/pinkbg.png);background-repeat:no-repeat;background-size:contain;width:696px;height:710px}.bg-decoration.ewrwrewt{top:-11px;left:121px;background-image:url(https://south-boulevard.nekoweb.org/Images/blog/ewrwrewt.png);background-repeat:no-repeat;background-size:contain;width:455px;height:481px}.bg-decoration.teaset{bottom:-123px;right:383px;background-image:url(https://south-boulevard.nekoweb.org/Images/blog/teaset.gif);background-repeat:no-repeat;background-size:contain;width:238px;height:264px}.bg-decoration.pichucheer{bottom:-170px;left:268px;background-image:url(https://south-boulevard.nekoweb.org/Images/blog/pichucheer.gif);background-repeat:no-repeat;background-size:contain;width:644px;height:335px}.speech-bubble{position:fixed;top:225px;left:255px;background:#fff;border:1px solid #000;border-radius:15px;padding:15px 20px;font-family:'MS Gothic',Arial,Verdana,sans-serif;font-size:16px;max-width:237px;z-index:1000}.speech-bubble::before{content:'';position:absolute;top:50%;left:-10px;transform:translateY(-50%);width:0;height:0;border-style:solid;border-width:10px 10px 10px 0;border-color:#fff0 #000 #fff0 #fff0}.speech-bubble::after{content:'';position:absolute;top:50%;left:-8px;transform:translateY(-50%);width:0;height:0;border-style:solid;border-width:9px 9px 9px 0;border-color:#fff0 #fff #fff0 #fff0}.container{max-width:900px;margin:0 auto;padding:20px;margin-top:80px;position:relative;z-index:10}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));background:#fff;border:1px solid #000;border-radius:8px;padding:5px}.control-group{display:flex;flex-direction:column}label{margin-bottom:5px;font-size:16px;font-weight:700}input,select,textarea{padding:8px 12px;border:1px solid #c5e0f0;background:#f5faff;font-family:'MS Gothic',sans-serif;font-size:16px;line-height:1.2;border-radius:4px}input:focus,select:focus,textarea:focus{outline:0;border-color:#3a6ea5;box-shadow:0 0 0 2px rgb(58 110 165 / .2)}textarea{resize:vertical;min-height:100px}.postcard-container{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}.postcard-section{text-align:center}.postcard-section h3{color:#3a6ea5;font-size:20px}.postcard,.postcard-front{width:400px;height:300px;border:1px solid #000;border-radius:10px;display:flex;background-color:#fff;background-size:cover;background-repeat:no-repeat;background-position:center;position:relative;box-shadow:0 5px 15px rgb(0 0 0 / .1);transition:border-color .3s ease}.border-red{border:1px solid red!important}.postcard-back-image{position:absolute;top:10px;right:70px;width:200px;height:auto;opacity:.5;z-index:0}.left-side,.right-side{width:50%;padding:15px;position:relative;background:rgb(255 255 255 / .1);z-index:1}.left-side{border-right:1px dashed #666}.message-lines{position:absolute;top:15px;left:15px;right:15px;bottom:15px}.message-text{width:100%;height:100%;background:rgb(255 255 255 / .7);border:0;resize:none;outline:0;line-height:22px;background-image:repeating-linear-gradient(transparent 0,transparent 21px,#ccc 0,#ccc 22px);padding:5px;font-size:14px;font-family:'MS Gothic',sans-serif;overflow:hidden;white-space:pre-wrap;word-wrap:break-word}.address-section{position:relative;height:100%}.stamp{width:75px;height:75px;background:#fff;border:1px solid #000;position:absolute;top:-62px;right:-2px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:crimson;border-radius:3px;background-size:cover;background-repeat:no-repeat;background-position:center;z-index:1}.stamp:before{content:'';position:absolute;top:-1px;left:-1px;right:-1px;bottom:-1px;z-index:-1}.address-lines{margin-top:60px;height:calc(100% - 80px);background:rgb(255 255 255 / .7);background-image:repeating-linear-gradient(transparent 0,transparent 21px,#ccc 0,#ccc 22px);line-height:22px;padding:10px;font-size:18px;font-family:'MS Gothic',sans-serif}.location-text{position:absolute;bottom:10px;right:10px;color:#fff;font-size:60px;font-family:'Angelface',cursive,sans-serif;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;text-align:right;z-index:1}.white-text,.yellow-text,.cyan-text{text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000}.screenshot-instructions{text-align:center;padding:25px;border-radius:10px}.screenshot-instructions h3{margin-bottom:15px;font-size:24px;color:#3a6ea5}.screenshot-instructions p{font-size:16px;max-width:700px;margin-left:auto;margin-right:auto}.screenshot-buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}.screenshot-btn{border:1px solid #000;padding:12px 25px;font-size:18px;font-family:'MS Gothic',sans-serif;cursor:pointer;border-radius:6px;transition:all .3s;display:flex;align-items:center;justify-content:center;background:#fff}.screenshot-btn:hover{transform:translateY(-2px)}.screenshot-btn:active{transform:translateY(0)}.footer{text-align:center;margin-top:30px;padding:20px;color:#6a6a6a;font-size:14px;border-top:1px solid #c5e0f0}.screenshot-icon{font-size:20px;margin-right:8px}.bg-color-option{display:flex;align-items:center;gap:8px}.color-preview{width:20px;height:20px;border-radius:3px;border:1px solid #ccc}.scrolling-footer{position:fixed;bottom:0;left:0;width:100%;height:30px;background:linear-gradient(45deg,#0055a4,#ffffff,#ef4135);overflow:hidden;z-index:10000;display:flex;align-items:center;box-shadow:0 -2px 10px rgb(0 0 0 / .3)}.marquee-container{display:flex;width:200%;animation:marquee 15s linear infinite}.marquee-text{font-size:20px;font-weight:700;font-family:'MS Gothic',Verdana,sans-serif;color:#fff;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;white-space:nowrap;width:50%;display:flex;align-items:center;justify-content:center;padding:0 20px}@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.pokeball{position:absolute;width:24px;height:24px;background:linear-gradient(to bottom,#ff1c1c 0%,#ff1c1c 47%,#fff 47%,#fff 53%,#ff1c1c 53%);border:2px solid #000;border-radius:50%;animation:spin 3s linear infinite;z-index:10001}.pokeball::before{content:'';position:absolute;top:50%;left:0;right:0;height:2px;background:#000;transform:translateY(-1px)}.pokeball::after{content:'';position:absolute;top:50%;left:50%;width:8px;height:8px;background:#fff;border:2px solid #000;border-radius:50%;transform:translate(-50%,-50%)}@keyframes spin{0%{transform:translateX(-50px) rotate(0deg)}100%{transform:translateX(calc(100vw + 50px)) rotate(360deg)}}.container{padding-bottom:0}.screenshot-instructions{margin-bottom:20px}
+    </style>
+</head>
+<body>
+
+    <div class="bg-decoration pink-bg"></div>
+    <div class="bg-decoration ewrwrewt"></div>
+    <div class="bg-decoration teaset"></div>
+    <div class="bg-decoration pichucheer"></div>
+    
+    <div class="speech-bubble">
+        Create custom Pokémon postcards from Kalos! Personalize your message, choose locations, stamps, and save them as images. Send them to your friends, or put them on your own website!
+    </div>
+    
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <label for="messageText">your message:</label>
+                <textarea id="messageText" placeholder="Write your message here..."> The Pokémon here are magnificent! Hope to see you in Lumiose City soon!</textarea>
+            </div>
+            <div class="control-group">
+                <label for="location">location:</label>
+                <select id="location">
+                    <option value="parfum-palace">Parfum Palace</option>
+                    <option value="dendemille-town">Dendemille Town</option>
+                    <option value="pokeball-factory">Pokeball Factory</option>
+                    <option value="laverre-town">Laverre Town</option>
+                    <option value="coumarine">Coumarine</option>
+                    <option value="shalour">Shalour</option>
+                    <option value="lumiose-city-night">Lumiose City Night</option>
+                    <option value="lumiose-city-day">Lumiose City Day</option>
+                    <option value="prism-tower" selected>Prism Tower</option>
+                    <option value="sycamore-pkmn-lab">Sycamore PKMN Lab</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="stamp">stamp:</label>
+                <select id="stamp">
+                    <option value="mega-stone">Mega Stone</option>
+                    <option value="chespin">Chespin</option>
+                    <option value="fennekin">Fennekin</option>
+                    <option value="froakie">Froakie</option>
+                    <option value="prof-sycamore" selected>Prof Sycamore</option>
+                    <option value="lumiose-galette">Lumiose Galette</option>
+                    <option value="awesome-coffee-beans">Awesome Coffee Beans</option>
+                    <option value="mega-charizard-x">Mega Charizard X</option>
+                    <option value="mega-charizard-y">Mega Charizard Y</option>
+                    <option value="xerneas">Xerneas</option>
+                    <option value="yveltal">Yveltal</option>
+                    <option value="gogoat">Gogoat</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="fontFamily">font:</label>
+                <select id="fontFamily">
+                    <option value="MS Gothic">MS Gothic</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Comic Sans MS">Comic Sans</option>
+                    <option value="Arial Narrow">Arial Narrow</option>
+                    <option value="Indie Flower">Indie Flower</option>
+                    <option value="Dancing Script">Dancing Script</option>
+                    <option value="Pacifico">Pacifico</option>
+                    <option value="Caveat">Caveat</option>
+                    <option value="Kalam">Kalam</option>
+                    <option value="Gloria Hallelujah">Gloria Hallelujah</option>
+                    <option value="Patrick Hand">Patrick Hand</option>
+                    <option value="Permanent Marker">Permanent Marker</option>
+                    <option value="Shadows Into Light">Shadows Into Light</option>
+                    <option value="Amatic SC">Amatic SC</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="textColor">text:</label>
+                <select id="textColor">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="black" selected>Black</option>
+                    <option value="white">White</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="purple">Purple</option>
+                    <option value="pink">Pink</option>
+                    <option value="cyan">Cyan</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="bgColor">background:</label>
+                <select id="bgColor">
+                    <option value="white" selected>White</option>
+                    <option value="black">Black</option>
+                    <option value="#f0f8ff">Alice Blue</option>
+                    <option value="#faebd7">Antique White</option>
+                    <option value="#7fffd4">Aquamarine</option>
+                    <option value="#f5f5dc">Beige</option>
+                    <option value="#ffe4c4">Bisque</option>
+                    <option value="#d9ebfc">Light Blue</option>
+                    <option value="#f8f0e3">Cream</option>
+                    <option value="#e0f7fa">Cyan Light</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="postcard-container">
+            <div class="postcard-section">
+                <h3>Front</h3>
+                <div class="postcard-front" id="postcardFront">
+                    <div class="location-text" id="locationText"></div>
+                </div>
+            </div>
+            <div class="postcard-section">
+                <h3>Back</h3>
+                <div class="postcard" id="postcard">
+                    <img class="postcard-back-image" id="postcardBackImage" src="https://south-boulevard.nekoweb.org/Images/paris-clipart-postmark-2.png" alt="Postmark">
+                    <div class="left-side">
+                        <div class="message-lines">
+                            <textarea class="message-text" id="displayMessage" readonly></textarea>
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="address-section">
+                            <div class="stamp" id="stampBack"></div>
+                            <div class="address-lines" id="addressLines">South Boulevard, Lumiose City<br>Kalos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="screenshot-instructions">
+            <h3>Save</h3>
+            <p>Use these buttons to capture and save your postcard as PNG images.</p>
+            <div class="screenshot-buttons">
+                <button class="screenshot-btn" onclick="capturePostcard('front')">
+                    <span class="screenshot-icon"></span> Save Front Only
+                </button>
+                <button class="screenshot-btn" onclick="capturePostcard('back')">
+                    <span class="screenshot-icon"></span> Save Back Only
+                </button>
+                <button class="screenshot-btn" onclick="capturePostcard('both')">
+                    <span class="screenshot-icon"></span> Save Both Sides
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- New Marquee Footer -->
+    <div class="scrolling-footer">
+        <div class="marquee-container">
+            <div class="marquee-text">Postcards!!! From Lumiose!!! So fun and exciting!!</div>
+            <div class="marquee-text">Postcards!!! From Lumiose!!! So fun and exciting!!</div>
+        </div>
+        
+        <div class="pokeball" style="top: -12px; animation-delay: 0s;"></div>
+        <div class="pokeball" style="top: -12px; animation-delay: 1s;"></div>
+        <div class="pokeball" style="top: -12px; animation-delay: 2s;"></div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+const messageText=document.getElementById('messageText'),displayMessage=document.getElementById('displayMessage'),locationSelect=document.getElementById('location'),stampSelect=document.getElementById('stamp'),fontSelect=document.getElementById('fontFamily'),colorSelect=document.getElementById('textColor'),bgColorSelect=document.getElementById('bgColor'),postcard=document.getElementById('postcard'),postcardFront=document.getElementById('postcardFront'),stampBack=document.getElementById('stampBack'),addressLines=document.getElementById('addressLines'),locationText=document.getElementById('locationText');const locationImages={'parfum-palace':'https://south-boulevard.nekoweb.org/Images/1729303080533673.jpg','dendemille-town':'https://south-boulevard.nekoweb.org/Images/1729518381502903.jpg','pokeball-factory':'https://south-boulevard.nekoweb.org/Images/1729303217135097.jpg','laverre-town':'https://south-boulevard.nekoweb.org/Images/1729518319164040.jpg','coumarine':'https://south-boulevard.nekoweb.org/Images/1729555420208721.jpg','shalour':'https://south-boulevard.nekoweb.org/Images/1730331919806690.png','lumiose-city-night':'https://south-boulevard.nekoweb.org/Images/Lumiose_City_Evolution2s.png','lumiose-city-day':'https://south-boulevard.nekoweb.org/Images/Lumiose_City.png','prism-tower':'https://south-boulevard.nekoweb.org/Images/p03_03.jpg','sycamore-pkmn-lab':'https://south-boulevard.nekoweb.org/Images/IMG_4132.jpg'},locationTexts={'parfum-palace':'A Royal Welcome!','dendemille-town':'A breezy visit...','pokeball-factory':'Hello from where Kalos\' Pokeballs are made!','laverre-town':'A mysterious feeling... what could it be?','coumarine':'Come see our fantastic bay!','shalour':'Mysteries of mega evolution and more...','lumiose-city-night':'The City of Light!','lumiose-city-day':'A cultural mecca!','prism-tower':'Amazing sights in Lumiose City!','sycamore-pkmn-lab':'Bonsoir from Lumiose!'},stampImages={'mega-stone':'https://south-boulevard.nekoweb.org/Images/Mega-Evolution-Symbol.png','chespin':'https://south-boulevard.nekoweb.org/Images/chespo.png','fennekin':'https://south-boulevard.nekoweb.org/Images/Malva_Fennekin_Adventures.png','froakie':'https://south-boulevard.nekoweb.org/Images/Y_Croaky_Froakie.png','prof-sycamore':'https://south-boulevard.nekoweb.org/Images/minisyc.png','lumiose-galette':'https://south-boulevard.nekoweb.org/Images/lumiosegalette.png','awesome-coffee-beans':'https://south-boulevard.nekoweb.org/Images/Masters_Awesome_Coffee_Beans.png','mega-charizard-x':'https://south-boulevard.nekoweb.org/Images/MegaZardX.png','mega-charizard-y':'https://south-boulevard.nekoweb.org/Images/MegaZardY.png','xerneas':'https://south-boulevard.nekoweb.org/Images/xern.png','yveltal':'https://south-boulevard.nekoweb.org/Images/20_png.png','gogoat':'https://south-boulevard.nekoweb.org/Images/673.png'};function updatePostcard(){displayMessage.value=messageText.value;displayMessage.style.fontFamily=addressLines.style.fontFamily=fontSelect.value;const color=colorSelect.value;displayMessage.style.color=addressLines.style.color=color;displayMessage.classList.remove('white-text','yellow-text','cyan-text');addressLines.classList.remove('white-text','yellow-text','cyan-text');if(color==='white'||color==='yellow'||color==='cyan'){if(color==='white'){displayMessage.classList.add('white-text');addressLines.classList.add('white-text')}else if(color==='yellow'){displayMessage.classList.add('yellow-text');addressLines.classList.add('yellow-text')}else if(color==='cyan'){displayMessage.classList.add('cyan-text');addressLines.classList.add('cyan-text')}}
+const bgColor=bgColorSelect.value;postcard.style.backgroundColor=bgColor;if(bgColor==='black'){postcard.classList.add('border-red');postcardFront.classList.add('border-red')}else{postcard.classList.remove('border-red');postcardFront.classList.remove('border-red')}
+const backgroundImage=`url("${locationImages[locationSelect.value]}")`;postcardFront.style.backgroundImage=backgroundImage;locationText.textContent=locationTexts[locationSelect.value];const stampImage=`url("${stampImages[stampSelect.value]}")`;stampBack.style.backgroundImage=stampImage;stampBack.innerHTML=''}
+function capturePostcard(type){const buttons=document.querySelectorAll('.screenshot-btn');buttons.forEach(btn=>{const oldText=btn.innerHTML;btn.dataset.oldText=oldText;btn.innerHTML='<span class="screenshot-icon"></span> Processing...';btn.disabled=!0});let completed=0;let total=0;if(type==='front'||type==='both')total++;if(type==='back'||type==='both')total++;if(type==='back'||type==='both'){const originalText=displayMessage.value;const textDiv=document.createElement('div');textDiv.className=displayMessage.className;textDiv.style.cssText=displayMessage.style.cssText;textDiv.style.overflow='visible';textDiv.style.whiteSpace='pre-wrap';textDiv.textContent=originalText;const parent=displayMessage.parentNode;parent.replaceChild(textDiv,displayMessage);html2canvas(postcard,{scale:2,useCORS:!0,backgroundColor:null,logging:!1}).then(canvas=>{downloadImage(canvas,'sycamore-postcard-back');parent.replaceChild(displayMessage,textDiv);displayMessage.value=originalText;completed++;if(completed>=total)resetButtons();}).catch(error=>{console.error('Error capturing back:',error);parent.replaceChild(displayMessage,textDiv);displayMessage.value=originalText;resetButtons()})}
+if(type==='front'||type==='both'){html2canvas(postcardFront,{scale:2,useCORS:!0,backgroundColor:null,logging:!1}).then(canvas=>{downloadImage(canvas,'sycamore-postcard-front');completed++;if(completed>=total)resetButtons();}).catch(error=>{console.error('Error capturing front:',error);resetButtons()})}}
+function downloadImage(canvas,filename){const dataURL=canvas.toDataURL('image/png');const link=document.createElement('a');link.href=dataURL;link.download=filename+'.png';document.body.appendChild(link);link.click();document.body.removeChild(link)}
+function resetButtons(){const buttons=document.querySelectorAll('.screenshot-btn');buttons.forEach(btn=>{btn.disabled=!1;if(btn.dataset.oldText){btn.innerHTML=btn.dataset.oldText}})}
+messageText.addEventListener('input',updatePostcard);locationSelect.addEventListener('change',updatePostcard);stampSelect.addEventListener('change',updatePostcard);fontSelect.addEventListener('change',updatePostcard);colorSelect.addEventListener('change',updatePostcard);bgColorSelect.addEventListener('change',updatePostcard);updatePostcard()
+    </script>
+</body>
+</html>

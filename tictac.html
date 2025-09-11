@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>South Boulevard ☕</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="chattable.css">
+  <link rel="icon" href="Images/Kalos_Logo.png" type="image/png">
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script src="https://iframe.chat/scripts/main.min.js"></script>
+  <style>        .game-frame.tic-tac-toe iframe {
+            max-width: 280px;
+            min-height: 440px;
+        }</style>
+</head>
+<body class="no-sidebar">
+  <div class="petal-container"></div>
+  <div class="page-wrapper">
+    <div class="header">
+      <div class="header-img"></div>
+      <div class="header-marquee">
+        <marquee behavior="scroll" direction="left" loop="infinite">
+          we are, who we are, <font color="#f9f9f9">_________</font>      
+          can't travel back to figure it out<font color="#f9f9f9">_________</font>     
+          but how great would it be,<font color="#f9f9f9">_________</font>       
+          if we could go back to change anything<font color="#f9f9f9">_________</font>       
+          we get what we get,<font color="#f9f9f9">_________</font>    
+          can't travel back to rearrange it<font color="#f9f9f9">_________</font>      
+          but how great would it be,<font color="#f9f9f9">_________</font>       
+          if we could go back and rewrite everything <font color="#f9f9f9">_________</font>
+        </marquee>
+      </div>
+      <div class="box">
+        <p>Welcome to Lumiose City! ☕</p>
+      </div>
+    </div>
+    <div id="navbar-placeholder"></div>
+    <div class="content-wrapper">
+      <div class="container">
+        <div class="main-content">
+          <div class="bio">
+            <h2>Tic-Tac-Toe</h2>
+      
+                <div class="game-frame tic-tac-toe">
+                    <iframe src="https://solitaires-online.com/tic-tac-toe/#id=42k71vdcel,no-nav,no-article,no-feedback,no-ads" title="Tic-Tac-Toe game" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-content">
+      <a href="home.html">home</a> | 
+      <a href="/contact.html">contact</a> | 
+      <a href="/links.html">links</a> | 
+      <a href="#" id="chatbox-link">chatbox</a>
+    </div>
+    <div id="sticky-boi">
+  <img src="https://south-boulevard.nekoweb.org/Images/fennekin.gif" alt="Sticky Boi">
+</div>
+<div id="stickamore">
+  <img src="https://south-boulevard.nekoweb.org/Images/Arms_folded.png" alt="Stickamore">
+</div>
+<div id="stickydeer">
+  <img src="https://south-boulevard.nekoweb.org/Images/xern.png" alt="Stickydeer">
+</div>
+  </div>
+  <script src="load-component.js"></script>
+  <script src="dropdown.js"></script>
+  <script src="scripts.js"></script>
+  <script src="sparklescript.js"></script>
+  <script src="sticky-boi.js"></script>
+  <script>
+    // Chatbox popup functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      // Poll for chatbox-link with timeout
+      let retries = 0;
+      const maxRetries = 50; // 5 seconds at 100ms intervals
+      const waitForChatboxLink = () => {
+        const chatboxLink = document.getElementById('chatbox-link');
+        if (chatboxLink) {
+          chatboxLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            openChatboxPopup();
+          });
+          console.log('Chatbox link found and event listener attached.');
+        } else if (retries < maxRetries) {
+          retries++;
+          console.log(`Chatbox link not found, retrying... (${retries}/${maxRetries})`);
+          setTimeout(waitForChatboxLink, 100);
+        } else {
+          console.error('Chatbox link not found after max retries.');
+        }
+      };
+
+      waitForChatboxLink();
+
+      function openChatboxPopup() {
+        if (document.getElementById('chatbox-popup')) return;
+
+        const popup = document.createElement('div');
+        popup.id = 'chatbox-popup';
+        popup.className = 'chatbox-popup';
+        popup.innerHTML = `
+          <div class="chatbox-header">
+            <span>Chat with Lumiose! ☕</span>
+            <button class="chatbox-close">✖</button>
+          </div>
+          <div class="chatbox-content">
+            <iframe src="https://iframe.chat/embed?chat=06600587" id="chattable" frameborder="none"></iframe>
+          </div>
+        `;
+
+        document.body.appendChild(popup);
+
+        // Initialize Chattable
+        try {
+          if (typeof chattable !== 'undefined' && chattable.initialize) {
+            chattable.initialize({});
+            console.log('Chattable initialized successfully.');
+          } else {
+            console.warn('Chattable library not loaded.');
+          }
+        } catch (e) {
+          console.error('Error initializing Chattable:', e);
+        }
+
+        // Make popup draggable
+        const header = popup.querySelector('.chatbox-header');
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+
+        header.addEventListener('mousedown', (e) => {
+          initialX = e.clientX - currentX;
+          initialY = e.clientY - currentY;
+          isDragging = true;
+          header.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+          if (isDragging) {
+            e.preventDefault();
+            currentX = e.clientX - initialX;
+            currentY = e.clientY - initialY;
+            popup.style.left = `${currentX}px`;
+            popup.style.top = `${currentY}px`;
+          }
+        });
+
+        document.addEventListener('mouseup', () => {
+          isDragging = false;
+          header.style.cursor = 'grab';
+        });
+
+        // Center popup
+        popup.style.left = `${(window.innerWidth - popup.offsetWidth) / 2}px`;
+        popup.style.top = `${(window.innerHeight - popup.offsetHeight) / 2}px`;
+        currentX = parseInt(popup.style.left);
+        currentY = parseInt(popup.style.top);
+
+        // Close popup
+        const closeButton = popup.querySelector('.chatbox-close');
+        closeButton.addEventListener('click', () => {
+          popup.remove();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+
+    <title>Supertraining</title>
+    <style>
+
+        .training-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            padding: 10px;
+        }
+
+        .training-layout h2 {
+            margin: 0 0 15px 0;
+            color: #bbd5e6;
+            font-size: 20px;
+            font-family: 'MS Gothic', monospace;
+            text-align: center;
+            width: 100%;
+        }
+
+        .training-container {
+            width: 220px;
+            height: 212px;
+            background: url('https://south-boulevard.nekoweb.org/Images/supertraining/supertrainingbg.png') no-repeat;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .controls-panel {
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .controls-panel p {
+            margin: 5px 0;
+            font-size: 14px;
+            font-family: 'MS Gothic', monospace;
+        }
+
+        .controls-panel button {
+            background: #e6f0fa;
+            color: #333;
+            border: 1px solid black;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 5px 0;
+            display: block;
+            width: 100%;
+        }
+
+        .controls-panel button:hover {
+            background: #6a9ccc;
+            color: #fff;
+        }
+
+        .punching-bag {
+            position: absolute;
+            top: 15px;
+            left: 28px;
+            width: 120px;
+            height: 240px;
+            background: url('https://south-boulevard.nekoweb.org/Images/supertraining/p1.png') center/cover no-repeat;
+            transition: transform 0.1s;
+        }
+
+        .punching-bag.shake {
+            transform: translateX(20px) rotate(5deg);
+        }
+
+        .pokemon {
+            position: absolute;
+            top: 110px;
+            left: 90px;
+            width: 60px;
+            height: 60px;
+            transition: transform 0.3s ease-in-out;
+            opacity: 1;
+        }
+
+        .punch {
+            transform: translateX(-20px) translateY(-30px);
+            opacity: 1;
+        }
+
+        .normal {
+            transform: translateX(0) translateY(0);
+            opacity: 1;
+        }
+
+        #click-counter {
+            font-size: 16px;
+            color: #8B6F47;
+            font-family: 'MS Gothic', monospace;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .bag-selection, .pokemon-selection {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            gap: 5px;
+            margin-top: 5px;
+            justify-content: center;
+        }
+
+        .bag-icon, .pokemon-icon {
+            width: 40px;
+            height: auto;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .bag-icon:hover, .pokemon-icon:hover {
+            opacity: 1;
+        }
+
+        .bag-icon.selected, .pokemon-icon.selected {
+            opacity: 1;
+            border: 2px solid black;
+            border-radius: 4px;
+        }
+
+        .quote-popup {
+            position: absolute;
+            background: #fff;
+            border: 1px solid black;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-family: 'MS Gothic', monospace;
+            font-size: 12px;
+            color: #634c53;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 1000;
+            max-width: 90%;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .quote-popup.show {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .training-layout h2 {
+                font-size: 18px;
+            }
+
+            .controls-panel p,
+            .controls-panel button,
+            #click-counter {
+                font-size: 16px;
+            }
+
+            .bag-icon, .pokemon-icon {
+                width: 35px;
+            }
+
+            .training-container {
+                width: 200px;
+                height: 190px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="training-layout">
+        <h2>Supertraining!</h2>
+        <p>Welcome to supertraining! Click below to help your Pokémon train and become stronger. How many clicks can they get?</p>
+        
+        <div class="training-container" onclick="punchBag()">
+            <div class="punching-bag" id="punching-bag"></div>
+            <img
+                src="https://south-boulevard.nekoweb.org/Images/supertraining/ph.png"
+                alt="Pokémon"
+                class="pokemon"
+                id="pokemon-image"
+            />
+        </div>
+        
+        <div class="controls-panel">
+            <p>Choose your Pokémon to train!</p>
+            <div class="pokemon-selection">
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/650MS6.png"
+                    class="pokemon-icon"
+                    onclick="selectPokemon('chespin', event)"
+                    data-pokemon="chespin"
+                />
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/656MS6.png"
+                    class="pokemon-icon"
+                    onclick="selectPokemon('froakie', event)"
+                    data-pokemon="froakie"
+                />
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/653MS6.png"
+                    class="pokemon-icon"
+                    onclick="selectPokemon('fennekin', event)"
+                    data-pokemon="fennekin"
+                />
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/001MS6.png"
+                    class="pokemon-icon"
+                    onclick="selectPokemon('bulbasaur', event)"
+                    data-pokemon="bulbasaur"
+                />
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/004MS6.png"
+                    class="pokemon-icon"
+                    onclick="selectPokemon('charmander', event)"
+                    data-pokemon="charmander"
+                />
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/007MS6.png"
+                    class="pokemon-icon"
+                    onclick="selectPokemon('squirtle', event)"
+                    data-pokemon="squirtle"
+                />
+            </div>
+            <p id="click-counter">Clicks: 0</p>
+            <button onclick="resetTraining()">Reset Training</button>
+            
+            <div class="bag-selection">
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/p1.png"
+                    class="bag-icon selected"
+                    onclick="changeBag('p1.png', event)"
+                    data-bag="p1.png"
+                />
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/p2.png"
+                    class="bag-icon"
+                    onclick="changeBag('p2.png', event)"
+                    data-bag="p2.png"
+                />
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/p3.png"
+                    class="bag-icon"
+                    onclick="changeBag('p3.png', event)"
+                    data-bag="p3.png"
+                />
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/p4.png"
+                    class="bag-icon"
+                    onclick="changeBag('p4.png', event)"
+                    data-bag="p4.png"
+                />
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/p5.png"
+                    class="bag-icon"
+                    onclick="changeBag('p5.png', event)"
+                    data-bag="p5.png"
+                />
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/p6.png"
+                    class="bag-icon"
+                    onclick="changeBag('p6.png', event)"
+                    data-bag="p6.png"
+                />
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/p7.png"
+                    class="bag-icon"
+                    onclick="changeBag('p7.png', event)"
+                    data-bag="p7.png"
+                />
+                <img
+                    src="https://south-boulevard.nekoweb.org/Images/supertraining/p8.png"
+                    class="bag-icon"
+                    onclick="changeBag('p8.png', event)"
+                    data-bag="p8.png"
+                />
+            </div>
+        </div>
+        
+        <div id="training-quote-popup"></div>
+    </div>
+
+    <script>
+        const punchingBag = document.getElementById('punching-bag');
+        const pokemonImage = document.querySelector('#pokemon-image');
+        const clickCounter = document.getElementById('click-counter');
+        const quotePopup = document.querySelector('#training-quote-popup');
+        let clickCount = 0;
+        let selectedPokemon = '';
+        let selectedBag = 'p1.png';
+        let nextQuoteClick = getRandomInterval();
+
+        const pokemonImages = {
+            chespin: 'https://south-boulevard.nekoweb.org/Images/supertraining/650MS6.png',
+            froakie: 'https://south-boulevard.nekoweb.org/Images/supertraining/656MS6.png',
+            fennekin: 'https://south-boulevard.nekoweb.org/Images/supertraining/653MS6.png',
+            bulbasaur: 'https://south-boulevard.nekoweb.org/Images/supertraining/001MS6.png',
+            charmander: 'https://south-boulevard.nekoweb.org/Images/supertraining/004MS6.png',
+            squirtle: 'https://south-boulevard.nekoweb.org/Images/supertraining/007MS6.png',
+            placeholder: 'https://south-boulevard.nekoweb.org/Images/supertraining/ph.png'
+        };
+
+        const sycamoreQuotes = [
+            "You're doing amazing so well, trainer!",
+            "I'm so proud of you and your partner Pokémon!",
+            "Keep it up the great work!",
+            "Your Pokémon are getting stronger every day!",
+            "What a fantastic effort!",
+            "You're a true Pokémon Trainer!",
+            "Wonderful! Your dedication makes you shine like a star!"
+        ];
+
+        function getRandomInterval() {
+            return Math.floor(Math.random() * (500 - 50 + 1)) + 50;
+        }
+
+        function showQuote() {
+            const randomQuote = sycamoreQuotes[Math.floor(Math.random() * sycamoreQuotes.length)];
+            if (quotePopup) {
+                quotePopup.innerHTML = `<img src="https://south-boulevard.nekoweb.org/Images/supertraining/XY_Sycamore_Icon.png" alt="Sycamore" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;"> ${randomQuote}`;
+                quotePopup.classList.add('show');
+                setTimeout(() => quotePopup.classList.remove('show'), 3500);
+            }
+            nextQuoteClick = clickCount + getRandomInterval();
+        }
+
+        function selectPokemon(pokemon, event) {
+            selectedPokemon = pokemon;
+            if (pokemonImage) {
+                pokemonImage.src = pokemonImages[pokemon] || 'https://south-boulevard.nekoweb.org/Images/supertraining/ph.png';
+                pokemonImage.classList.add('pokemon', 'normal');
+                pokemonImage.style.opacity = '1';
+            }
+            const icons = document.querySelectorAll('.pokemon-icon');
+            icons.forEach(icon => icon.classList.remove('selected'));
+            if (event && event.target) {
+                event.target.classList.add('selected');
+            } else {
+                const selectedIcon = document.querySelector(`.pokemon-icon[data-pokemon="${pokemon}"]`);
+                if (selectedIcon) {
+                    selectedIcon.classList.add('selected');
+                }
+            }
+        }
+
+        function punchBag() {
+            if (!selectedPokemon) return;
+            clickCount++;
+            if (clickCounter) {
+                clickCounter.textContent = `Clicks: ${clickCount}`;
+            }
+            
+            if (punchingBag) {
+                punchingBag.classList.remove('shake');
+                void punchingBag.offsetWidth;
+                punchingBag.classList.add('shake');
+                setTimeout(() => {
+                    punchingBag.classList.remove('shake');
+                }, 100);
+            }
+            
+            if (pokemonImage) {
+                pokemonImage.classList.remove('punch', 'normal');
+                void pokemonImage.offsetWidth;
+                pokemonImage.classList.add('punch');
+                setTimeout(() => {
+                    pokemonImage.classList.remove('punch');
+                    pokemonImage.classList.add('normal');
+                }, 300);
+            }
+            
+            if (clickCount >= nextQuoteClick) {
+                showQuote();
+            }
+        }
+
+        function resetTraining() {
+            clickCount = 0;
+            if (clickCounter) {
+                clickCounter.textContent = `Clicks: ${clickCount}`;
+            }
+            selectedPokemon = '';
+            if (pokemonImage) {
+                pokemonImage.src = 'https://south-boulevard.nekoweb.org/Images/supertraining/ph.png';
+                pokemonImage.className = 'pokemon';
+                pokemonImage.style.opacity = '1';
+            }
+            const pokemonIcons = document.querySelectorAll('.pokemon-icon');
+            pokemonIcons.forEach(icon => icon.classList.remove('selected'));
+            nextQuoteClick = getRandomInterval();
+            changeBag('p1.png');
+        }
+
+        function changeBag(bagFile, event) {
+            const validBag = bagFile && bagFile.endsWith('.png') ? bagFile : 'p1.png';
+            selectedBag = validBag;
+            const bagUrl = `https://south-boulevard.nekoweb.org/Images/supertraining/${validBag}`;
+            if (punchingBag) {
+                punchingBag.style.backgroundImage = `url('${bagUrl}')`;
+            }
+            
+            const img = new Image();
+            img.onerror = () => {
+                console.error(`Failed to load bag image: ${bagUrl}`);
+                if (punchingBag) {
+                    punchingBag.style.backgroundImage = `url('https://south-boulevard.nekoweb.org/Images/supertraining/p1.png')`;
+                }
+            };
+            img.src = bagUrl;
+            
+            const icons = document.querySelectorAll('.bag-icon');
+            icons.forEach(icon => icon.classList.remove('selected'));
+            if (event && event.target) {
+                event.target.classList.add('selected');
+            } else {
+                const selectedIcon = document.querySelector(`.bag-icon[data-bag="${validBag}"]`);
+                if (selectedIcon) {
+                    selectedIcon.classList.add('selected');
+                }
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            changeBag('p1.png');
+        });
+    </script>
+</body>
+</html>

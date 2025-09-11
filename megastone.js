@@ -1,0 +1,145 @@
+        const ms=['abomasite','absolite','aerodactylite','aggronite','alakazite','altarianite','ampharosite','audinite','banettite','beedrillite','blastoisinite','blazikenite','cameruptite','charizarditex','charizarditey','diancite','galladite','garchompite','gardevoirite','gengarite','glalitite','gyaradosite','heracronite','houndoominite','kangaskhanite','latiasite','latiosite','lopunnite','lucarionite','manectite','mawilite','medichamite','metagrossite','mewtwonitex','mewtwonitey','pidgeotite','pinsirite','sablenite','salamencite','sceptilite','scizorite','sharpedonite','slowbronite','steelixite','swampertite','tyranitarite'];
+        const pl=[{n:'chespin',u:'https://south-boulevard.nekoweb.org/Images/650MS6.png'},{n:'fennekin',u:'https://south-boulevard.nekoweb.org/Images/653MS6.png'},{n:'froakie',u:'https://south-boulevard.nekoweb.org/Images/656MS6.png'},{n:'flabebe',u:'https://south-boulevard.nekoweb.org/Images/669.png'}];
+        
+        const a=document.getElementById('a');
+        let h=document.getElementById('h');
+        const c=document.getElementById('c');
+        const te=document.getElementById('t');
+        const sm=document.getElementById('sm');
+        const wm=document.getElementById('wm');
+        const rb=document.getElementById('rb');
+        const sc=document.getElementById('sc');
+        const p=document.getElementById('p');
+        const gp=document.getElementById('gp');
+        const gc=document.getElementById('g');
+        const ri=document.getElementById('ri');
+        const rn=document.getElementById('rn');
+        let ol=document.getElementById('ol');
+        let or=document.getElementById('or');
+        const se=document.getElementById('se');
+        const ft=document.getElementById('ft');
+        const bb=document.getElementById('bb');
+
+        let s=[],co=0,to=ms.length,gs=false,af,st,ti,pi,g=0.15,mj=2,aw=30,mx=0,my=0,ds=null,gps=false,pk=[],ft_val='';
+
+        const early_msgs=['Good work!','Careful now!','Nice job!','Excellent!','Keep going!','Well done!','Great catch!','Perfect!','Amazing!','Fantastic!'];
+        const mid_msgs=["We've almost got them all!",'What is that black hole anyway...?','The mega stones are almost all secure!','Chespin sure is rambunctious today!',"We're almost there!",'You\'re doing great!','So many stones!','Almost finished!'];
+        const final_msg='I think we can just pick up the rest!';
+
+        let obs=[
+            {e:ol,x:-22,y:187,w:180,h:307,hw:60,hh:102,hox:60,hoy:102},
+            {e:or,x:400-180+13,y:123,w:180,h:307,hw:50,hh:60,hox:65,hoy:80}
+        ];
+
+        const hx=200-20,hy=10,hw=40,hh=40;
+
+        function init(){
+            a.innerHTML='<div id="h"></div><div class="o" id="ol"></div><div class="o" id="or"></div>';
+            h=document.getElementById('h');ol=document.getElementById('ol');or=document.getElementById('or');
+            obs=[{e:ol,x:-22,y:187,w:180,h:307,hw:60,hh:102,hox:60,hoy:102},{e:or,x:400-180+13,y:123,w:180,h:307,hw:50,hh:60,hox:65,hoy:80}];
+            pk.forEach(p=>p.e.remove());pk=[];
+            clearInterval(ti);clearInterval(pi);cancelAnimationFrame(af);af=null;
+            s=[];co=0;gps=false;c.textContent=`${co} / ${to}`;te.textContent='0 s';gs=false;document.body.style.cursor='default';ri.style.display='none';rn.textContent='';se.src="https://south-boulevard.nekoweb.org/Images/miniiconsmile.png";wm.style.display='none';bb.textContent='Ready to start!';
+            ms.forEach(st=>{
+                const i=document.createElement('img');
+                i.classList.add('s');i.src=`https://south-boulevard.nekoweb.org/Images/megastones/${st}.png`;i.dataset.name=st.charAt(0).toUpperCase()+st.slice(1).replace('.png','');i.dataset.type=st;i.style.left=`${Math.random()*(400-aw)}px`;i.style.bottom='0px';i.velocity={x:0,y:0};i.jumpCount=0;i.rollingDirection=0;a.appendChild(i);s.push(i);
+            });
+            usi();sps();
+        }
+
+        function usi(){
+            const r=to-co;
+            if(r<=5){s.forEach(st=>{st.classList.add('draggable');st.draggable=true;});if(!gps){sgp('You can grab the rest, get them!');gps=true;bb.textContent=final_msg;}}else{s.forEach(st=>{st.classList.remove('draggable');st.draggable=false;});}
+        }
+
+        function ls(){
+            if(!gs){gs=true;st=performance.now();ti=setInterval(ut,1000);}
+            s.forEach(st=>{const y=parseFloat(st.style.bottom)||0;if(y<=0&&st.jumpCount<mj){st.velocity={x:(Math.random()-0.5)*3,y:Math.random()*4+8};st.jumpCount++;}});
+            if(!af)ani();
+        }
+
+        function ut(){const e=performance.now()-st;te.textContent=`${Math.floor(e/1000)} s`;ft_val=`${Math.floor(e/1000)} s`;}
+
+        function sp(m){p.textContent=m;p.style.display='block';p.style.animation='none';setTimeout(()=>{p.style.animation='pf 2.5s forwards';},10);}
+
+        function sgp(m){gp.textContent=m;gp.style.display='block';gp.style.animation='none';setTimeout(()=>{gp.style.animation='pf 3s forwards';},10);}
+
+        function sms(){
+            const hr=h.getBoundingClientRect();const ar=a.getBoundingClientRect();const hcx=hr.left-ar.left+hr.width/2;const hcy=hr.top-ar.top+hr.height/2;
+            for(let i=0;i<8;i++){
+                const ms=document.createElement('img');ms.classList.add('ms');ms.src='https://south-boulevard.nekoweb.org/Images/ministar.gif';
+                const an=Math.random()*Math.PI*2;const d=30+Math.random()*30;const d2=60+Math.random()*40;
+                const tx=Math.cos(an)*d;const ty=Math.sin(an)*d;const tx2=Math.cos(an)*d2;const ty2=Math.sin(an)*d2;
+                ms.style.setProperty('--tx',`${tx}px`);ms.style.setProperty('--ty',`${ty}px`);ms.style.setProperty('--tx2',`${tx2}px`);ms.style.setProperty('--ty2',`${ty2}px`);
+                ms.style.left=`${hcx-10}px`;ms.style.top=`${hcy-10}px`;a.appendChild(ms);setTimeout(()=>{if(ms.parentNode)ms.remove();},1200);
+            }
+        }
+
+        function dsc(){
+            for(let i=0;i<s.length;i++){for(let j=i+1;j<s.length;j++){
+                const sa=s[i],sb=s[j];const ay=parseFloat(sa.style.bottom)||0,by=parseFloat(sb.style.bottom)||0;
+                if(ay<=0||by<=0)continue;const ra=sa.getBoundingClientRect(),rb=sb.getBoundingClientRect();
+                const rda=ra.width/2,rdb=rb.width/2;const ax=parseFloat(sa.style.left)+rda,ay_pos=ay+(ra.height/2);
+                const bx=parseFloat(sb.style.left)+rdb,by_pos=by+(rb.height/2);const dx=ax-bx,dy=ay_pos-by_pos;
+                const d=Math.sqrt(dx*dx+dy*dy);if(d<rda+rdb){
+                    const tvx=sa.velocity.x,tvy=sa.velocity.y;sa.velocity.x=sb.velocity.x;sa.velocity.y=sb.velocity.y;sb.velocity.x=tvx;sb.velocity.y=tvy;
+                    const o=(rda+rdb)-d;const sx=(dx/d)*o/2,sy=(dy/d)*o/2;sa.style.left=`${parseFloat(sa.style.left)+sx}px`;sa.style.bottom=`${parseFloat(sa.style.bottom)+sy}px`;sb.style.left=`${parseFloat(sb.style.left)-sx}px`;sb.style.bottom=`${parseFloat(sb.style.bottom)-sy}px`;
+                }
+            }}
+            s.forEach(st=>{
+                if(st===ds)return;const r=st.getBoundingClientRect();const sx=parseFloat(st.style.left);const sy=400-parseFloat(st.style.bottom)-r.height;const scx=sx+r.width/2;const scy=sy+r.height/2;const sr=r.width/2;
+                obs.forEach(ob=>{
+                    const hx=ob.x+ob.hox,hy=ob.y+ob.hoy,hw=ob.hw,hh=ob.hh;const cx=Math.max(hx,Math.min(scx,hx+hw)),cy=Math.max(hy,Math.min(scy,hy+hh));
+                    const dx=scx-cx,dy=scy-cy,d=Math.sqrt(dx*dx+dy*dy);if(d<sr){const o=sr-d,a=Math.atan2(dy,dx),px=Math.cos(a)*o,py=Math.sin(a)*o;st.style.left=`${parseFloat(st.style.left)+px}px`;st.style.bottom=`${parseFloat(st.style.bottom)-py}px`;st.velocity.x=-st.velocity.x*0.7;st.velocity.y=-st.velocity.y*0.7;st.jumpCount=0;}
+                });
+            });
+            s.forEach(st=>{
+                if(st===ds)return;const r=st.getBoundingClientRect();const scx=parseFloat(st.style.left)+r.width/2;const scy=400-parseFloat(st.style.bottom)-r.height/2;const sr=r.width/2;
+                pk.forEach(p=>{const pcx=p.x+24,pcy=p.y+24,dx=scx-pcx,dy=scy-pcy,d=Math.sqrt(dx*dx+dy*dy);if(d<sr+16){const f=3;st.velocity.x=(dx/d)*f;st.velocity.y=-(dy/d)*f;}});
+            });
+        }
+
+        function chc(st){
+            const sr=st.getBoundingClientRect();const sx=parseFloat(st.style.left);const sy=parseFloat(st.style.bottom);const sw=sr.width,sh=sr.height;const st_=400-sy-sh;
+            return sx<hx+hw&&sx+sw>hx&&st_<hy+hh&&st_+sh>hy;
+        }
+
+        function sps(){pi=setInterval(()=>{if(gs&&s.length>0){const sc=Math.random()<0.1?4:Math.random()<0.7?2:1;for(let i=0;i<sc;i++)setTimeout(()=>sp_(),i*300);}},2000+Math.random()*1000);}
+
+        function sp_(){
+            const pd=pl[Math.floor(Math.random()*pl.length)];const pk_=document.createElement('div');pk_.classList.add('pk');pk_.style.backgroundImage=`url(${pd.u})`;
+            const e=Math.floor(Math.random()*4);let x,y,sx,sy;
+            switch(e){case 0:x=Math.random()*400;y=-48;sx=(Math.random()-0.5)*4;sy=Math.random()*2+2;break;case 1:x=400;y=Math.random()*400;sx=-Math.random()*3-1;sy=(Math.random()-0.5)*4;break;case 2:x=Math.random()*400;y=400;sx=(Math.random()-0.5)*4;sy=-Math.random()*2-2;break;case 3:x=-48;y=Math.random()*400;sx=Math.random()*3+1;sy=(Math.random()-0.5)*4;break;}
+            pk_.style.left=`${x}px`;pk_.style.top=`${y}px`;a.appendChild(pk_);pk.push({e:pk_,x:x,y:y,sx:sx,sy:sy});
+        }
+
+        function up(){for(let i=pk.length-1;i>=0;i--){const p=pk[i];p.x+=p.sx;p.y+=p.sy;p.e.style.left=`${p.x}px`;p.e.style.top=`${p.y}px`;if(p.x<-50||p.x>450||p.y<-50||p.y>450){p.e.remove();pk.splice(i,1);}}}
+
+        function msr(){s.forEach(st=>{if(st.velocity.y===0&&Math.abs(st.velocity.x)<0.1){const r=st.getBoundingClientRect();const scx=parseFloat(st.style.left)+r.width/2;const scy=400-parseFloat(st.style.bottom)-r.height/2;for(const ob of obs){const hx=ob.x+ob.hox,hy=ob.y+ob.hoy,hw=ob.hw,hh=ob.hh;if(scx>hx&&scx<hx+hw&&scy>hy&&scy<hy+hh){if(st.rollingDirection===0)st.rollingDirection=Math.random()>0.5?1:-1;st.velocity.x+=0.02*st.rollingDirection;}}}});}
+
+        function ani(){
+            const ar=a.getBoundingClientRect();
+            s.forEach(st=>{
+                if(!st.parentNode)return;const sr=st.getBoundingClientRect();let x=parseFloat(st.style.left)||0,y=parseFloat(st.style.bottom)||0;
+                if(st!==ds&&(to-co)>5){const scx=x+sr.width/2,scy=400-y-sr.height/2,cx=mx-ar.left,cy=my-ar.top,dx=cx-scx,dy=cy-scy,d=Math.sqrt(dx*dx+dy*dy),at=0.02;if(d>10){st.velocity.x+=(dx/d)*at;st.velocity.y+=-(dy/d)*at;}}
+                if(st!==ds){st.velocity.y-=g;x+=st.velocity.x;y+=st.velocity.y;if(x<0||x+sr.width>400){st.velocity.x=-st.velocity.x;x=Math.max(0,Math.min(x,400-sr.width));}if(y>400-sr.height){st.style.left=`${x}px`;st.style.bottom=`${y}px`;if(!chc(st)){y=400-sr.height;st.velocity.y=-st.velocity.y*0.8;}}if(y<=0){y=0;st.velocity.y=0;st.velocity.x*=0.8;if(Math.abs(st.velocity.x)<0.1)st.velocity.x=0;st.jumpCount=0;}st.style.left=`${x}px`;st.style.bottom=`${y}px`;}
+            });
+            msr();dsc();up();
+            s.forEach((st,i)=>{
+                if(!st.parentNode||st.classList.contains('shrinking'))return;
+                if(chc(st)){const n=st.dataset.name,t=st.dataset.type;st.classList.add('shrinking');se.src="https://south-boulevard.nekoweb.org/Images/miniicconshocked.png";sms();gc.classList.add('shake');setTimeout(()=>{gc.classList.remove('shake');se.src="https://south-boulevard.nekoweb.org/Images/miniiconnsmile.png";setTimeout(()=>{se.src="https://south-boulevard.nekoweb.org/Images/miniiconsmile.png";},2000);},300);setTimeout(()=>{                        if(st.parentNode){st.remove();const si=s.indexOf(st);if(si>-1)s.splice(si,1);co++;c.textContent=`${co} / ${to}`;sp(`Got the ${n}!`);ri.src=`https://south-boulevard.nekoweb.org/Images/megastones/${t}.png`;ri.style.display='block';rn.textContent=n;s.forEach(s=>s.jumpCount=0);
+                        let msg;if(co>=30&&co<to-5)msg=mid_msgs[Math.floor(Math.random()*mid_msgs.length)];else if(co>=to-5)msg=final_msg;else msg=early_msgs[Math.floor(Math.random()*early_msgs.length)];bb.textContent=msg;usi();if(co===to)wg();}},300);}
+            });
+            af=requestAnimationFrame(ani);
+        }
+
+        function wg(){gs=false;clearInterval(ti);clearInterval(pi);cancelAnimationFrame(af);ft.textContent=`Final Time: ${ft_val}`;wm.style.display='flex';document.body.style.cursor='default';}
+
+        sc.addEventListener('click',()=>{sm.style.display='none';});
+        a.addEventListener('click',()=>{if(sm.style.display==='none')ls();});
+        a.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+        a.addEventListener('mousedown',e=>{if(to-co<=5){const t=e.target;if(t.classList.contains('s')){ds=t;const r=ds.getBoundingClientRect();ds.offsetX=e.clientX-r.left;ds.offsetY=e.clientY-r.top;ds.stoneHeight=r.height;ds.stoneWidth=r.width;ds.classList.add('dragging');}}});
+        document.addEventListener('mousemove',e=>{if(ds){const ar=a.getBoundingClientRect();let x=e.clientX-ar.left-ds.offsetX,st=e.clientY-ds.offsetY-ar.top,y=400-st-ds.stoneHeight;x=Math.max(0,Math.min(x,400-ds.stoneWidth));y=Math.max(0,Math.min(y,400-ds.stoneHeight));ds.style.left=`${x}px`;ds.style.bottom=`${y}px`;ds.velocity={x:0,y:0};}});
+        document.addEventListener('mouseup',()=>{if(ds){ds.classList.remove('dragging');ds=null;}});
+        rb.addEventListener('click',()=>{wm.style.display='none';init();});
+        init();

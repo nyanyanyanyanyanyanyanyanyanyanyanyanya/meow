@@ -1,0 +1,184 @@
+ <style>
+.astro-details {
+  padding: 15px;
+  border: 1px solid var(--border-light);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.astro-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.herb {
+  cursor: pointer;
+  text-decoration: dotted underline;
+  transition: transform 0.2s ease-in-out;
+}
+
+.herb:hover {
+  background-color: var(--highlight);
+  transform: translateY(-3px);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 1px solid #000;
+  padding: 20px;
+  max-width: 400px;
+  box-shadow: var(--popup-shadow);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  color: #000; 
+}
+
+.popup[style*="display: block"] {
+  opacity: 1;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+   color: #000; 
+}
+
+.close-btn:hover {
+  color: #000; 
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-bg);
+}
+
+  </style>
+</head>
+<body>
+    <p>
+      <img src="https://south-boulevard.nekoweb.org/Images/sycamoremug.png" class="right" alt="Official Concept art of Professor Sycamore">
+      Astrology is a belief that says positions and movements of celestial bodies, like the stars and planets, can influence human personalities or even life events! While we have no canonical basis for Professor Sycamore's astrological sign (we get a zodiac sign based on birth date or birth year), we can work backwards by thumbing through all the signs and deciding which one is a good fit for him.This is all speculation!
+    </p>
+    
+    <h2>
+      Sagittarius the Archer
+    </h2>
+    <div class="astro-details">
+      <ul>
+        <li><mark>Gemstones:</mark> Turquoise, Topaz</li>
+        <li><mark>Herbs:</mark> 
+          <span class="herb" onclick="
+            document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+            document.getElementById('dandelion-popup').style.display = 'block';
+            document.querySelector('.popup-overlay').style.display = 'block';
+          ">Dandelion</span>, 
+          <span class="herb" onclick="
+            document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+            document.getElementById('sage-popup').style.display = 'block';
+            document.querySelector('.popup-overlay').style.display = 'block';
+          ">Sage</span>, 
+          <span class="herb" onclick="
+            document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+            document.getElementById('willow-popup').style.display = 'block';
+            document.querySelector('.popup-overlay').style.display = 'block';
+          ">Willow</span>
+        </li>
+        <li><mark>Element:</mark> Fire</li>
+        <li><mark>Planet:</mark> Jupiter</li>
+        <li><mark>Injuries:</mark> Often injured by accidents like falls; pain often brought by recklessness. Risky hips and thighs.</li>
+      </ul>
+    </div>
+    <p>
+      Sagittarius individuals are enthusiastic, driven by curiosity, and harbor a natural ability to teach, influenced by Jupiter. This makes Professor Sycamore eager to share knowledge and experiences. His love for discovery is infectious, and he actively explores Lumiose and Kalos firsthand to experience new things. The Fire element allows him to see the potential in everyone around him, believing in their ability to forge meaningful connections. He's got a very positive outlook even when sad things happen, and his genuine belief in others is a lovely trait. He encourages a broad outlook on life, understanding other people and cultures.
+    </p><br>
+    <p>
+      However, Sagittarius restlessness can make him seem a little scatterbrained, jumping from place to place or topic to topic. His philosophical nature can come off as preachy or meandering if not reined in, and lengthy explanations can overwhelm more practical folks. The sign tends toward abstract thinking first. They can be a bit irresponsible or emotional, and passion or optimism can sometimes override logical decision-making!
+    </p>
+    <p>
+      Sagittarius is ruled by the planet Jupiter, meaning Jupiter is the primary influence shaping its energy, and Jupiter qualities are naturally displayed. Jupiter is the planet of expansion, growth, and abundance, which is why Sagittarians often take on roles like professors, philosophers, travelers, and guides!
+    </p>
+    <img src="https://south-boulevard.nekoweb.org/Images/dasdasds.png" class="centered-image" alt="Injuries!?">
+    
+    <h2>
+      Connections to Pokémon
+    </h2>
+    <p>
+      On a side note, Professor Sycamore is closely associated with Xerneas, the box legendary of Pokémon XY, which embodies Jupiter's aspects of growth, wisdom, and the life force connecting all living things. He's also often linked with Skiddo and Gogoat. He's first seen with Skiddo in the opening of Pokémon XY, rides a Gogoat Shuttle in the Pokémon manga, and has a Gogoat partner in Pokémon Masters EX. Sagittarius is represented by a Centaur archer, while Gogoat is a Pokémon version of a mount that carries people on journeys. Described as one of the Pokémon with the oldest connections to humanity, Gogoat is a bridge between civilization and wild nature, much like Sagittarius symbolizes. It has a gentle, reliable nature.
+    </p>
+    <p>
+      Imagine Professor Sycamore riding a Gogoat. It's almost like his horse half! Sometimes the stars really do align.
+    </p>
+    <img src="https://south-boulevard.nekoweb.org/Images/673.png" class="divider" alt="Gogoat">
+
+
+  <div class="popup-overlay" onclick="
+    document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+    document.querySelector('.popup-overlay').style.display = 'none';
+  "></div>
+
+  <div id="dandelion-popup" class="popup">
+    <div class="popup-header">
+      <span>Dandelion</span>
+<button class="close-btn" aria-label="Close popup" onclick="
+  document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+  document.querySelector('.popup-overlay').style.display = 'none';
+">×</button>
+    </div>
+    <p>Dandelions are resilient plants! Their seeds literally travel on the wind to new places. This plant is often associated with wishes and dreams... </p>
+  </div>
+
+  <div id="sage-popup" class="popup">
+    <div class="popup-header">
+      <span>Sage</span>
+<button class="close-btn" aria-label="Close popup" onclick="
+  document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+  document.querySelector('.popup-overlay').style.display = 'none';
+">×</button>
+
+    </div>
+    <p>Sage has been associated with wisdom, purification, and learning. It's where we get the word 'sage' meaning a wise person. Professor Sycamore is the epitome of a sage figure, don't you think? </p>
+  </div>
+
+  <div id="willow-popup" class="popup">
+    <div class="popup-header">
+      <span>Willow</span>
+<button class="close-btn" aria-label="Close popup" onclick="
+  document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+  document.querySelector('.popup-overlay').style.display = 'none';
+">×</button>
+    </div>
+    <p>Willow represents adaptation. willow trees bend without breaking! They are very adaptable, and often associated with intuition and emotions... they are often associated with water, too, which fits his personality and name!</p>
+  </div>
+
+  <script>
+window.openPopup=function(herb){const popups=document.querySelectorAll('.popup');popups.forEach(popup=>popup.style.display='none');document.getElementById(herb+'-popup').style.display='block';document.querySelector('.popup-overlay').style.display='block'};window.closePopup=function(){const popups=document.querySelectorAll('.popup');popups.forEach(popup=>popup.style.display='none');document.querySelector('.popup-overlay').style.display='none'};document.addEventListener('keydown',function(event){if(event.key==='Escape'){window.closePopup()}});(function(){console.log('Popup script loaded')})()
+  </script>
+</body>
+</html>

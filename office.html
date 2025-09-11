@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Sycamore's Office</title>
+    <style>
+body{background-color:#fff;border:1px solid #000;font-family:'Courier New',monospace,sans-serif;padding:20px}.bio{max-width:800px;margin:0 auto;text-align:center}.clearfix{overflow:auto;margin-bottom:20px}.bio .clearfix p{text-align:justify;margin-bottom:20px;line-height:1.5}.bio .clearfix::after{content:"";display:table;clear:both}.game-container{position:relative;width:160px;height:144px;margin:20px auto;background-color:#fff;border-radius:10px;box-shadow:0 2px 5px rgb(0 0 0 / .1)}.game-container img{width:160px;height:144px;display:block}.hotspot{position:absolute;cursor:pointer;border:2px solid #fff0;transition:border 0.2s;border-radius:3px}.hotspot:hover{border:2px solid #ff9bb5;opacity:.8}.quote-window{position:fixed;width:300px;background:#fff;border:1px solid #000;z-index:1000;border-radius:8px;overflow:hidden;font-family:'Courier New',monospace;display:none}.quote-header{background:#000;color:#fff;padding:8px;display:flex;justify-content:space-between;align-items:center;font-size:16px;cursor:grab;user-select:none}.quote-close{background:none;border:none;color:#fff;font-size:14px;cursor:pointer;padding:0 8px}.quote-close:hover{color:gold}.quote-content{padding:15px;font-size:16px;text-align:justify;color:#333;line-height:1.6}
+    </style>
+</head>
+<body>
+    <div class="bio">
+        <h2>Professor Sycamore's Office</h2>
+        <div class="clearfix">
+            <div class="game-container">
+                <img src="https://south-boulevard.nekoweb.org/Images/room2.png" alt="Professor Sycamore's Office">
+                <div class="hotspot" data-popup="popup-shelf1" style="top: 0px; left: 30px; width: 80px; height: 10px;"></div>
+                <div class="hotspot" data-popup="popup-bigwindow" style="top: 30px; left: 50px; width: 30px; height: 40px;"></div>
+                <div class="hotspot" data-popup="popup-colum" style="top: 10px; left: 100px; width: 30px; height: 20px;"></div>
+                <div class="hotspot" data-popup="popup-gramo" style="top: 70px; left: 5px; width: 30px; height: 40px;"></div>
+                <div class="hotspot" data-popup="popup-wall" style="top: 50px; left: 90px; width: 10px; height: 30px;"></div>
+                <div class="hotspot" data-popup="popup-bookshelf2" style="top: 30px; left: 130px; width: 30px; height: 40px;"></div>
+                <div class="hotspot" data-popup="popup-carpet" style="top: 90px; left: 10px; width: 40px; height: 40px;"></div>
+                <div class="hotspot" data-popup="popup-computer" style="top: 90px; left: 60px; width: 50px; height: 20px;"></div>
+                <div class="hotspot" data-popup="popup-plant" style="top: 80px; left: 110px; width: 20px; height: 20px;"></div>
+                <div class="hotspot" data-popup="popup-desk" style="top: 110px; left: 60px; width: 40px; height: 20px;"></div>
+                <div class="hotspot" data-popup="popup-corner" style="top: 120px; left: 100px; width: 30px; height: 20px;"></div>
+            </div>
+            
+            <div id="popup-shelf1" class="quote-window">
+                <div class="quote-header"><span>Office Sunroof</span><button class="quote-close" data-popup="popup-shelf1">✖</button></div>
+                <div class="quote-content">You can see Lumiose' blue skies outside... oh, a fletchling!</div>
+            </div>
+            <div id="popup-bigwindow" class="quote-window">
+                <div class="quote-header"><span>Big Window</span><button class="quote-close" data-popup="popup-bigwindow">✖</button></div>
+                <div class="quote-content">A giant window right behind Professor Sycamore's desk. It looks like you're on the third floor... the streets below are packed.</div>
+            </div>
+            <div id="popup-colum" class="quote-window">
+                <div class="quote-header"><span>Office Columns</span><button class="quote-close" data-popup="popup-colum">✖</button></div>
+                <div class="quote-content">A tall column made out of some kind of building material... it's so fancy, and it hits the ceiling. Gold, teal, and white is quite the color combo, isn't it?</div>
+            </div>
+            <div id="popup-gramo" class="quote-window">
+                <div class="quote-header"><span>Gramophone</span><button class="quote-close" data-popup="popup-gramo">✖</button></div>
+                <div class="quote-content">While newer models of record players exist with all the modern amenities, Professor Sycamore seems to prefer antique-looking gramophones.</div>
+            </div>
+            <div id="popup-wall" class="quote-window">
+                <div class="quote-header"><span>Wall Paintings</span><button class="quote-close" data-popup="popup-wall">✖</button></div>
+                <div class="quote-content">Framed art of Pokémon are hanging on the wall. They're a mix of abstract color studies and surprisingly detailed anatomical charts.<br><br>You don't think the Professor drew these himself, but...?</div>
+            </div>
+            <div id="popup-bookshelf2" class="quote-window">
+                <div class="quote-header"><span>Giant Bookshelf</span><button class="quote-close" data-popup="popup-bookshelf2">✖</button></div>
+                <div class="quote-content">A massive bookshelf full of what looks to be research reports, but if you move the copy of 'Mega Evolution Throughout the Ages', you'll find Kalosian fashion magazines...</div>
+            </div>
+            <div id="popup-carpet" class="quote-window">
+                <div class="quote-header"><span>Red Rug</span><button class="quote-close" data-popup="popup-carpet">✖</button></div>
+                <div class="quote-content">The carpet that lines his office is an ostentatious shade of red. It's very regal... too bad about all the stuff he just has lying around on it, though.</div>
+            </div>
+            <div id="popup-computer" class="quote-window">
+                <div class="quote-header"><span>Computers</span><button class="quote-close" data-popup="popup-computer">✖</button></div>
+                <div class="quote-content">Two computers sit on Professor Sycamore's messy desk, one that is sleek and modern for official research, and another is a laptop that he can't bear to part with. This is where presumably he does most of his research, e-mailing, and voice comms, at least until he gets a holocaster.</div>
+            </div>
+            <div id="popup-plant" class="quote-window">
+                <div class="quote-header"><span>Office Plant</span><button class="quote-close" data-popup="popup-plant">✖</button></div>
+                <div class="quote-content">A healthy office plant! 🌱 It's quite large. Professor Sycamore must take good care of it. It gets lots of sunlight from the windows. This might be the only plant in Kalos that receives more attention than grass-types.<br><br>Sitting on the desk next to it is a gold-framed, tiny photo frame, partially hidden behind research papers.</div>
+            </div>
+            <div id="popup-desk" class="quote-window">
+                <div class="quote-header"><span>Professor Sycamore's Desk</span><button class="quote-close" data-popup="popup-desk">✖</button></div>
+                <div class="quote-content">Notes are scattered all over the top of this desk. It's large, heavy, and engraved with fancy designs that seem faintly reminiscent of Unovan Pokémon.</div>
+            </div>
+            <div id="popup-corner" class="quote-window">
+                <div class="quote-header"><span>Sycamore's Office</span><button class="quote-close" data-popup="popup-corner">✖</button></div>
+                <div class="quote-content">Research books and canvases are haphazardly on the floor and against the walls. Professor Sycamore swears he'll hang them up, but he inevitably gets distracted.</div>
+            </div>
+                <a href="https://south-boulevard.nekoweb.org/home">HOME</a>!
+        </div>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded',()=>{const hotspots=document.querySelectorAll('.hotspot');const closeButtons=document.querySelectorAll('.quote-close');hotspots.forEach(spot=>{spot.addEventListener('click',()=>{const popupId=spot.dataset.popup;const popup=document.getElementById(popupId);if(popup){popup.style.display='block';popup.style.left=`calc(50% - ${popup.offsetWidth / 2}px)`;popup.style.top=`calc(50% - ${popup.offsetHeight / 2}px)`}})});closeButtons.forEach(button=>{button.addEventListener('click',(e)=>{e.stopPropagation();const popupId=button.dataset.popup;const popup=document.getElementById(popupId);if(popup){popup.style.display='none'}})});const quoteWindows=document.querySelectorAll('.quote-window');quoteWindows.forEach(popup=>{const header=popup.querySelector('.quote-header');if(header){makeDraggable(popup,header)}});function makeDraggable(element,dragHandle){let pos1=0,pos2=0,pos3=0,pos4=0;dragHandle.onmousedown=dragMouseDown;function dragMouseDown(e){e=e||window.event;e.preventDefault();pos3=e.clientX;pos4=e.clientY;document.onmouseup=closeDragElement;document.onmousemove=elementDrag;dragHandle.style.cursor='grabbing'}
+function elementDrag(e){e=e||window.event;e.preventDefault();pos1=pos3-e.clientX;pos2=pos4-e.clientY;pos3=e.clientX;pos4=e.clientY;element.style.top=(element.offsetTop-pos2)+"px";element.style.left=(element.offsetLeft-pos1)+"px"}
+function closeDragElement(){document.onmouseup=null;document.onmousemove=null;dragHandle.style.cursor='grab'}}})
+    </script>
+</body>
+</html>

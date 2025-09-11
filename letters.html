@@ -1,0 +1,114 @@
+<style>
+.professor-sycamore {
+  font-family: "MS Gothic", monospace;
+  font-size: 18px;
+  border: 1px solid transparent;
+  border-image: var(--detail-border) 1;
+  border-radius: 12px;
+  padding: 15px;
+  background: var(--detail-bg);
+  color: var(--text-color);
+  margin: 20px 0;
+  position: relative;
+  margin-left: 80px;
+  width: 70%;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-speed);
+}
+
+.professor-sycamore::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background: var(--detail-bg);
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-image: var(--detail-border) 1;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.professor-sycamore p {
+  line-height: 1.5;
+  margin: 0;
+  margin-left: 115px;
+  color: #000;
+}
+
+.sycamore-image {
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+</style>
+
+  <h2>Write to Professor Sycamore</h2>
+  <p>
+    Have a message for Professor Sycamore? Share your thoughts, questions, or kind words in the letter box below. Your letter will be sent anonymously to the Professor's mailbox. Please keep your message kind and respectful, just as the Professor would appreciate!<br><br>
+    <form id="letter-form" action="https://formspree.io/f/movdvrko" method="POST">
+      <textarea name="letter" class="code-textarea" rows="10" placeholder="Dear Professor Sycamore, ..." aria-label="Letter to Professor Sycamore" required></textarea>
+      <button type="submit">Send Letter</button>
+    </form>
+    <details>
+      <summary>Professor Sycamore's Mailbox</summary>
+      <div>
+        <p>Below are letters the Professor has received, along with his responses!</p>
+        <div class="image-group">
+          <img src="https://south-boulevard.nekoweb.org/Images%2Fsubmit/3.png" alt="Letter 3">
+        </div>
+        <div class="professor-sycamore">
+          <img src="https://south-boulevard.nekoweb.org/Images/dividers/sycsmilepixel.png" alt="Professor Sycamore" class="sycamore-image">
+          <p><em>Dear Admirer</em>,<br> Oh my! What a lovely thing to say, and so sweet! It brought some warmth to my breezy Lumiose day. I’d love for you to visit the lab sometime! Thank you for brightening my morning! <br><br>Warmly, Prof. Augustine Sycamore</em></p>
+        </div>
+        <div class="image-group">
+          <img src="https://south-boulevard.nekoweb.org/Images%2Fsubmit/2.png" alt="Letter 2">
+        </div>
+        <div class="professor-sycamore">
+          <img src="https://south-boulevard.nekoweb.org/Images/dividers/sycsmilepixel.png" alt="Professor Sycamore" class="sycamore-image">
+          <p><em>Dear Pokémon Friend,<br> While I don't speak meowth or glameow fluently, your letter brought a smile to my face! It sounds like you're curious about something... perhaps research, or Poképuff flavors? You're welcome to visit my lab anytime, and we could discuss both! Until then, keep up that energy! <br><br>Warmly, Prof. Augustine Sycamore</em></p>
+        </div>
+
+        <div class="image-group">
+          <img src="Images/submit/1.png" alt="Letter 1">
+        </div>
+        <div class="professor-sycamore">
+          <img src="https://south-boulevard.nekoweb.org/Images/dividers/sycsmilepixel.png" alt="Professor Sycamore" class="sycamore-image">
+          <p><em>Dear Curious Trainer,<br> I have to admit, you caught me off guard with this one, haha! But since you asked, I'll let you in on a little secret... sometimes I kick my shoes off when I'm in my office... it's easier to feel at home! Thank you for your letter, <br><br>Warmly, Prof. Augustine Sycamore</em></p>
+        </div>
+      </div>
+    </details>
+  </div><br><br>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Form submission feedback
+    const letterForm = document.getElementById('letter-form');
+    if (letterForm) {
+      letterForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        const formData = new FormData(this);
+        fetch(this.action, {
+          method: this.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Your letter has been sent to Professor Sycamore! Thank you! ✉️');
+            this.reset();
+          } else {
+            alert('Oh no! There was an issue sending your letter. Please try again later. 😔');
+          }
+        })
+        .catch(error => {
+          console.error('Form submission error:', error);
+          alert('Oh no! There was an error sending your letter. Please try again later. 😔');
+        });
+      });
+    }
+  });
+</script>
