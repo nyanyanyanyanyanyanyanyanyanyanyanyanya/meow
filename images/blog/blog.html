@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pichupuff!!!!!!</title>
+    <style>
+        @font-face {
+            font-family: 'Pichupuff';
+            src: url('https://south-boulevard.nekoweb.org/Images/blog/Pichupuff.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://south-boulevard.nekoweb.org/Images/Backrounds/flowers%2012.gif');
+            background-repeat: repeat; 
+            font-family: 'Pichupuff', sans-serif;
+            font-size: 15px; 
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .header img {
+            width: 100%;
+            max-width: 360px; 
+            height: auto; 
+            display: block;
+            margin: 30px auto;
+        }
+
+        .main-content {
+display: flex;
+align-items: flex-start;
+gap: -91px;
+width: 664px;
+justify-content: center;
+flex-wrap: nowrap;
+background:
+  repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 200, 0.6) 0px,
+    rgba(255, 255, 200, 0.6) 2px,
+    transparent 2px,
+    transparent 6px
+  ),
+  #fff0a0;
+border-radius: 310px 1000px 50px 50px;
+background-size: 100% 8px;
+animation: scanlineScroll 2s linear infinite;
+
+        }
+@keyframes scanlineScroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -8px;
+  }
+}
+
+        .container-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+  margin-top: 27px;
+        }
+
+        .container {
+background-color: white;
+  border-right: 3px solid #000;
+  border-bottom: 3px solid #000;
+  border-left: 3px solid #000;
+  border-radius: 0 0 500px 50px;
+  width: 254px;
+  height: 300px;
+  padding: 20px;
+  overflow-y: auto;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+        }
+
+        h1 {
+font-family: 'Pichupuff', sans-serif;
+  color: #ffd483;
+  text-align: center;
+  font-size: 33px;
+  margin: 0 0 0 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: black;
+  padding: 10px;
+  border-bottom: none;
+  border-radius: 400px 400px 0 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 280px;
+        }
+
+        .date-container {
+            display: flex;
+            align-items: center; 
+            justify-content: flex-start; 
+            width: 100%; 
+            gap: 5px; 
+            margin: 10px 0 5px 0; 
+        }
+
+        h2 {
+            font-family: 'Pichupuff', sans-serif;
+            color: #ffd483;
+            font-size: 14px;
+            margin: 0; 
+        }
+
+        .date-container img {
+            height: 14px; 
+            width: auto;
+            vertical-align: middle; 
+        }
+
+        .content-paragraph {
+            display: flex;
+            align-items: flex-start; 
+            width: 100%;
+            gap: 5px; 
+        }
+
+        .content-paragraph img {
+            height: 12px; 
+            width: auto; 
+            vertical-align: middle; 
+        }
+
+        .side-image img {
+            width: 360px; 
+            height: auto; 
+            display: block;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 8px 16px;
+
+            color: #333;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            margin-top: auto; 
+
+        }
+
+        .back-button:hover {
+            background-color: #ffc107; 
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 0; 
+            text-align: center; 
+        }
+
+        .pichu-emoji {
+            font-size: 18px; 
+            margin: 0 5px;
+        }
+
+        .pichu-wiggle {
+position: absolute;
+  top: 738px;
+  left: 582px;
+  z-index: 10;
+        }
+
+        .pichu-wiggle img {
+            width: 100px;
+            height: auto;
+        }
+
+        .container::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background: #ffffff;
+            border-radius: 12px;
+            margin: 5px;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background: #ffd483; 
+            border-radius: 12px;
+            border: 2px solid #fff9e6; 
+            background-image: linear-gradient(
+                45deg,
+                #ffd483 25%,
+                transparent 25%,
+                transparent 50%,
+                #ffd483 50%,
+                #ffd483 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 20px 20px; 
+        }
+
+        .container::-webkit-scrollbar-thumb:hover {
+            background: #ffc107; 
+            background-image: linear-gradient(
+                45deg,
+                #ffc107 25%,
+                transparent 25%,
+                transparent 50%,
+                #ffc107 50%,
+                #ffc107 75%,
+                transparent 75%,
+                transparent
+            );
+        }
+
+        .container {
+            scrollbar-width: thin;
+            scrollbar-color: #ffd483 #ffffff;
+        }
+
+        @media (max-width: 700px) {
+            .main-content {
+                width: 100%;
+                padding: 0 10px;
+            }
+            .side-image img {
+                max-width: 100%;
+            }
+            .pichu-wiggle {
+                top: 50px;
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://south-boulevard.nekoweb.org/Images/blog/Pichu-PNG-Image.png" alt="Pichu Header">
+    </div>
+    <div class="pichu-wiggle">
+        <img src="https://south-boulevard.nekoweb.org/Images/blog/pichuwiggle.gif" alt="Pichu Wiggle">
+    </div>
+    <div class="main-content">
+        <div class="container-wrapper">
+            <h1>Pichupuff Super Blog!! <span class="pichu-emoji"></span></h1>
+            <div class="container">
+                <img src="https://south-boulevard.nekoweb.org/Images/blog/951259drv7owmvvu.gif">
+                <div class="date-container">
+                    <img src="https://south-boulevard.nekoweb.org/Images/blog/l1.gif" alt="Left Deco">
+                    <h2>July 07, 2025</h2>
+                    <img src="https://south-boulevard.nekoweb.org/Images/blog/r1.gif" alt="Right Deco">
+                </div>
+                <div class="content-paragraph">
+                    <p>I thought it might be fun to add a little blog page that focuses on typing out more of my thought processes and site updates. I try to keep things focused and organized but I think having a place to post things randomly could be fun and interesting! I'm currently working on rewriting some of the things I had written for the original friendshipps/relationships page that south Boulevard had originally, but I feel like I didn't quite get across the feeling I wanted. I sometimes feel like I need to rush to get  things posted, and that can be quite the detriment when it comes to adequeely showing the information or conveying the feelings I want... does that make sense!? I don't know... it's difficult. <br><br>-pichupuff<img src="https://south-boulevard.nekoweb.org/Images/blog/pichupuff.gif"> </p>
+                </div>
+      
+            </div>
+        </div>
+        <div class="side-image">
+            <img src="https://south-boulevard.nekoweb.org/Images/blog/pichu(3).png" alt="Pichu Side Image">
+        </div>
+               
+    </div>
+      <a href="https://south-boulevard.nekoweb.org/home" class="back-button">to south boulevard</a>
+</body>
+</html>
