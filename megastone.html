@@ -89,7 +89,7 @@ body{margin:0;padding:0;overflow:hidden;font-family:'MS Gothic',Arial,sans-serif
             obs=[{e:ol,x:-22,y:187,w:180,h:307,hw:60,hh:102,hox:60,hoy:102},{e:or,x:400-180+13,y:123,w:180,h:307,hw:50,hh:60,hox:65,hoy:80}];
             pk.forEach(p=>p.e.remove());pk=[];
             clearInterval(ti);clearInterval(pi);cancelAnimationFrame(af);af=null;
-            s=[];co=0;gps=false;c.textContent=`${co} / ${to}`;te.textContent='0 s';gs=false;document.body.style.cursor='default';ri.style.display='none';rn.textContent='';se.src="https://south-boulevard.nekoweb.org/Images/miniiconsmile.png";wm.style.display='none';bb.textContent='Ready to start!';
+            s=[];co=0;gps=false;c.textContent=`${co} / ${to}`;te.textContent='0 s';gs=false;document.body.style.cursor='default';ri.style.display='none';rn.textContent='';se.src="images/miniiconsmile.png";wm.style.display='none';bb.textContent='Ready to start!';
             ms.forEach(st=>{
                 const i=document.createElement('img');
                 i.classList.add('s');i.src=`Images/megastones/${st}.png`;i.dataset.name=st.charAt(0).toUpperCase()+st.slice(1).replace('.png','');i.dataset.type=st;i.style.left=`${Math.random()*(400-aw)}px`;i.style.bottom='0px';i.velocity={x:0,y:0};i.jumpCount=0;i.rollingDirection=0;a.appendChild(i);s.push(i);
