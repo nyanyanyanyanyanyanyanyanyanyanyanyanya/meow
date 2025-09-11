@@ -1,0 +1,293 @@
+Chapter1
+BG_INTRO SFX_TITLE - A Beautiful Meeting!?
+SET:intimacy:0 FG_BLANK - The beginning.
+    CLEARSCREEN - 
+BG_TITLE - You are Lysandre, the ambitious leader of Lysandre Labs. 
+STATUS:[✧Status: A Visionary!]] - ... and the owner of the popular Lysandre Café.
+Despite your busy schedule overseeing groundbreaking technological innovations and various philanthropic efforts, you've received a message.
+BG_SYCCALL - It's from your old friend Professor Augustine Sycamore, asking if you might spare some time to meet.
+You've grown somewhat distant in recent months...
+Due to certain responsibilities.
+There was a time when you were inseparable.
+GOTO:cafe - Something in his message suggests he might miss your company...
+###
+cafe 
+BG_OUTSIDE - You briskly make your way through Magenta Plaza, the afternoon sun glinting off the architecture of Lumiose City.
+STATUS:[✧Status: Arriving to your café]] - Lysandre Café bustles with its usual afternoon crowd.
+SFX_CROW SFXVOL:0.1 - It's a youthful crowd, ranging from the avant-garde artists working on their newest screenplay...
+BG_CAFE - to the bogstandard socialites and sychopants.
+The smell of ground beans fills the air, mingling with hushed conversations and the gentle clinking of porcelain.
+You check your watch for the third time in six minutes.
+It's not like you to be so concerned with punctuality when you've already arrived fifteen minutes early.
+BG_CAFEINSIDE - Inside...
+STATUS:[✧Status: A familiar sanctuary]] - The low lights cast a glow over the stylish interior of your café.
+Some patrons glance your way. You, the tech mogul of Kalos, always draw attention.
+It's a given.
+You're nonchalant about that, though, as you navigate to your seat.
+STATUS:[✧Status: Waiting at the Café]] - The server brings your usual espresso to the table.
+L! - Merci.
+Your café. Your coffee.
+Your city.
+You adjust your cravat slightly, watching the drink in the cup.
+Something feels different about today...
+Perhaps it's simply the anticipation of seeing an old friend.
+How many years has it been since your last conversation?
+A proper one. Two? Three?
+Time seems to blur when you're pursuing a vision...
+BG_CAFEINSIDE SFX_BING MUS_SYC FG_SYCPRESENTS: S! - Lysandre! Mon ami!
+His voice cuts through the café, all too familiar. His baritone is as full-bodied and as warm as the coffee you serve.
+L! - Professor.
+L! - You arrived exactly on time.
+STATUS:[✧Status: Professor Sycamore has arrived]] - The professor hasn't changed much since you've known him.
+Coiffed dark hair, always looking windswept.
+FG_SYCJOYFUL - That carefree smile.
+It carries no burdens, does it?
+S! - You sound surprised! 
+S! - May I?
+He gestures to the empty chair across from you.
+CHOICE1:[Of course]:Chapter2 CHOICE2:[I've been waiting]:Chapter3 L! - Ah...
+###
+Chapter2
+MODE:standard SET:tone:polite L! - Of course, Professor. Please join me.
+FG_SYCWINK S! - Still so formal, Lysandre?
+He slides into the seat casually.
+S! - I suppose that's part of your charm!
+GOTO:conversation - He offers a wink that most would find disarming.
+###
+Chapter3
+MODE:standard SET:tone:intimate SET:intimacy:intimacy+1 - I've been waiting, Professor.
+FG_SYC S! - Oh?
+L! - Longer than you'd know.
+He slides into the seat with a curious tilt of his head.
+S! - I'm sorry, Lysandre. I didn't mean to keep you waiting!
+GOTO:conversation - His obliviousness to certain matters has always been both endearing and frustrating.
+###
+conversation
+The server approaches instantly, as if summoned by Professor Sycamore's presence.
+FG_SYC S! - Un café au lait, s'il vous plaît.
+After the server departs, Professor Sycamore leans forward, chin resting on his fingers.
+FG_SYCSMILEFOLD S! - So, how is the café business? Lysandre Café is becoming quite the sensation!
+L! - A mere side project. A pleasant diversion.
+Your fingers trace the rim of your espresso cup.
+S! - You've never been one for "mere" diversions.
+FG_SYC S! - Everything you involve yourself in has purpose, doesn't it?
+STATUS:[✧Status: Discussing business with Sycamore]] - There's a knowing glint in his eye that makes you wonder about how much he's pieced together.
+He is more perceptive than many give him credit for.
+L! - You know me too well.
+L! - And what of you? Still unlocking the mysteries of Mega Evolution?
+S! - Among other things! Though lately I've been focused on a bunch of promising young trainers. 
+FG_SYCPRESENTS SFX_BING S! - The next generation, if you will!
+The phrase catches in your mind. 
+The next generation.
+Your jaw tightens almost imperceptibly.
+L! - And do they show promise? These children?
+CHOICE1:[The world needs strong trainers]:Chapter4 CHOICE2:[The future demands excellence]:Chapter5 CHOICE3:[(Lost in thought...)]:confession L! - Professor, 
+###
+Chapter4
+MODE:standard SET:worldview:practical L! - The world needs strong trainers now more than ever.
+Your hand clenches slightly around your cup.
+FG_SYCSADGE MUS_MAYBE S! - That's what I thought you'd say.
+His smile falters, just for a moment.
+S! - I suspect we might disagree on what constitutes strength in the end.
+L! - Perhaps. Though I've always valued your perspective, Professor.
+FG_SYC L! - Even when we disagree.
+GOTO:memories - His expression softens at that, eyes crinkling at the corners.
+###
+Chapter5
+MODE:standard SET:worldview:idealistic L! - The future demands excellence. We must preserve what beauty remains in the world. Once lost, it can never be reclaimed.
+Your voice drops lower, more intense.
+FG_SYCJOYFUL MUS_MAYBE S! - Always the protector!
+There's fondness in his tone, but something else too. Concern?
+FG_SYC S! - Sometimes I wonder, though. Who decides what beauty is worth preserving?
+L! - Those with the vision to see what is truly precious.
+L! - And the resolve to protect it.
+You find yourself glancing at the disheveled mess that the Professor's hair has found itself in, the wayward locks framing his face in such a way...
+L! - Not everything beautiful needs to be changed.
+L! - I believe that things that are beautiful should stay that way forever.
+GOTO:memories - He catches your gaze.
+###
+confession
+SET:worldview:conflicted SET:intimacy:intimacy+1 - The café seems confined suddenly.
+FG_SYC MUS_MAYBE SFX_HUH S! - Lysandre?
+L! - Only thinking, Professor. About the potential of these children.
+L! - And the responsibility that they may have to utilize the knowledge you give them.
+L! - If you knew that one of these children were going to do something... difficult. Something others might not understand.
+FG_SYCSRS S! - Something they believed was right?
+There's a knowing edge to his voice that startles you.
+L! - Yes. 
+S! - I would want to understand their reasoning...
+S! - I've always believed in listening first. 
+S! - Especially to those I care about.
+L! - And if that wasn't possible?
+FG_SYCSADGE S! - ... I would still value the trust it took to confide in me.
+His smile is sad.
+STATUS:[✧Status: A crossroads]] - This isn't meant to be shared. Not with him.
+L! - Thank you, Professor.
+The silence in the air between you.
+GOTO:memories - It's the closest you'll come to confession.
+###
+memories
+FG_SYCSMILEFOLD MUS_RETROSPECTIVE S! - Do you remember that summer?
+STATUS:[✧Status: Memories resurfacing...]] - His voice softens.
+L! - I wouldn't forget that, Professor.
+S! - We spent an entire weekend camped out on the beach, all for a glimpse of that supposed "Mega Lapras"!
+L! - Of which we never saw.
+You share a laugh, the sound of it bringing back a flood of memories. The sand, the conversations, the way his eyes reflected the stars.
+His laugh is boisterous enough to draw glances from the other patrons, but you don't mind the attention.
+STATUS:[✧Status: Reminiscing...]] - The afternoon sun catches in his dark hair, highlighting strands of premature silver you hadn't noticed before. Something about it makes your throat tighten.
+S! - Just the two of us...
+FG_SYC S! - Those were simpler times, weren't they?
+L! - We were different people then.
+You can still remember the smell of the ocean, the way his shoulder pressed against yours as you watched the horizon.
+S! - Were we? Sometimes I wonder if we've changed as much as we think.
+He reaches across the table, fingers briefly brushing against your hand.
+CHECK:tone:intimate:eq:intimatemoment:Chapter7 - The touch lingers...
+###
+intimatemoment
+S! - Speaking of the past, I still have that book you lent me...
+He looks sheepish.
+L! - The one on megastone deposits off the coast of Ambrette? From three years ago?
+FG_SYCJOYFUL S! - That's the one! I've made notes in it. I hope you don't mind!
+His eyes meet yours, unexpectedly vulnerable.
+S! - Perhaps you could come by the lab sometime? To collect it.
+L! - Perhaps I could.
+The invitation hangs between you.
+S! - It would be nice to show you my recent research as well.
+L! - I would like that, Professor.
+SET:intimacy:intimacy+1 - Your agreement to make time out of your busy schedule doesn't go unnoticed by the professor.
+STATUS:[✧Status: Boundaries shifting...]] - The professional veneer between you cracks... just a bit.
+L! - It's been too long since we've properly discussed research.
+S! - Yes, well. We've both been busy...
+The slight hesitation speaks volumes.
+GOTO:Chapter6 - The bond between you deepens.
+###
+Chapter6
+FG_SYC S! - Remember that night?
+The café seems to fade into the background.
+L! - I remember everything we do together, Professor.
+Your voice is steadier than you feel.
+S! - I often think about what you said then. About creating a more beautiful world.
+L! - I still intend to.
+Your eyes meet his, unwavering.
+S! - I know. 
+FG_SYCSADGE SFX_HUH S! - That's what worries me sometimes.
+The concern in his eyes is genuine.
+GOTO:departure - His hand returns to his coffee cup. You feel its absence.
+###
+Chapter7
+FG_SYCPRESENTS SFX_BING S! - Your Holo Caster technology is remarkable, by the way!
+His enthusiasm is almost childlike in its exuberance.
+L! - A necessary innovation for the future I envision.
+Your pride in your creation is evident despite your measured tone.
+S! - Always looking ahead, aren't you?
+L! - Someone must.
+Your eyes drift to the window, to the city beyond.
+FG_SYCJOYFUL S! - Just don't forget to occasionally look around at what's already here!
+GOTO:departure - You find yourself unable to look away.
+###
+departure
+His Holo Caster chimes softly, breaking the moment between you. The real world intrudes once more.
+FG_SYC S! - Ah, forgive me. The lab calls.
+He glances at the device with visible reluctance.
+L! - Of course. Your work is important.
+He stands, straightening himself out with an apologetic smile, brushing away invisible creases.
+STATUS:[✧Status: Professor Sycamore preparing to leave]] - You rise as well, instinctively.
+S! - We shouldn't let so much time pass before our next meeting!
+L! - Agreed. Perhaps dinner next time?
+FG_SYCWINK S! - I'd like that very much.
+He hesitates, then steps closer. The scent of his cologne is strong, now.
+CHECK:worldview:idealistic:eq:Chapter8:Chapter9 - The café seems to fade around you for a moment.
+###
+Chapter8
+S! - Lysandre...
+STATUS:[✧Status: Heart pounding..]] - His voice carries a weight.
+You find that you enjoy the sound of your name on his lips.
+FG_SYCSADGE SFX_BING S! - Promise me you'll be careful with whatever you're planning.
+L! - You know I calculate every move with precision.
+Your smile doesn't quite reach your eyes.
+S! - That's not what I meant.
+He places a gentle hand on your shoulder, squeezing once.
+S! - I care too much to see something happen to you.
+GOTO:goodbye - The sincerity in his eyes is almost painful to witness. For a moment, you consider telling him everything.
+###
+Chapter9
+S! - Your passion has always been your most captivating quality.
+His voice is soft.
+L! - Your optimism has always been yours.
+You mean it as a compliment, but...
+S! - We balance each other well, don't we?
+L! - Indeed. We always have.
+Complementary yet opposed.
+FG_SYCJOYFUL - His smile turns heartachingly fond.
+S! - If only circumstances were different...
+GOTO:goodbye - The unfinished thought hangs in the air between you.
+###
+goodbye
+MUS_SYC S! - Until next time!
+He leans in, pressing a brief kiss to each of your cheeks in the traditional Kalosian farewell.
+Though traditional, there's nothing traditional about the way his lips linger near your ear.
+FG_SYCCLOSER S! - Please remember what matters, Lysandre.
+A plea, not a command.
+SFX_CROW FG_BLANK - And then he's gone, weaving through the tables with graceful steps.
+MUS_MAYBE L! - What matters...
+STATUS:[✧Status: Alone..]] - You remain standing, watching Professor Sycamore through the window as he disappears into the crowded street.
+CLEARSCREEN - Your reflection stares back at you from the window glass.
+CHECK:intimacy:2:gte:ChapterPursuit:StandardEnd - The weight of your vision presses down on your shoulders.
+###
+ChapterPursuit
+SET:tone:intimate SET:worldview:conflicted - The beauty of this world. The future. Him.
+Your carefully constructed walls falter...
+Just for a moment.
+L! - Professor...
+The title slips from your lips.
+BG_OUTSIDE - Before you realize it, you're on your feet, through the door.
+The crowds part instinctively before your purposeful stride.
+STATUS:[✧Status: A moment of weakness?!]] - Something compels you forward,against your better judgment.
+There! a glimpse of that windswept hair turning the corner.
+CHOICE1:[Call out]:ChapterReconcile CHOICE2:[Watch him go]:ChapterResolve - Your voice catches in your throat.
+###
+ChapterReconcile
+MUS_NICEEND L! - Augustine!
+Your voice carries over the crowd, uncharacteristically urgent.
+BG_OUTSIDE FG_SYCSHOCKED - He turns, surprise evident in his widened eyes.
+S! - Lysandre?
+The distance between you closes.
+L! - I think perhaps...
+For once, words fail you.
+S! - Yes?
+There's hope in his voice.
+L! - I've been remiss in our friendship. I would like to remedy that.
+Your hands clasp behind your back, a rare gesture of uncertainty.
+L! - There is a private exhibition at the museum next weekend. Rare artifacts from ancient Kalos.
+L! - I have two invitations. Would you accompany me?
+It's not your plans you're sharing, but something equally precious...
+Your time.
+FG_SYCJOYFUL S! - I... yes, of course I would.
+His expression softens into something dangerously close to tenderness.
+S! - I've missed you, mon ami.
+L! - And I you.
+A truth amidst your necessary secrets.
+STATUS:[✧Status: A tentative bridge]] - Beautiful things can be preserved, after all...
+BG_TY CHOICE1:[Start Again]:Chapter1 - The beginning of something new.
+###
+ChapterResolve
+You watch him disappear into the crowd.
+The weight of your vision settles back onto your shoulders, heavier now.
+STATUS:[✧Status: Resolve strengthened]] - Some sacrifices must be made for a beautiful world.
+Even this one.
+L! - Goodbye, Professor.
+Your whisper is lost to the bustle of Lumiose City.
+BG_LABS MUS_EVILEND - Later, in your laboratory, you stare at the blueprints spread before you.
+Your hand hovers over the designs, mind replaying the afternoon's conversation.
+For a moment, you see his face reflected in the polished surface of your desk.
+L! - A beautiful world requires difficult choices.
+L! - Choices that only those with strength can make...
+You return to work with renewed determination.
+BG_TY CHOICE1:[Start Again]:Chapter1 - The end is inevitable.
+###
+StandardEnd
+Perhaps it doesn't matter. 
+Some sacrifices must be made for a beautiful world.
+BG_TY CHOICE1:[Start Again]:Chapter1 - The end.
+###
+End

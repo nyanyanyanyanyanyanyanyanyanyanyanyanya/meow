@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://south-boulevard.nekoweb.org/game/favicon.ico" type="image/png">
+    <title>A Beautiful meeting!?</title>
+
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <script src="code.js"></script>
+    <script src="assets.js"></script>
+    <script src="config.js"></script>
+    <script src="utils.js"></script>
+
+    <noscript>You need to enable JavaScript to view the full site.</noscript>
+  </head>
+
+  <body class="crt" id="body" class="standard" onload="readyStory()">
+    <div id="loadingscreen">
+      <span id="loadingprogress">Loading!</span>
+      <br><br>
+    </div>
+
+    <div id="container" class=" standard">
+      <div id="menus">
+        <div id="messagecontainer" class="hidden">
+          <ul id="messagelog"></ul>
+        </div>
+        
+        <div id="settings-menu" class="hidden"> Music volume <br>
+          <input type="range" min="0" max="1" step="0.1" id="settingsMusicVolume">
+          <br> SFX volume <br>
+          <input type="range" min="0" max="1" step="0.1" id="settingsSFXVolume">
+          <br>
+          <br> Autoplay speed <br>
+          <input type="range" min="40" max="120" step="10" id="settingsAutoplaySpeed">
+        </div>
+
+        <div id="save-menu" class="hidden">
+          <div id="savegame">save game</div>
+          <br>
+          <div id="loadgame">load game</div>
+        </div>
+      </div>
+
+      <div id="main">
+
+        <div id="bg1">
+          <img id="fg1">
+        </div>
+
+        <div id="sidebar">
+          <div id="statuswindow" class="hidden"></div>
+          <div id="choicewindow" class="hidden">
+            <ol id="choicelist"></ol>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="dial">
+      </div>
+
+      <div id="menu-buttons">
+        <div id="autoplay">auto</div>
+        <div id="historybutton">history</div>
+        <div id="settingsbutton">settings</div>
+
+        <div id="savesbutton">save/load</div>
+        <div id="resetbutton">reset</div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
