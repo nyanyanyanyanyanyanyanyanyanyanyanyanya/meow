@@ -36,7 +36,7 @@
 
 
 <p>
-      This is a webshrine dedicated to Kalos' very own Pokémon Professor, <b>Augustine Sycamore</b>!  <img src="Images/sideviewHD.png" class="right" alt="Side View of Professor Sycamore from his concept Art"></p>
+      This is a webshrine dedicated to Kalos' very own Pokémon Professor, <b>Augustine Sycamore</b>!  <img src="images/sideviewHD.png" class="right" alt="Side View of Professor Sycamore from his concept Art"></p>
       <p>Professor Sycamore is from the Pokémon XY games, released on Oct. 12th, 2013. Why South Boulevard?
       It's where the Sycamore Pokémon Lab is located in Lumiose City!</p>
       <p> Prof. Sycamore is known for his kind demeanor and passion for Mega Evolution research. He values love,
@@ -44,11 +44,11 @@
       and his big heart makes him warm. He can be a bit scatterbrained, but he's sharper than he seems...</p>
        
    <div class="newsbox-container"><div style="display: flex; flex-direction: column; align-items: center;">
-  <img src="Images/flabebe-blue.gif" alt="A Flabebe Floats Gently, sprite from PKMN XY">
+  <img src="images/flabebe-blue.gif" alt="A Flabebe Floats Gently, sprite from PKMN XY">
   <a href="https://status.cafe/users/profsyc"style="text-decoration: none; display: inline-block;">
     <img src="https://status.cafe/users/profsyc/badge.png" alt="Status Cafe Profile" style="text-decoration: none;"/>
   </a><br>
-<img src="Images/sycasway.gif" alt="Professor Sycamore's model from PKMN XY, doing a dance" width="150" height="250">
+<img src="images/sycasway.gif" alt="Professor Sycamore's model from PKMN XY, doing a dance" width="150" height="250">
 
 </div>
 
@@ -132,60 +132,6 @@
                             <div id="links" class="section">
 <h2>Link Back!</h2>
 
-
-<table class="table">
-    <tbody>
-        <tr>
-            <td>
-
-                <textarea id="share-text-1" readonly style="width: 100%; height: 80px;">
-<a href="https://south-boulevard.nekoweb.org" target="_blank"><img src="https://south-boulevard.nekoweb.org/Images/tiny_icon.png" alt="south boulevard icon image, for linking back"></a>
-                </textarea>
-
-            </td>
-            <td>
-                <img src="https://south-boulevard.nekoweb.org/Images/tiny_icon.png" style="padding-left: 20px;" alt="south boulevard icon image, for linking back">
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-<table class="table">
-    <tbody>
-        <tr>
-            <td>
-           
-                <textarea id="share-text-2" readonly style="width: 100%; height: 80px;">
-<a href="https://south-boulevard.nekoweb.org" target="_blank"><img src="https://south-boulevard.nekoweb.org/Images/southb.gif" alt="south boulevard banner, for linking back"></a>
-                </textarea>
-
-            </td>
-            <td>
-
-                <img src="https://south-boulevard.nekoweb.org/Images/southb.gif" style="padding-left: 20px;" alt="south boulevard banner, for linking back">
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-<table class="table">
-    <tbody>
-        <tr>
-            <td>
-
-                <textarea id="share-text-3" readonly style="width: 100%; height: 80px;">
-<a href="https://south-boulevard.nekoweb.org" target="_blank"><img src="https://south-boulevard.nekoweb.org/Images/southb2.gif" alt="south boulevard banner, for linking back"></a>
-                </textarea>
-
-            </td>
-            <td>
-                <img src="https://south-boulevard.nekoweb.org/Images/southb2.gif" style="padding-left: 20px;" alt="south boulevard banner, for linking back">
-            </td>
-        </tr>
-    </tbody>
-</table>
 <h2>Land of Polls and Clickables</h2>
 <div class="poll-row">
       <a href="https://pfq.link/?HyVPj"><img src="https://pfq.link/?HyVPj=party_xy.png"  alt="Chesnaught from the Pokemon Farm Website"/></a>
@@ -196,35 +142,6 @@
     </div>
     
   </div>
-  <script>
-const copyButtons = document.querySelectorAll('.copy-button');
-
-
-copyButtons.forEach((button, index) => {
-  button.addEventListener('click', function() {
-
-    const textareaId = 'share-text-' + (index + 1);
-    const textarea = document.getElementById(textareaId);
-    
-
-    textarea.select();
-    textarea.setSelectionRange(0, 99999);
-
-
-    try {
-      navigator.clipboard.writeText(textarea.value).then(() => {
-
-        const originalText = this.textContent;
-        this.textContent = "Copied!";
-        
-        setTimeout(() => {
-          this.textContent = originalText;
-        }, 2000); 
-      });
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-    }
-  });
-});</script>
 </body>
+
 </html>
