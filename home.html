@@ -1926,25 +1926,23 @@ transform:translateX(-50%) translateY(0)
 }
 }
    
-/* Let flex items shrink properly in Firefox/Chromium */
 .container {
   min-width: 0;
 }
 
 .main-content {
-  min-width: 0;  /* critical */
+  min-width: 0; 
   max-width: 100%;
   width: 100%;
 }
 
 .page {
-  min-width: 0;  /* protects nested content like .page from forcing overflow */
+  min-width: 0;  
 }
 
    /* Mobile layout reset */
 @media (max-width: var(--bp-small)) {
   :root {
-    /* Override the desktop min-width variable */
     --main-min-width: 0px;
   }
 
@@ -1981,23 +1979,41 @@ transform:translateX(-50%) translateY(0)
     height: auto;
   }
 }
+
 @media (max-width: var(--bp-small)) {
   .nav-container {
-    position: fixed;
+    position: fixed;         /* keep it visible */
     top: 0;
     left: 0;
-    transform: none;       /* remove the translateX centering */
-    width: 100%;           /* span full screen */
-    padding: 0.5rem 1rem;  /* gentle breathing room */
+    transform: none;         /* kill desktop centering offset */
+    width: 100%;             /* span the viewport */
+    padding: 0.5rem 0.75rem; /* soft breathing room */
     box-sizing: border-box;
-    justify-content: center; /* keep menu centered inside */
+    display: flex;           /* center the menu inside */
+    justify-content: center;
+    z-index: 1000;
   }
 
   .nav-menu {
-    flex-wrap: wrap;
+    flex-wrap: wrap;         /* allow wrapping */
     justify-content: center;
+    gap: 0.25rem;
+  }
+
+  /* Make buttons fluid instead of fixed 110px */
+  .nav-menu li a {
+    width: clamp(88px, 22vw, var(--nav-width));
+    height: calc(var(--nav-height) * 0.9);
+    font-size: calc(var(--nav-font-size) * 0.9);
+    border-radius: 10px;
+  }
+
+  /* Prevent content from hiding under the fixed bar */
+  .container {
+    margin-top: calc(var(--nav-height) + 1.25rem);
   }
 }
+
 
   </style>
 </head>
@@ -2815,6 +2831,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
