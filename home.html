@@ -1980,7 +1980,7 @@ transform:translateX(-50%) translateY(0)
   }
 }
 
-/* Mobile nav: make it full-width, safe-area aware, and non-overflowing */
+/* FINAL mobile nav override */
 @media (max-width: var(--bp-small)) {
   .nav-container {
     position: fixed;
@@ -1999,6 +1999,7 @@ transform:translateX(-50%) translateY(0)
     padding-bottom: 0.5rem;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    min-width: 0;
   }
 
   .nav-menu {
@@ -2013,15 +2014,16 @@ transform:translateX(-50%) translateY(0)
   }
 
   .nav-menu li a {
-    width: clamp(60px, 20vw, 90px);  /* fluid width */
-    height: auto;                    /* let height follow image ratio */
-    font-size: 0.75rem;               /* smaller text if any */
-    padding: 0;                       /* remove extra padding */
+    width: clamp(60px, 20vw, 90px) !important;
+    height: auto !important;
+    font-size: 0.75rem;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   .nav-menu li a img {
-    max-width: 100%;                  /* scale image down with parent */
-    height: auto;
+    max-width: 100% !important;
+    height: auto !important;
     display: block;
   }
 
@@ -2033,6 +2035,7 @@ transform:translateX(-50%) translateY(0)
     margin-top: calc(env(safe-area-inset-top, 0px) + var(--nav-height) + 1rem);
   }
 }
+
 
 
   </style>
@@ -2851,6 +2854,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
