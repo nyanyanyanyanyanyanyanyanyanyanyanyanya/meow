@@ -959,7 +959,7 @@ transform:translateX(-100%)
 .plush-wrapper {
 position:fixed;
 top:calc(2rem + 160px);
-left:27%;
+left:29%;
 transform:translateX(-50%);
 z-index:9999;
 pointer-events:auto;
@@ -971,30 +971,6 @@ transition:opacity var(--anim-speed-long) ease,visibility var(--anim-speed-long)
 .plush-wrapper.fade-out {
 opacity:0;
 visibility:hidden
-}
-
-@media (max-width: var(--bp-large)) {
-.plush-wrapper {
-top:calc(2rem + 200px);
-left:20rem
-}
-}
-
-@media (max-width: var(--bp-medium)) {
-.plush-wrapper {
-top:calc(2rem + 150px);
-left:50%;
-transform:translateX(-50%)
-}
-}
-
-@media (max-width: var(--bp-small)) {
-.plush-wrapper {
-top:calc(1rem + 100px);
-right:.5rem;
-left:auto;
-transform:none
-}
 }
 
 .sycamore-plush {
@@ -1128,190 +1104,14 @@ position:relative
 opacity:1
 }
 
-@media (max-width: var(--bp-large)) {
-.nav-container {
-left:20rem
-}
-}
-
-@media (max-width: var(--bp-medium)) {
-  body {
-    padding:1rem;
-  }
-
-  .container {
-    width:90%;
-  }
-
-  .nav-container {
-    position: static; 
-    margin: 1rem auto; 
-    width: fit-content;
-    padding: 0.5rem;
-  }
-
-  .nav-menu {
-    flex-direction: row; 
-    justify-content: center;
-    gap: 0.3rem; 
-  }
-}
-
-@media (max-width: var(--bp-small)) {
-body {
-display:flex;
-flex-direction:column;
-min-height:100vh
-}
-.main-content {
-  min-width: auto !important;
-  max-width: 100%;
-  width: 100%;
-  margin: 0 auto;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-  
-.container {
-  width: 100%;
-  max-width: 90vw;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-}
-
 .nav-container,.container {
 transition:all var(--anim-speed-short) ease
-}
-
-.page {
-padding: 1rem;
-line-height:1.5
-}
-
-.page h1 {
-font-size:24px
-}
-
-.page h2,.page h3,.page h4 {
-font-size:16px
-}
-
-.nav-container {
-    position: fixed;
-    top: 0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content;
-    padding: 0.3rem;
-  }
-
-
-.plush-wrapper {
-top:1rem;
-right:1rem;
-left:auto;
-transform:none;
-width:100px
-}
-
-.nav-menu {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 0.2rem;
-    flex-wrap: wrap;
-  }
-
-.nav-menu li a {
-    width: calc(var(--nav-width) * 0.8); 
-    height: calc(var(--nav-height) * 0.8);
-    font-size: calc(var(--nav-font-size) * 0.8);
-    border-radius: 8px; 
-  }
-
-.nav-menu li a .tooltip {
-font-size:.6rem;
-padding:.4rem .8rem
-}
-
-#nav-toggle {
-font-size:.7rem;
-padding:.1rem .4rem
-}
-
-.nav-container.nav-hidden ~ .container {
-margin-top:.3rem
-}
-
-.nav-container.nav-hidden ~ .container .page {
-padding-top:10px
-}
-
-.header-image {
-height:150px
-}
-
-.page img.right,.page img.left {
-max-width:150px
-}
-
-.topics-table {
-font-size:12px
-}
-
-.quote-sycamore {
-padding:15px;
-font-size:.9rem
-}
-
-.footer {
-font-size:.65rem
-}
-}
-@supports (-moz-appearance: none) {
-  @media (max-width: var(--bp-small)) {
-    .main-content {
-      min-width: unset;
-    }
-    .page {
-      padding: 1.5rem;
-    }
-  }
-}
-
-@supports (-moz-appearance: none) {
-  @media (max-width: var(--bp-small)) {
-    .page {
-      padding: 12px;
-    }
-    .nav-menu li a {
-      font-size: .7rem;
-    }
-    .nav-toggle {
-      font-size: .65rem;
-    }
-  }
-}
-
-
-@media (max-width: var(--bp-small)) and (-webkit-min-device-pixel-ratio: 2) {
-  body {
-    zoom: .95;
-  }
-  a:focus, button:focus, .nav-menu li a:focus {
-    outline: 2px solid var(--focus-color);
-    outline-offset: 2px;
-    box-shadow: 0 0 8px var(--focus-color); 
-  }
 }
 
 .clearfix {
   overflow: auto;
   margin-bottom: 20px;
 }
-
 
 .figure-right,.figure-left {
 margin:0 0 10px 10px;
@@ -1646,23 +1446,6 @@ gap:1rem;
 padding:1rem
 }
 
-@media (max-width: var(--bp-small)) {
-.newsbox-container {
-display:flex;
-flex-direction:row;
-justify-content:center;
-align-items:flex-start;
-flex-wrap:wrap;
-gap:1rem
-}
-
-.newsbox-item {
-flex:1 1 45%;
-min-width:140px;
-box-sizing:border-box
-}
-}
-
 .bubble-background {
 position:fixed;
 inset:0;
@@ -1862,47 +1645,6 @@ cursor:pointer
 all:unset;
 display:inline-block;
 cursor:pointer
-}
-
-.plush-wrapper {
-position:fixed;
-top:calc(2rem + 160px);
-left:29%;
-transform:translateX(-50%);
-z-index:9999;
-pointer-events:auto;
-backface-visibility:hidden;
-will-change:transform,opacity;
-transition:opacity var(--anim-speed-long) ease,visibility var(--anim-speed-long) ease
-}
-
-.plush-wrapper.fade-out {
-opacity:0;
-visibility:hidden
-}
-
-@media (max-width: var(--bp-large)) {
-.plush-wrapper {
-top:calc(2rem + 200px);
-left:20rem
-}
-}
-
-@media (max-width: var(--bp-medium)) {
-.plush-wrapper {
-top:calc(2rem + 150px);
-left:50%;
-transform:translateX(-50%)
-}
-}
-
-@media (max-width: var(--bp-small)) {
-.plush-wrapper {
-top:calc(1rem + 100px);
-right:.5rem;
-left:auto;
-transform:none
-}
 }
 
 .relax-trigger {
@@ -2184,72 +1926,6 @@ opacity:1;
 transform:translateX(-50%) translateY(0)
 }
 }
-
-@media (max-width: var(--bp-small)) {
-.relax-text {
-top:calc(20px + env(safe-area-inset-top,0px));
-left:calc(20px + env(safe-area-inset-left,0px));
-font-size:1rem
-}
-
-.breathing-circle {
-bottom:calc(20px + env(safe-area-inset-bottom,0px));
-right:calc(20px + env(safe-area-inset-right,0px));
-width:80px;
-height:80px
-}
-
-.breathing-circle::after {
-font-size:.8rem
-}
-
-.bubble-relax {
-width:clamp(var(--bubble-size-min),3vw,var(--bubble-size-max));
-height:clamp(var(--bubble-size-min),3vw,var(--bubble-size-max))
-}
-
-.bokeh-spot {
-width:clamp(var(--bokeh-size-min),3vw,var(--bokeh-size-max));
-height:clamp(var(--bokeh-size-min),3vw,var(--bokeh-size-max))
-}
-}
-
-@media (max-width: var(--bp-tiny)) {
-.breathing-circle {
-bottom:calc(15px + env(safe-area-inset-bottom,0px));
-right:calc(15px + env(safe-area-inset-right,0px));
-width:60px;
-height:60px
-}
-
-.breathing-circle::after {
-font-size:.7rem
-}
-
-.relax-text {
-top:calc(15px + env(safe-area-inset-top,0px));
-left:calc(15px + env(safe-area-inset-left,0px));
-font-size:.9rem;
-padding:.5rem .8rem
-}
-
-.exit-whisper {
-bottom:calc(15px + env(safe-area-inset-bottom,0px));
-font-size:.9rem;
-padding:.5rem .8rem
-}
-
-.bubble-relax {
-width:clamp(12px,2.5vw,20px);
-height:clamp(12px,2.5vw,20px)
-}
-
-.bokeh-spot {
-width:clamp(10px,2vw,20px);
-height:clamp(10px,2vw,20px)
-}
-
-
   </style>
 </head>
 
@@ -3066,6 +2742,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
