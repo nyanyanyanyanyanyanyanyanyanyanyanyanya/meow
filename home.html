@@ -1979,7 +1979,6 @@ transform:translateX(-50%) translateY(0)
     height: auto;
   }
 }
-/* ... all your other CSS ... */
 
 /* Mobile nav: make it full-width, safe-area aware, and non-overflowing */
 @media (max-width: var(--bp-small)) {
@@ -2014,10 +2013,16 @@ transform:translateX(-50%) translateY(0)
   }
 
   .nav-menu li a {
-    width: clamp(80px, 24vw, var(--nav-width));
-    height: calc(var(--nav-height) * 0.9);
-    font-size: calc(var(--nav-font-size) * 0.9);
-    border-radius: 10px;
+    width: clamp(60px, 20vw, 90px);  /* fluid width */
+    height: auto;                    /* let height follow image ratio */
+    font-size: 0.75rem;               /* smaller text if any */
+    padding: 0;                       /* remove extra padding */
+  }
+
+  .nav-menu li a img {
+    max-width: 100%;                  /* scale image down with parent */
+    height: auto;
+    display: block;
   }
 
   .nav-menu li a .tooltip {
@@ -2846,6 +2851,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
