@@ -2124,8 +2124,8 @@ transform:translateX(-50%) translateY(0)
 
   </style>
 </head>
-
-  <button id="theme-toggle">theme</button>
+  
+<button id="theme-toggle">theme</button>
     <div class="bubble-background"></div>
 
 
@@ -2143,7 +2143,13 @@ transform:translateX(-50%) translateY(0)
   <div class="exit-whisper">Come back anytime.</div>
 </div>
 
+<!-- FIXED HTML: Wrap nav in hamburger for mobile -->
 <div class="nav-container">
+  <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" id="hamburger-btn">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
   <nav role="navigation" aria-label="Main navigation">
     <ul class="nav-menu">
         <li>
@@ -2215,7 +2221,6 @@ transform:translateX(-50%) translateY(0)
     <img id="skitty" alt="Skitty is right there, she's so cute!">
   </div>
 </footer>
-
 
   <script>
 /* ──────────────── ✦ SOUTH BOULEVARD - PROFESSOR SYCAMORE ✦ SCRIPMANIA! (Themed Version) ─*/
@@ -2938,6 +2943,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
