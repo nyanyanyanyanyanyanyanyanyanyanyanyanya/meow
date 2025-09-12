@@ -1983,40 +1983,22 @@ transform:translateX(-50%) translateY(0)
 /* FINAL mobile nav override */
 @media (max-width: var(--bp-small)) {
   .nav-container {
-    position: fixed;
-    top: 0;
     left: 0 !important;
-    right: 0;
     transform: none !important;
     width: 100% !important;
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
-    z-index: 1000;
-    padding-top: calc(0.5rem + env(safe-area-inset-top, 0px));
-    padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
-    padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
-    padding-bottom: 0.5rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    min-width: 0;
   }
 
   .nav-menu {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.25rem;
-    min-width: 0;
-  }
-
-  .nav-menu li {
-    min-width: 0;
   }
 
   .nav-menu li a {
     width: clamp(60px, 20vw, 90px) !important;
     height: auto !important;
-    font-size: 0.75rem;
     padding: 0;
     box-sizing: border-box;
   }
@@ -2025,7 +2007,6 @@ transform:translateX(-50%) translateY(0)
     max-width: 100% !important;
     height: auto !important;
     display: block;
-  }
 
   .nav-menu li a .tooltip {
     display: none !important;
@@ -2854,6 +2835,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
