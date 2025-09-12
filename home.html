@@ -1980,37 +1980,58 @@ transform:translateX(-50%) translateY(0)
   }
 }
 
+/* Mobile nav: make it full-width, safe-area aware, and non-overflowing */
 @media (max-width: var(--bp-small)) {
   .nav-container {
-    position: fixed;         /* keep it visible */
+    position: fixed;
     top: 0;
-    left: 0;
-    transform: none;         /* kill desktop centering offset */
-    width: 100%;             /* span the viewport */
-    padding: 0.5rem 0.75rem; /* soft breathing room */
+    left: 0;                /* kill desktop centering */
+    right: 0;               /* ensure full-width */
+    transform: none;        /* kill desktop centering */
+    width: 100%;
     box-sizing: border-box;
-    display: flex;           /* center the menu inside */
+    display: flex;
     justify-content: center;
     z-index: 1000;
+
+    /* safe area support for notches */
+    padding-top: calc(0.5rem + env(safe-area-inset-top, 0px));
+    padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+    padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
+    padding-bottom: 0.5rem;
+
+    /* prevent visual clipping when content is a tad wider */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-menu {
-    flex-wrap: wrap;         /* allow wrapping */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 0.25rem;
+    min-width: 0;   /* let it shrink within container */
   }
 
-  /* Make buttons fluid instead of fixed 110px */
+  .nav-menu li {
+    min-width: 0;
+  }
+
   .nav-menu li a {
-    width: clamp(88px, 22vw, var(--nav-width));
+    /* fluid buttons with a smaller minimum to avoid edge clipping */
+    width: clamp(80px, 24vw, var(--nav-width));
     height: calc(var(--nav-height) * 0.9);
     font-size: calc(var(--nav-font-size) * 0.9);
     border-radius: 10px;
   }
 
-  /* Prevent content from hiding under the fixed bar */
+  /* Tooltips are positioned left:-190px on desktop; hide on mobile to avoid side clipping */
+  .nav-menu li a .tooltip {
+    display: none !important;
+  }
+
+  /* Let the page content clear the fixed bar + safe area */
   .container {
-    margin-top: calc(var(--nav-height) + 1.25rem);
+    margin-top: calc(env(safe-area-inset-top, 0px) + var(--nav-height) + 1rem);
   }
 }
 
@@ -2831,6 +2852,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
