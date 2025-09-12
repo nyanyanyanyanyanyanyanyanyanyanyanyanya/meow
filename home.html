@@ -81,7 +81,6 @@
 --nav-font-size: 13px;
 --header-height: 120px;
 --main-min-height: 800px;
---main-min-width: 800px;
 --page-padding: 30px;
 --h1-size: 50px;
 --h2-size: 40px;
@@ -1926,6 +1925,21 @@ opacity:1;
 transform:translateX(-50%) translateY(0)
 }
 }
+   
+/* Let flex items shrink properly in Firefox/Chromium */
+.container {
+  min-width: 0;
+}
+
+.main-content {
+  min-width: 0;  /* critical */
+  max-width: 100%;
+  width: 100%;
+}
+
+.page {
+  min-width: 0;  /* protects nested content like .page from forcing overflow */
+}
 
    /* Mobile layout reset */
 @media (max-width: var(--bp-small)) {
@@ -2784,6 +2798,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
