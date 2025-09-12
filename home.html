@@ -1163,22 +1163,22 @@ display:flex;
 flex-direction:column;
 min-height:100vh
 }
-  .main-content {
-    min-width: auto;
-    max-width: 360px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
+.main-content {
+  min-width: auto !important;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
   
-  .container {
-    width: 100%;
-    max-width: 90vw; 
-    margin: 0 auto;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
+.container {
+  width: 100%;
+  max-width: 90vw;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 }
 
 .nav-container,.container {
@@ -1270,7 +1270,16 @@ font-size:.9rem
 font-size:.65rem
 }
 }
-
+@supports (-moz-appearance: none) {
+  @media (max-width: var(--bp-small)) {
+    .main-content {
+      min-width: unset;
+    }
+    .page {
+      padding: 1.5rem;
+    }
+  }
+}
 
 @supports (-moz-appearance: none) {
   @media (max-width: var(--bp-small)) {
@@ -1284,17 +1293,19 @@ font-size:.65rem
       font-size: .65rem;
     }
   }
-  @media (max-width: var(--bp-small)) and (-webkit-min-device-pixel-ratio: 2) {
-    body {
-      zoom: .95;
-    }
-    a:focus, button:focus, .nav-menu li a:focus {
-      outline: 2px solid var(--focus-color);
-      outline-offset: 2px;
-      box-shadow: 0 0 8px var(--focus-color); 
-    }
+}
+
+
+@media (max-width: var(--bp-small)) and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    zoom: .95;
   }
-} 
+  a:focus, button:focus, .nav-menu li a:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 8px var(--focus-color); 
+  }
+}
 
 .clearfix {
   overflow: auto;
@@ -3055,6 +3066,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
