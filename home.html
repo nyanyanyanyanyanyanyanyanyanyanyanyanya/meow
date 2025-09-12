@@ -2034,7 +2034,12 @@ transform:translateX(-50%) translateY(0)
     margin-top: calc(env(safe-area-inset-top, 0px) + var(--nav-height) + 1rem);
   }
 }
-
+@media (max-width: var(--bp-small)) {
+  .nav-container {
+    left: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+  }
 
   </style>
 </head>
@@ -2852,6 +2857,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
