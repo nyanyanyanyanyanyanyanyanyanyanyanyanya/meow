@@ -1981,6 +1981,23 @@ transform:translateX(-50%) translateY(0)
     height: auto;
   }
 }
+@media (max-width: var(--bp-small)) {
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: none;       /* remove the translateX centering */
+    width: 100%;           /* span full screen */
+    padding: 0.5rem 1rem;  /* gentle breathing room */
+    box-sizing: border-box;
+    justify-content: center; /* keep menu centered inside */
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 
   </style>
 </head>
@@ -2798,6 +2815,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
