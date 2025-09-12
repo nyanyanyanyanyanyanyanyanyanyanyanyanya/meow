@@ -2108,11 +2108,15 @@ transform:translateX(-50%) translateY(0)
   .page img {
     max-width: 100%;
     height: auto;
+     }
+      .nav-menu {
+    display: none;
   }
 
-  /* Plush shift for mobile nav space */
-  .plush-wrapper {
-    left: 10% !important;
+  .nav-menu.active {
+    display: block;
+  }
+}
   }
 }
 
@@ -2139,7 +2143,7 @@ transform:translateX(-50%) translateY(0)
 
 <!-- FIXED HTML: Wrap nav in hamburger for mobile -->
 <div class="nav-container">
-  <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" id="hamburger-btn">
+  <button class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" id="hamburger-btn">
     <span class="hamburger-line"></span>
     <span class="hamburger-line"></span>
     <span class="hamburger-line"></span>
@@ -2242,29 +2246,35 @@ document.addEventListener('DOMContentLoaded', () => {
   let timeSpentOnPage = 0;
   let timeSpentTimer;
   let pageStartTime = Date.now();
-  let bubbleInterval;  // Fixed: Declare here for relax bubbles
-  let bokehInterval;   // Fixed: Declare here for bokeh spots
+  let bubbleInterval;
+  let bokehInterval; 
 
   function getAsset(pathVar, defaultPath) {
     return getComputedStyle(document.documentElement).getPropertyValue(pathVar).trim() || defaultPath;
   }
 
+
   function setDynamicAssets() {
+
     const loaderImg = loader.querySelector('img');
-    if (loaderImg) loaderImg.src = getAsset('--loader-image', 'images/minidance.gif');
+    if (loaderImg) loaderImg.src = getAsset('--loader-image', 'Images/minidance.gif');
+
 
     const headerImg = document.querySelector('.header-image');
-    if (headerImg) headerImg.src = getAsset('--header-image', 'images/llight.jpg');
+    if (headerImg) headerImg.src = getAsset('--header-image', 'Images/llight.jpg');
+
 
     const plush = document.querySelector('.sycamore-plush');
-    if (plush) plush.src = getAsset('--plush-image', 'images/1663994121_trainers-salon-professor-sycamore-mascot-plush-keychain-3-500x500-removebg-preview.png');
+    if (plush) plush.src = getAsset('--plush-image', 'Images/1663994121_trainers-salon-professor-sycamore-mascot-plush-keychain-3-500x500-removebg-preview.png');
+
 
     const footerImg = document.querySelector('.footer img');
-    if (footerImg) footerImg.src = getAsset('--footer-image', 'images/blog/958459epuot7xpev.gif');
+    if (footerImg) footerImg.src = getAsset('--footer-image', 'Images/blog/958459epuot7xpev.gif');
+
 
     if (relaxButton) {
       relaxAudio.src = relaxButton.dataset.relaxAudio || getAsset('--relax-audio', 'music/Maromi\'sTheme.mp3');
-      if (relaxImage) relaxImage.src = relaxButton.dataset.relaxImage || getAsset('--relax-image', 'images/hug.png');
+      if (relaxImage) relaxImage.src = relaxButton.dataset.relaxImage || getAsset('--relax-image', 'Images/hug.png');
     }
 
     console.log('Dynamic assets loaded for theme');
@@ -2300,6 +2310,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resetTitleAnimation();
     resetPageTracking();
 
+
     contentDiv.style.height = 'auto';
     contentDiv.style.overflow = 'visible';
     contentDiv.classList.remove('page-enter', 'page-exit', 'pkmn-page');
@@ -2309,8 +2320,8 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Loader displayed');
       contentDiv.innerHTML = '';
 
-      const cacheBuster = `?_=${Math.random().toString(36).substring(2)}`;
-      fetch(page + cacheBuster)
+const cacheBuster = `?_=${Math.random().toString(36).substring(2)}`;
+fetch(page + cacheBuster)
         .then(response => {
           if (!response.ok) throw new Error(`Page not found: ${page}`);
           return response.text();
@@ -2325,8 +2336,10 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Loader hidden, content loaded');
             contentDiv.innerHTML = data;
 
+
             contentDiv.removeAttribute('style');
             contentDiv.style.scrollBehavior = 'smooth';
+
 
             const scripts = contentDiv.getElementsByTagName('script');
             for (let i = 0; i < scripts.length; i++) {
@@ -2394,6 +2407,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function startTitleAnimation() {
     if (isIdle) return;
 
+    // Use var for timing
     const idleDelay = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--title-idle-delay').trim().replace('ms', '')) || 15000;
     const cycleInterval = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--title-cycle-interval').trim().replace('ms', '')) || 6000;
 
@@ -2549,7 +2563,7 @@ document.addEventListener('DOMContentLoaded', () => {
             backdrop-filter: var(--backdrop-blur);
           ">
             <strong>Note from Professor Sycamore</strong><br>
-            <img src="images/qt2.png" alt="Mini Sycamore" style="
+            <img src="Images/qt2.png" alt="Mini Sycamore" style="
               float: right;
               max-width: 120px;
               border-radius: 8px;
@@ -2561,7 +2575,7 @@ document.addEventListener('DOMContentLoaded', () => {
             See you soon!
           </p>
           <div style="margin-top: 0.5rem;">
-            <img src="images/minisycadopt.png" alt="Mini Sycamore">
+            <img src="Images/minisycadopt.png" alt="Mini Sycamore">
           </div>
         </div>
       `;
@@ -2613,6 +2627,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function startRelaxBubbles() {
+
     const interval = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--relax-bubble-interval').trim().replace('ms', '')) || 1000;
     bubbleInterval = setInterval(createRelaxBubble, interval);
   }
@@ -2637,6 +2652,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function startBokehSpots() {
+
     const interval = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bokeh-interval').trim().replace('ms', '')) || 1500;
     bokehInterval = setInterval(createBokehSpot, interval);
   }
@@ -2646,102 +2662,104 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.bokeh-spot').forEach(spot => spot.remove());
   }
 
-  function enterRelaxMode() {
-    console.log('Entering Relax Mode');
-    relaxOverlay.classList.add('visible');
-    relaxOverlay.classList.remove('fade-out');
-    relaxAudio.volume = 0.2;
-    relaxAudio.play().catch(e => console.log('Audio playback failed:', e));
-    startRelaxBubbles();
-    startBokehSpots();
+function enterRelaxMode() {
+  console.log('Entering Relax Mode');
+  relaxOverlay.classList.add('visible');
+  relaxOverlay.classList.remove('fade-out');
+  relaxAudio.volume = 0.2;
+  relaxAudio.play().catch(e => console.log('Audio playback failed:', e));
+  startRelaxBubbles();
+  startBokehSpots();
+  exitWhisper.classList.remove('visible');
+
+  const plushWrapper = document.querySelector('.plush-wrapper');
+  const themeToggle = document.getElementById('theme-toggle');
+
+  if (plushWrapper) {
+    plushWrapper.classList.add('fade-out');
+  }
+  if (themeToggle) {
+    themeToggle.classList.add('fade-out');
+
+    }
+}
+  
+function exitRelaxMode() {
+  console.log('Exiting Relax Mode');
+  relaxOverlay.classList.add('fade-out');
+  exitWhisper.classList.add('visible');
+  stopRelaxBubbles();
+  stopBokehSpots();
+  relaxAudio.volume = 0.2;
+
+  const plushWrapper = document.querySelector('.plush-wrapper');
+  const themeToggle = document.getElementById('theme-toggle');
+
+  setTimeout(() => {
+    relaxOverlay.classList.remove('visible', 'fade-out');
+    relaxAudio.pause();
+    relaxAudio.currentTime = 0;
     exitWhisper.classList.remove('visible');
 
-    const plushWrapper = document.querySelector('.plush-wrapper');
-    const themeToggle = document.getElementById('theme-toggle');
-
     if (plushWrapper) {
-      plushWrapper.classList.add('fade-out');
+      plushWrapper.classList.remove('fade-out');
     }
     if (themeToggle) {
-      themeToggle.classList.add('fade-out');
+      themeToggle.classList.remove('fade-out');
     }
-  }
-  
-  function exitRelaxMode() {
-    console.log('Exiting Relax Mode');
-    relaxOverlay.classList.add('fade-out');
-    exitWhisper.classList.add('visible');
-    stopRelaxBubbles();
-    stopBokehSpots();
-    relaxAudio.volume = 0.2;
+  }, 1500);
+}
 
-    const plushWrapper = document.querySelector('.plush-wrapper');
-    const themeToggle = document.getElementById('theme-toggle');
 
-    setTimeout(() => {
-      relaxOverlay.classList.remove('visible', 'fade-out');
-      relaxAudio.pause();
-      relaxAudio.currentTime = 0;
-      exitWhisper.classList.remove('visible');
-
-      if (plushWrapper) {
-        plushWrapper.classList.remove('fade-out');
-      }
-      if (themeToggle) {
-        themeToggle.classList.remove('fade-out');
-      }
-    }, 1500);
+  if (relaxButton) {
+    relaxButton.addEventListener('click', enterRelaxMode);
   }
 
-  /* ──────────────── ✦ THEME SWITCH!? ✦ ──────────────── */
-  const themeToggle = document.getElementById('theme-toggle');
-  const savedTheme = localStorage.getItem('theme');
-
-  if (savedTheme) {
-    document.documentElement.classList.add(`theme-${savedTheme}`);
-    themeToggle.textContent = savedTheme === 'uratane' ? 'URATANE' : 'SYCAMORE';
-    document.title = savedTheme === 'uratane'
-      ? 'XYBREAK! Ura-takes over the site!?'
-      : 'South Boulevard';
+  if (relaxImage) {
+    relaxImage.addEventListener('click', exitRelaxMode);
   }
 
-  themeToggle.addEventListener('click', () => {
-    const html = document.documentElement;
-
-    if (html.classList.contains('theme-sycamore')) {
-      html.classList.remove('theme-sycamore');
-      html.classList.add('theme-uratane');
-      localStorage.setItem('theme', 'uratane');
-      themeToggle.textContent = 'URATANE';
-      document.title = 'XYBREAK! Ura-takes over the site!?';
-    } else {
-      html.classList.remove('theme-uratane');
-      html.classList.add('theme-sycamore');
-      localStorage.setItem('theme', 'sycamore');
-      themeToggle.textContent = 'SYCAMORE';
-      document.title = 'South Boulevard';
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && relaxOverlay.classList.contains('visible')) {
+      exitRelaxMode();
     }
-
-    setDynamicAssets();
   });
+/* ──────────────── ✦ THEME SWITCH!? ✦ ──────────────── */
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme');
 
-  /* ──────────────── ✦ HAMBURGER MENU FUNCTIONALITY ✦ ──────────────── */
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const navMenu = document.querySelector('.nav-menu');
-  const navContainer = document.querySelector('.nav-container');
+if (savedTheme) {
+  document.documentElement.classList.add(`theme-${savedTheme}`);
+  themeToggle.textContent = savedTheme === 'uratane' ? 'URATANE' : 'SYCAMORE';
+  document.title = savedTheme === 'uratane'
+    ? 'XYBREAK! Ura-takes over the site!?'
+    : 'South Boulevard';
+}
 
-  function toggleNav() {
-    const isExpanded = navMenu.classList.toggle('active');
-    hamburgerBtn.classList.toggle('active');
-    hamburgerBtn.setAttribute('aria-expanded', isExpanded);
-    navContainer.style.minHeight = isExpanded ? 'auto' : '0';
+
+themeToggle.addEventListener('click', () => {
+  const html = document.documentElement;
+
+  if (html.classList.contains('theme-sycamore')) {
+    html.classList.remove('theme-sycamore');
+    html.classList.add('theme-uratane');
+    localStorage.setItem('theme', 'uratane');
+    themeToggle.textContent = 'URATANE';
+    document.title = 'XYBREAK! Ura-takes over the site!?';
+  } else {
+    html.classList.remove('theme-uratane');
+    html.classList.add('theme-sycamore');
+    localStorage.setItem('theme', 'sycamore');
+    themeToggle.textContent = 'SYCAMORE';
+    document.title = 'South Boulevard';
   }
 
-  if (hamburgerBtn) {
-    hamburgerBtn.addEventListener('click', toggleNav);
-  }
+  setDynamicAssets(); // 
+});
 
-  /* ──────────────── ✦ EVENT LISTENERS (Consolidated) ✦ ──────────────── */
+
+
+  /* ──────────────── ✦ EVENT LISTENERS ✦ ──────────────── */
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -2755,11 +2773,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
-
-      // Close menu on link click (mobile)
-      if (window.innerWidth <= parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bp-small'))) {
-        toggleNav();
-      }
     });
   });
 
@@ -2790,27 +2803,6 @@ document.addEventListener('DOMContentLoaded', () => {
       resetTitleAnimation();
       startTitleAnimation();
     }, { passive: true });
-  });
-
-  /* Relax mode listeners */
-  if (relaxButton) {
-    relaxButton.addEventListener('click', enterRelaxMode);
-  }
-
-  if (relaxImage) {
-    relaxImage.addEventListener('click', exitRelaxMode);
-  }
-
-  /* Consolidated Escape key listener (for relax + hamburger) */
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (relaxOverlay.classList.contains('visible')) {
-        exitRelaxMode();
-      }
-      if (navMenu.classList.contains('active')) {
-        toggleNav();
-      }
-    }
   });
 
   /* ──────────────── ✦ PLUSHIE INTERACTIONS ✦ ──────────────── */
@@ -2859,7 +2851,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ──────────────── ✦ INITIALIZATION ✦ ──────────────── */
   console.log('South Boulevard script initializing...');
   contentDiv.style.scrollBehavior = 'smooth';
-  setDynamicAssets();
+  setDynamicAssets(); // New: Load theme assets
   loadPage('home2.html');
   startTitleAnimation();
   startTimeTracking();
@@ -2870,7 +2862,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Force background repaint
     document.body.style.backgroundImage = 'none';
     setTimeout(() => {
-      document.body.style.backgroundImage = getAsset('--bg-image', 'images/iliuliulu.png');
+      document.body.style.backgroundImage = getAsset('--bg-image', 'Images/iliuliulu.png');
     }, 0);
   });
 });
@@ -2926,10 +2918,10 @@ let isAnimating = false;
 function toggleSkitty() {
   if (isAnimating) return;
   isAnimating = true;
-  const skittyAnim = getComputedStyle(document.documentElement).getPropertyValue('--skitty-anim-image').trim() || 'images/skitty (2).gif';
+  const skittyAnim = getComputedStyle(document.documentElement).getPropertyValue('--skitty-anim-image').trim() || 'Images/skitty (2).gif';
   skittyImg.src = skittyAnim;
   setTimeout(() => {
-    const skittyStatic = getComputedStyle(document.documentElement).getPropertyValue('--skitty-image').trim() || 'images/skitty1.png';
+    const skittyStatic = getComputedStyle(document.documentElement).getPropertyValue('--skitty-image').trim() || 'Images/skitty1.png';
     skittyImg.src = skittyStatic;
     isAnimating = false;
   }, 1000);
@@ -2946,9 +2938,42 @@ function updatePlushPosition() {
 window.addEventListener('resize', updatePlushPosition);
 window.addEventListener('scroll', updatePlushPosition);
 updatePlushPosition();
+/* ──────────────── ✦ Hamburger✦ ──────────────── */
+ const hamburgerBtn = document.getElementById('hamburger-btn');
+const navMenu = document.querySelector('.nav-menu');
+const navContainer = document.querySelector('.nav-container');
+const navLinks = document.querySelectorAll('.nav-menu li a'); // ← this was missing
+
+function toggleNav() {
+  const isExpanded = navMenu.classList.toggle('active');
+  hamburgerBtn.classList.toggle('active');
+  hamburgerBtn.setAttribute('aria-expanded', isExpanded);
+  navContainer.style.minHeight = isExpanded ? 'auto' : '0';
+}
+
+if (hamburgerBtn) {
+  hamburgerBtn.addEventListener('click', toggleNav);
+}
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bp-small'))) {
+      toggleNav();
+    }
+  });
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+    toggleNav();
+  }
+});
+
+
 </script>
 </body>
 </html>
+
 
 
 
