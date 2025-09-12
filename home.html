@@ -1926,6 +1926,48 @@ opacity:1;
 transform:translateX(-50%) translateY(0)
 }
 }
+
+   /* Mobile layout reset */
+@media (max-width: var(--bp-small)) {
+  :root {
+    /* Override the desktop min-width variable */
+    --main-min-width: 0px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .main-content {
+    min-width: unset !important; 
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 90vw;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .page {
+    padding: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .page img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
   </style>
 </head>
 
@@ -2742,6 +2784,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
