@@ -1356,11 +1356,9 @@ text-shadow: var(--text-shadow-dark)
 }
 
 .newsbox-container {
-display:flex;
-flex-direction:row;
-flex-wrap:wrap;
-justify-content:center
-}
+    flex-direction: row;    
+    align-items: center;      
+  }
 .newsbox-header {
   font-size: 1.2rem;
   font-weight: bold;
@@ -1370,14 +1368,11 @@ justify-content:center
   color: var(--text-color);
 }
 .newsbox {
-  width: 500px;
-  height: 300px;
-  overflow-y: auto;
-  border: var(--newsbox-border);
-  padding: 1rem;
-  box-sizing: border-box;
-  border-radius: var(--border-radius-main)
-}
+    width: 100%;   
+    max-width: 100%;
+    height: auto;              
+    box-sizing: border-box;   
+  }
 .newsbox-inner {
   font-size: 0.75rem;
 }
@@ -3071,6 +3066,7 @@ updatePlushPosition();
 </script>
 </body>
 </html>
+
 
 
 
