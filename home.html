@@ -84,7 +84,7 @@
 --h1-size: 50px;
 --h2-size: 40px;
 --h3-size: 25px;
---h4-size: 30px;
+--h4-size: 18px;
 --img-max-width: 200px;
 --pkmn-img-max-width: 150px;
 --loader-width: 200px;
@@ -413,9 +413,6 @@ opacity:1
 
 .nav-container {
   position: fixed;
-  top: 1rem; 
-  left: 50%;
-  transform: translateX(-50%); 
   width: fit-content; 
   z-index: 1000;
   padding: 0.5rem;
@@ -424,11 +421,11 @@ opacity:1
 .nav-menu {
   display: flex;
   flex-direction: row;
-  padding: 0;
   margin: 0;
   list-style: none;
   align-items: center;
   gap: 0.5rem;
+  padding:var(--padding-sm);
 }
 
 .nav-menu li {
@@ -445,13 +442,16 @@ display:block
   color: var(--nav-link-color); 
   text-decoration: none;
   background: var(--nav-bg);
-  border: 1px solid var(--nav-border);
   border-radius: var(--border-radius-small);
   text-shadow: var(--text-shadow-dark);
   transition: all var(--transition-speed) ease;
   font-variant: small-caps;
   letter-spacing: 0.5px;
   backdrop-filter: var(--backdrop-blur);
+  font-size: var(--h4-size);
+    padding:var(--padding-sm);
+      border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--accent-color);
 }
 .nav-menu li a:hover,
 .nav-menu li a:focus {
@@ -507,128 +507,6 @@ opacity:1
 transition:all var(--anim-speed-short) ease
 }
 
-@media (max-width: var(--bp-small)) {
-  .nav-container {
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
-    width: auto;
-    transform: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .hamburger {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    background: var(--nav-bg);
-    border: 1px solid var(--nav-border);
-    border-radius: var(--border-radius-small);
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1001;
-    transition: all var(--transition-fast);
-    backdrop-filter: var(--backdrop-blur);
-  }
-
-  .hamburger:hover,
-  .hamburger:focus {
-    background: var(--about-link-hover);
-    transform: var(--hover-scale);
-  }
-
-  .hamburger-line {
-    width: 25px;
-    height: 2px;
-    background: var(--nav-link-color);
-    margin: 2px 0;
-    transition: all var(--transition-fast);
-    border-radius: 1px;
-  }
-
-  .hamburger.active .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-  }
-
-  .hamburger.active .hamburger-line:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-  }
-
-  .nav-menu {
-    display: none;
-    flex-direction: column !important;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-    padding: 1rem;
-    background: var(--nav-bg);
-    border: 1px solid var(--nav-border);
-    border-radius: var(--border-radius-small);
-    box-shadow: var(--card-shadow);
-    backdrop-filter: var(--backdrop-blur);
-    animation: slideDown var(--anim-speed-medium) ease-out;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .nav-menu li {
-    display: block;
-    margin: 0;
-    width: 100%;
-  }
-
-  .nav-menu li a {
-    display: flex !important;
-    align-items: center;
-    justify-content: flex-start; 
-    width: 100% !important;
-    height: 48px !important; 
-    padding: 0 1rem;
-    font-size: 1rem !important;
-    border: none;
-    border-radius: var(--border-radius-small);
-    box-sizing: border-box;
-    text-align: left;
-  }
-
-  .nav-menu li a:hover,
-  .nav-menu li a:focus {
-    background: var(--about-link-hover);
-    padding-left: 1.25rem; 
-  }
-
-
-  .tooltip {
-    display: none;
-  }
-
-
-  .plush-wrapper {
-    left: 10% !important; 
-  }
-}
 
 
 .main-content {
@@ -2071,7 +1949,6 @@ transform:translateX(-50%) translateY(0)
   min-width: 0;  
 }
 
-/* Mobile layout reset (updated for nav) */
 @media (max-width: var(--bp-small)) {
   :root {
     --main-min-width: 0px;
@@ -2140,13 +2017,8 @@ transform:translateX(-50%) translateY(0)
   <div class="exit-whisper">Come back anytime.</div>
 </div>
 
-<!-- FIXED HTML: Wrap nav in hamburger for mobile -->
+
 <div class="nav-container">
-  <button class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" id="hamburger-btn">
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-  </button>
   <nav role="navigation" aria-label="Main navigation">
     <ul class="nav-menu">
         <li>
@@ -2931,70 +2803,14 @@ const plush = document.querySelector('.plush-wrapper');
 
 function updatePlushPosition() {
   const rect = header.getBoundingClientRect();
-  plush.style.top = `${rect.bottom + 16}px`; // 16px gentle spacing
+  plush.style.top = `${rect.bottom + 16}px`; 
 }
 
 window.addEventListener('resize', updatePlushPosition);
 window.addEventListener('scroll', updatePlushPosition);
 updatePlushPosition();
-/* ──────────────── ✦ Hamburger✦ ──────────────── */
- const hamburgerBtn = document.getElementById('hamburger-btn');
-const navMenu = document.querySelector('.nav-menu');
-const navContainer = document.querySelector('.nav-container');
-const navLinks = document.querySelectorAll('.nav-menu li a'); // ← this was missing
-
-function toggleNav() {
-  const isExpanded = navMenu.classList.toggle('active');
-  hamburgerBtn.classList.toggle('active');
-  hamburgerBtn.setAttribute('aria-expanded', isExpanded);
-  navContainer.style.minHeight = isExpanded ? 'auto' : '0';
-}
-
-if (hamburgerBtn) {
-  hamburgerBtn.addEventListener('click', toggleNav);
-}
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bp-small'))) {
-      toggleNav();
-    }
-  });
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-    toggleNav();
-  }
-});
 
 
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
