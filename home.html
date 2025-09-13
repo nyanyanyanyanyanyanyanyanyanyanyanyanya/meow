@@ -2163,7 +2163,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const relaxButton = document.getElementById('relax-button');
   const relaxOverlay = document.getElementById('sycamore-relax');
   const relaxAudio = document.getElementById('relax-audio');
-  const relaxImage = document.querySelector('.relax-image');
+  const relax = document.querySelector('.relax-image');
   const exitWhisper = document.querySelector('.exit-whisper');
   let titleTimeout;
   let titleInterval;
@@ -2756,49 +2756,48 @@ function updateThemeUI(theme) {
     }, { passive: true });
   });
 
-  /* ──────────────── ✦ PLUSHIE INTERACTIONS ✦ ──────────────── */
-  const plush = document.querySelector('.sycamore-plush');
+ /* ──────────────── ✦ PLUSHIE INTERACTIONS ✦ ──────────────── */
+const plushImg = document.querySelector('.sycamore-plush');
 
-  function triggerPlushInteraction(e) {
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const timeString = `It's ${hours}:${minutes} right now.`;
-    const message = document.getElementById('plush-time-message');
+function triggerPlushInteraction(e) {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const timeString = `It's ${hours}:${minutes} right now.`;
+  const message = document.getElementById('plush-time-message');
 
-    if (message) {
-      message.textContent = timeString;
-      message.hidden = false;
+  if (message) {
+    message.textContent = timeString;
+    message.hidden = false;
+    setTimeout(() => {
+      message.hidden = true;
+    }, 6000);
+  }
+
+  const container = document.getElementById('star-sparkle-container');
+  if (container && plushImg) {
+    const rect = plushImg.getBoundingClientRect();
+    const clickX = (e.clientX || rect.left + rect.width / 2) - rect.left;
+    const clickY = (e.clientY || rect.top + rect.height / 2) - rect.top;
+
+    for (let i = 0; i < 5; i++) {
+      const star = document.createElement('div');
+      star.className = 'sparkle-star';
+      const offsetX = Math.random() * 40 - 20;
+      const offsetY = Math.random() * 20 - 10;
+      star.style.left = `${clickX + offsetX}px`;
+      star.style.top = `${clickY + offsetY}px`;
+      container.appendChild(star);
       setTimeout(() => {
-        message.hidden = true;
-      }, 6000);
-    }
-
-    const container = document.getElementById('star-sparkle-container');
-    if (container && plush) {
-      const rect = plush.getBoundingClientRect();
-      const clickX = (e.clientX || rect.left + rect.width / 2) - rect.left;
-      const clickY = (e.clientY || rect.top + rect.height / 2) - rect.top;
-
-      for (let i = 0; i < 5; i++) {
-        const star = document.createElement('div');
-        star.className = 'sparkle-star';
-        const offsetX = Math.random() * 40 - 20;
-        const offsetY = Math.random() * 20 - 10;
-        star.style.left = `${clickX + offsetX}px`;
-        star.style.top = `${clickY + offsetY}px`;
-        container.appendChild(star);
-        setTimeout(() => {
-          star.remove();
-        }, 1500);
-      }
+        star.remove();
+      }, 1500);
     }
   }
+}
 
-  if (plush) {
-    plush.addEventListener('click', triggerPlushInteraction);
-  }
-
+if (plushImg) {
+  plushImg.addEventListener('click', triggerPlushInteraction);
+}
   /* ──────────────── ✦ INITIALIZATION ✦ ──────────────── */
   console.log('South Boulevard script initializing...');
   contentDiv.style.scrollBehavior = 'smooth';
@@ -2838,7 +2837,7 @@ function setTimeBasedGreeting() {
   }
 }
 
-/* ──────────────── ✦ LAND OF BUBBLES (Use var for interval) ✦ ──────────────── */
+/* ──────────────── ✦ LAND OF BUBBLES ✦ ──────────────── */
 function createBubble() {
   const bubble = document.createElement('div');
   bubble.classList.add('bubble');
@@ -2877,19 +2876,19 @@ function toggleSkitty() {
     isAnimating = false;
   }, 1000);
 }
-/* ──────────────── ✦ PLUSHIE LOVE✦ ──────────────── */
+/* ──────────────── ✦ PLUSHIE LOVE ✦ ──────────────── */
 const header = document.querySelector('.header');
-const plush = document.querySelector('.plush-wrapper');
+const plushWrapper = document.querySelector('.plush-wrapper');
 
 function updatePlushPosition() {
+  if (!header || !plushWrapper) return; // safety check
   const rect = header.getBoundingClientRect();
-  plush.style.top = `${rect.bottom + 16}px`; 
+  plushWrapper.style.top = `${rect.bottom + 16}px`; 
 }
 
 window.addEventListener('resize', updatePlushPosition);
 window.addEventListener('scroll', updatePlushPosition);
 updatePlushPosition();
-
 
 </script>
 </body>
