@@ -1602,7 +1602,6 @@ cursor:pointer
 #skitty {
 height: var(--skitty-size);
 transition:filter var(--anim-speed-short) ease,transform var(--anim-speed-short) ease;
-content: var(--skitty-image); 
 }
 
 .skitty-container:hover #skitty {
@@ -2153,8 +2152,8 @@ transform:translateX(-50%) translateY(0)
   </div>
 <footer class="footer">
 <p class="footer-text">south boulevard<br>made with love</p>  <div class="skitty-container" onclick="toggleSkitty()">
-    <img id="skitty" alt="Skitty is right there, she's so cute!">
-  </div>
+    <img id="skitty" src="images/skitty1.png" alt="Skitty is right there, she's so cute!">
+</div>
 </footer>
 
 
@@ -2869,18 +2868,34 @@ const bubbleIntervalTime = parseInt(getComputedStyle(document.documentElement).g
 setInterval(createBubble, bubbleIntervalTime);
 
 /* ──────────────── ✦ SKITTYHOP ✦ ──────────────── */
-let skittyImg = document.getElementById('skitty');
 let isAnimating = false;
 
 function toggleSkitty() {
+  const skittyImg = document.getElementById('skitty');
+  
+  if (!skittyImg) {
+    console.log('Skitty image not found!');
+    return;
+  }
+  
   if (isAnimating) return;
+  
   isAnimating = true;
-  const skittyAnim = getComputedStyle(document.documentElement).getPropertyValue('--skitty-anim-image').trim() || 'images/skitty (2).gif';
+  console.log('Skitty is hopping!');
+  
+  // Get the CSS variable and remove the url() wrapper
+  let skittyAnimVar = getComputedStyle(document.documentElement).getPropertyValue('--skitty-anim-image').trim();
+  let skittyAnim = skittyAnimVar.replace(/url\(['"]?([^'"]*)['"]?\)/, '$1') || 'images/skitty (2).gif';
+  
   skittyImg.src = skittyAnim;
+  
   setTimeout(() => {
-    const skittyStatic = getComputedStyle(document.documentElement).getPropertyValue('--skitty-image').trim() || 'images/skitty1.png';
+    let skittyStaticVar = getComputedStyle(document.documentElement).getPropertyValue('--skitty-image').trim();
+    let skittyStatic = skittyStaticVar.replace(/url\(['"]?([^'"]*)['"]?\)/, '$1') || 'images/skitty1.png';
+    
     skittyImg.src = skittyStatic;
     isAnimating = false;
+    console.log('Skitty finished hopping!');
   }, 1000);
 }
 /* ──────────────── ✦ PLUSHIE LOVE✦ ──────────────── */
