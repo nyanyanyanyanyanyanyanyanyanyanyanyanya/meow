@@ -6,6 +6,8 @@
   <meta name="keywords" content="Professor Sycamore, Pokémon XY, fan site, Kalos, shrine, sycamore, professor, pokemon, gen6, augustine sycamore, platane, xybreak, xyz, xy">
   <title>South Boulevard</title>
   <link rel="icon" type="image/png" href="images/Kalos_Logo.png?v=1">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 <meta name="theme-color" content="#1F498C">
   <meta property="og:title" content="You're in the south boulevard of Lumiose City...">
 <meta property="og:description" content="And you see the Sycamore Pokémon Lab! That's exciting!(it's a fan site dedicated to Professor Sycamore from Pokémon XY.)">
@@ -447,6 +449,7 @@ padding:0;
 border-radius: var(--border-radius-main);
 opacity: var(--opacity-default);
 transition:filter var(--anim-speed-medium) ease,opacity var(--anim-speed-medium) ease;
+content: var(--header-image); 
 }
 
 .header-image:hover {
@@ -780,6 +783,7 @@ display:block;
 margin:0 auto 15px;
 border-radius:8px;
 animation:gentlePulse var(--gentle-pulse-duration) infinite ease-in-out;
+content: var(--loader-image); 
 }
 
 @keyframes gentlePulse {
@@ -1067,17 +1071,16 @@ visibility:hidden
 }
 
 .sycamore-plush {
-    cursor: pointer;
-    width: var(--plush-width);
-    height: auto;
-    max-width: 100%; 
-    display: block; 
-    transform-origin: top center;
-    opacity: var(--opacity-default);
-    --scale-factor: 1;
-    border-radius: var(--border-radius-small);
-    animation: swayChime var(--sway-duration) ease-in-out infinite;
-    transition: all var(--transition-speed) ease;
+cursor:pointer;
+width: var(--plush-width);
+height:auto;
+transform-origin:top center;
+opacity: var(--opacity-default);
+--scale-factor:1;
+border-radius: var(--border-radius-small);
+animation:swayChime var(--sway-duration) ease-in-out infinite;
+transition:all var(--transition-speed) ease;
+content: var(--plush-image); 
 }
 
 @keyframes swayChime {
@@ -1593,7 +1596,8 @@ cursor:pointer
 
 #skitty {
 height: var(--skitty-size);
-transition:filter var(--anim-speed-short) ease,transform var(--anim-speed-short) ease; 
+transition:filter var(--anim-speed-short) ease,transform var(--anim-speed-short) ease;
+content: var(--skitty-image); 
 }
 
 .skitty-container:hover #skitty {
@@ -1903,6 +1907,7 @@ z-index:2;
 opacity:.85;
 animation:fadeIn 2s ease forwards;
 cursor: var(--cursor-sylveon);
+content: var(--relax-image); 
 }
 
 .breathing-circle {
@@ -2176,13 +2181,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let bubbleInterval;
   let bokehInterval; 
 
-function getAsset(pathVar, defaultPath) {
-  let value = getComputedStyle(document.documentElement).getPropertyValue(pathVar).trim();
-  if (value.startsWith('url(')) {
-    value = value.slice(4, -1).replace(/['"]/g, ''); // Gently unwraps the url() and any quotes
+  function getAsset(pathVar, defaultPath) {
+    return getComputedStyle(document.documentElement).getPropertyValue(pathVar).trim() || defaultPath;
   }
-  return value || defaultPath;
-}
 
 
   function setDynamicAssets() {
@@ -2209,41 +2210,6 @@ function getAsset(pathVar, defaultPath) {
     }
 
     console.log('Dynamic assets loaded for theme');
-      function setDynamicAssets() {
-
-    const loaderImg = loader.querySelector('img');
-    if (loaderImg) loaderImg.src = getAsset('--loader-image', 'images/minidance.gif');
-
-    const headerImg = document.querySelector('.header-image');
-    if (headerImg) headerImg.src = getAsset('--header-image', 'images/llight.jpg');
-
-    const plush = document.querySelector('.sycamore-plush');
-    if (plush) plush.src = getAsset('--plush-image', 'images/sycamore-plush.png');
-
-    const footerImg = document.querySelector('.footer img');
-    if (footerImg) footerImg.src = getAsset('--footer-image', 'images/blog/958459epuot7xpev.gif');
-
-    if (relaxButton) {
-      relaxAudio.src = relaxButton.dataset.relaxAudio || getAsset('--relax-audio', 'music/Maromi\'sTheme.mp3');
-      if (relaxImage) relaxImage.src = relaxButton.dataset.relaxImage || getAsset('--relax-image', 'images/hug.png');
-    }
-
-    console.log('Dynamic assets loaded for theme');
-
-    // **NEW: The safety net goes right here! 🐾**
-    const plush = document.querySelector('.sycamore-plush');  // (It's okay to query again—it's quick!)
-    if (plush) {
-      plush.onerror = function() {
-        console.log('Oh no, little plushie couldn\'t load! Check if the file path is right or if the image is okay.');
-        // this.src = 'images/fallback-plush.png';  // Comment this out if no fallback yet, to avoid more errors
-      };
-      plush.onload = function() {
-        console.log('Yay! Plushie loaded happily.');
-        window.dispatchEvent(new Event('resize'));  // Helps with sizing if needed
-      };
-    }
-    // **END NEW STUFF**
-  }
   }
 
   const baseTitles = {
