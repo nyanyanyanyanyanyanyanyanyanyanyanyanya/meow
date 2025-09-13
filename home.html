@@ -1071,14 +1071,19 @@ visibility:hidden
 }
 
 .sycamore-plush {
-  background-image: var(--plush-image);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   width: var(--plush-width, 120px);
-  height: 120px; 
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
   display: block;
+  cursor: pointer;
+  transform-origin: top center;
+  opacity: var(--opacity-default);
+  border-radius: var(--border-radius-small);
+  animation: swayChime var(--sway-duration, 3s) ease-in-out infinite;
+  transition: all var(--transition-speed) ease;
 }
+
 
 
 
@@ -2123,7 +2128,7 @@ transform:translateX(-50%) translateY(0)
 
   <div class="plush-wrapper">
     <div id="plush-time-message" class="time-message" hidden></div>
-    <img class="sycamore-plush" alt="A swaying Professor Sycamore plushie. Do you dare click?">
+    <img class="sycamore-plush" src="images/1663994121_trainers-salon-professor-sycamore-mascot-plush-keychain-3-500x500-removebg-preview.png" alt="A swaying Professor Sycamore plushie. Do you dare click?">
     <div class="star-container" id="star-sparkle-container"></div>
   </div>
 
