@@ -153,7 +153,7 @@
 --loader-image: url(images/minidance.gif);
 --footer-image: url(images/blog/958459epuot7xpev.gif);
 --skitty-image: url(images/skitty1.png);
---skitty-anim-image: url(images/skitty (2).gif);
+--skitty-anim-image: url(images/skitty(2).gif);
 --relax-image: url(images/hug.png);
 --relax-audio: url(music/Maromi'sTheme.mp3);
 --cursor-default: url(images/cursors/hand1.png), auto;
@@ -2873,27 +2873,16 @@ let isAnimating = false;
 function toggleSkitty() {
   const skittyImg = document.getElementById('skitty');
   
-  if (!skittyImg) {
-    console.log('Skitty image not found!');
-    return;
-  }
-  
-  if (isAnimating) return;
+  if (!skittyImg || isAnimating) return;
   
   isAnimating = true;
   console.log('Skitty is hopping!');
   
-  // Get the CSS variable and remove the url() wrapper
-  let skittyAnimVar = getComputedStyle(document.documentElement).getPropertyValue('--skitty-anim-image').trim();
-  let skittyAnim = skittyAnimVar.replace(/url\(['"]?([^'"]*)['"]?\)/, '$1') || 'images/skitty (2).gif';
-  
-  skittyImg.src = skittyAnim;
+  // Just use the direct file paths - simpler and more reliable
+  skittyImg.src = 'images/skitty(2).gif';
   
   setTimeout(() => {
-    let skittyStaticVar = getComputedStyle(document.documentElement).getPropertyValue('--skitty-image').trim();
-    let skittyStatic = skittyStaticVar.replace(/url\(['"]?([^'"]*)['"]?\)/, '$1') || 'images/skitty1.png';
-    
-    skittyImg.src = skittyStatic;
+    skittyImg.src = 'images/skitty1.png';
     isAnimating = false;
     console.log('Skitty finished hopping!');
   }, 1000);
