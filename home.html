@@ -1602,8 +1602,10 @@ cursor:pointer
 #skitty {
 height: var(--skitty-size);
 transition:filter var(--anim-speed-short) ease,transform var(--anim-speed-short) ease;
+background-image: var(--skitty-image);
+background-size: contain;
+background-repeat: no-repeat;
 }
-
 .skitty-container:hover #skitty {
 filter:drop-shadow(0 0 6px #fff9) drop-shadow(0 0 12px #ffc0cb66);
 animation:wiggle .6s ease-in-out infinite
