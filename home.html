@@ -1068,17 +1068,18 @@ opacity:0;
 visibility:hidden
 }
 
-.sycamore-plush {
-cursor:pointer;
-width: var(--plush-width);
-height:auto;
-transform-origin:top center;
-opacity: var(--opacity-default);
---scale-factor:1;
-border-radius: var(--border-radius-small);
-animation:swayChime var(--sway-duration) ease-in-out infinite;
-transition:all var(--transition-speed) ease;
-content: var(--plush-image); 
+.sycamore-plush {  
+  cursor: pointer;
+  width: clamp(80px, 10vw, 120px);
+  max-width: 100%;
+  height: auto;
+  transform-origin: top center;
+  opacity: var(--opacity-default);
+  --scale-factor: 1;
+  border-radius: var(--border-radius-small);
+  animation: swayChime var(--sway-duration) ease-in-out infinite;
+  transition: all var(--transition-speed) ease;
+  content: var(--plush-image);
 }
 
 @keyframes swayChime {
