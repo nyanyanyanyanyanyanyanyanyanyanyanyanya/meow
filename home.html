@@ -1069,15 +1069,17 @@ visibility:hidden
 }
 
 .sycamore-plush {
-cursor:pointer;
-width: var(--plush-width);
-height:auto;
-transform-origin:top center;
-opacity: var(--opacity-default);
---scale-factor:1;
-border-radius: var(--border-radius-small);
-animation:swayChime var(--sway-duration) ease-in-out infinite;
-transition:all var(--transition-speed) ease;
+    cursor: pointer;
+    width: var(--plush-width);
+    height: auto;
+    max-width: 100%; 
+    display: block; 
+    transform-origin: top center;
+    opacity: var(--opacity-default);
+    --scale-factor: 1;
+    border-radius: var(--border-radius-small);
+    animation: swayChime var(--sway-duration) ease-in-out infinite;
+    transition: all var(--transition-speed) ease;
 }
 
 @keyframes swayChime {
