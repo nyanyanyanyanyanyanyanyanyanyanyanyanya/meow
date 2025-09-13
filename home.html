@@ -1071,19 +1071,22 @@ transform:translateX(-100%)
 opacity:0;
 visibility:hidden
 }
-
 .sycamore-plush {
-cursor:pointer;
-  width: clamp(80px, 10vw, 120px);
-height:auto;
-transform-origin:top center;
-opacity: var(--opacity-default);
---scale-factor:1;
-border-radius: var(--border-radius-small);
-animation:swayChime var(--sway-duration) ease-in-out infinite;
-transition:all var(--transition-speed) ease;
-content: var(--plush-image); 
+  display: block; /* fixes inline image quirks in Edge */
+  max-width: var(--plush-width); /* ceiling from your variable */
+  width: 100%; /* scale within that ceiling */
+  height: auto;
+
+  cursor: pointer;
+  transform-origin: top center;
+  opacity: var(--opacity-default);
+  --scale-factor: 1;
+  border-radius: var(--border-radius-small);
+  animation: swayChime var(--sway-duration) ease-in-out infinite;
+  transition: all var(--transition-speed) ease;
+  content: var(--plush-image); /* harmless, but won't affect <img> */
 }
+
 
 @keyframes swayChime {
 0% {
