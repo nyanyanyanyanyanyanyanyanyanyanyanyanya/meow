@@ -115,7 +115,7 @@
   --transition-fast: all 0.3s ease;
   --blur-bg: blur(4px);
   --hover-scale: scale(1.05);
-    --content-bg: #0000001a; /* transparent black */
+    --content-bg: #0000001a;
   --card-shadow: 0 12px 40px #00000080;
   --text-color: #f0f5ffe6;
   --page-padding: 2px;
@@ -321,7 +321,6 @@
   --nav-link-color: #2d5016;
   --tooltip-bg: #00331abf; /* dark green tooltip */
   --page-padding: 2px;
-  --plush-width: 120px;
 }
 
 * {
@@ -1072,18 +1071,15 @@ visibility:hidden
 }
 
 .sycamore-plush {
+  background-image: var(--plush-image);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   width: var(--plush-width, 120px);
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 120px; 
   display: block;
-  cursor: pointer;
-  transform-origin: top center;
-  opacity: var(--opacity-default);
-  border-radius: var(--border-radius-small);
-  animation: swayChime var(--sway-duration) ease-in-out infinite;
-  transition: all var(--transition-speed) ease;
 }
+
 
 
 @keyframes swayChime {
