@@ -2062,7 +2062,7 @@ transform:translateX(-50%) translateY(0)
     <div class="bubble-background"></div>
 
 
-<button id="relax-button" class="relax-trigger" aria-label="take a rest. opens overlay with music and breathing prompt" data-relax-audio="music/Maromi'sTheme.mp3" data-relax-image="Images/hug.png">
+<button id="relax-button" class="relax-trigger" aria-label="take a rest. opens overlay with music and breathing prompt" data-relax-audio="music/Maromi'sTheme.mp3" data-relax-image="images/hug.png">
   take a rest
 </button>
 
@@ -2187,24 +2187,24 @@ document.addEventListener('DOMContentLoaded', () => {
   function setDynamicAssets() {
 
     const loaderImg = loader.querySelector('img');
-    if (loaderImg) loaderImg.src = getAsset('--loader-image', 'Images/minidance.gif');
+    if (loaderImg) loaderImg.src = getAsset('--loader-image', 'images/minidance.gif');
 
 
     const headerImg = document.querySelector('.header-image');
-    if (headerImg) headerImg.src = getAsset('--header-image', 'Images/llight.jpg');
+    if (headerImg) headerImg.src = getAsset('--header-image', 'images/llight.jpg');
 
 
     const plush = document.querySelector('.sycamore-plush');
-    if (plush) plush.src = getAsset('--plush-image', 'Images/1663994121_trainers-salon-professor-sycamore-mascot-plush-keychain-3-500x500-removebg-preview.png');
+    if (plush) plush.src = getAsset('--plush-image', 'images/sycamore-plush.png');
 
 
     const footerImg = document.querySelector('.footer img');
-    if (footerImg) footerImg.src = getAsset('--footer-image', 'Images/blog/958459epuot7xpev.gif');
+    if (footerImg) footerImg.src = getAsset('--footer-image', 'images/blog/958459epuot7xpev.gif');
 
 
     if (relaxButton) {
       relaxAudio.src = relaxButton.dataset.relaxAudio || getAsset('--relax-audio', 'music/Maromi\'sTheme.mp3');
-      if (relaxImage) relaxImage.src = relaxButton.dataset.relaxImage || getAsset('--relax-image', 'Images/hug.png');
+      if (relaxImage) relaxImage.src = relaxButton.dataset.relaxImage || getAsset('--relax-image', 'images/hug.png');
     }
 
     console.log('Dynamic assets loaded for theme');
@@ -2493,7 +2493,7 @@ fetch(page + cacheBuster)
             backdrop-filter: var(--backdrop-blur);
           ">
             <strong>Note from Professor Sycamore</strong><br>
-            <img src="Images/qt2.png" alt="Mini Sycamore" style="
+            <img src="images/qt2.png" alt="Mini Sycamore" style="
               float: right;
               max-width: 120px;
               border-radius: 8px;
@@ -2505,7 +2505,7 @@ fetch(page + cacheBuster)
             See you soon!
           </p>
           <div style="margin-top: 0.5rem;">
-            <img src="Images/minisycadopt.png" alt="Mini Sycamore">
+            <img src="images/minisycadopt.png" alt="Mini Sycamore">
           </div>
         </div>
       `;
@@ -2813,7 +2813,7 @@ function updateThemeUI(theme) {
       
     document.body.style.backgroundImage = 'none';
     setTimeout(() => {
-      document.body.style.backgroundImage = getAsset('--bg-image', 'Images/iliuliulu.png');
+      document.body.style.backgroundImage = getAsset('--bg-image', 'images/iliuliulu.png');
     }, 0);
   });
 });
@@ -2869,10 +2869,10 @@ let isAnimating = false;
 function toggleSkitty() {
   if (isAnimating) return;
   isAnimating = true;
-  const skittyAnim = getComputedStyle(document.documentElement).getPropertyValue('--skitty-anim-image').trim() || 'Images/skitty (2).gif';
+  const skittyAnim = getComputedStyle(document.documentElement).getPropertyValue('--skitty-anim-image').trim() || 'images/skitty (2).gif';
   skittyImg.src = skittyAnim;
   setTimeout(() => {
-    const skittyStatic = getComputedStyle(document.documentElement).getPropertyValue('--skitty-image').trim() || 'Images/skitty1.png';
+    const skittyStatic = getComputedStyle(document.documentElement).getPropertyValue('--skitty-image').trim() || 'images/skitty1.png';
     skittyImg.src = skittyStatic;
     isAnimating = false;
   }, 1000);
