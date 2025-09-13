@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-megaevo">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="A fan site dedicated to Professor Augustine Sycamore from Pokémon XY">
@@ -2663,7 +2663,13 @@ const html = document.documentElement;
 if (savedTheme) {
   html.classList.add(`theme-${savedTheme}`);
   updateThemeUI(savedTheme);
+} else {
+  // Default to Mega Evo (Eco)
+  html.classList.add('theme-megaevo');
+  updateThemeUI('megaevo');
 }
+
+
 
 // Theme cycle: megaevo → sycamore → uratane → megaevo...
 themeToggle.addEventListener('click', () => {
