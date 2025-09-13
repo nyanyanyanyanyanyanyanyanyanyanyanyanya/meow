@@ -2873,23 +2873,8 @@ const bubbleIntervalTime = parseInt(getComputedStyle(document.documentElement).g
 setInterval(createBubble, bubbleIntervalTime);
 
 /* ──────────────── ✦ SKITTYHOP ✦ ──────────────── */
-let isAnimating = false;
 function toggleSkitty() {
-  const skittyDiv = document.getElementById('skitty');
-  
-  if (!skittyDiv || isAnimating) return;
-  
-  isAnimating = true;
-  console.log('Skitty is hopping!');
-  
-  // Change background image instead of src
-  skittyDiv.style.backgroundImage = 'url(images/skitty(2).gif)';
-  
-  setTimeout(() => {
-    skittyDiv.style.backgroundImage = 'url(images/skitty1.png)';
-    isAnimating = false;
-    console.log('Skitty finished hopping!');
-  }, 1000);
+  window.open('https://aidn.jp/wowa/959131631', '_blank');
 }
 /* ──────────────── ✦ PLUSHIE LOVE✦ ──────────────── */
 const header = document.querySelector('.header');
