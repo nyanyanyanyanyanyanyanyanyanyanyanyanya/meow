@@ -2874,19 +2874,19 @@ setInterval(createBubble, bubbleIntervalTime);
 
 /* ──────────────── ✦ SKITTYHOP ✦ ──────────────── */
 let isAnimating = false;
-
 function toggleSkitty() {
-  const skittyImg = document.getElementById('skitty');
+  const skittyDiv = document.getElementById('skitty');
   
-  if (!skittyImg || isAnimating) return;
+  if (!skittyDiv || isAnimating) return;
   
   isAnimating = true;
   console.log('Skitty is hopping!');
   
-  skittyImg.src = 'images/skitty(2).gif';
+  // Change background image instead of src
+  skittyDiv.style.backgroundImage = 'url(images/skitty(2).gif)';
   
   setTimeout(() => {
-    skittyImg.src = 'images/skitty1.png';
+    skittyDiv.style.backgroundImage = 'url(images/skitty1.png)';
     isAnimating = false;
     console.log('Skitty finished hopping!');
   }, 1000);
