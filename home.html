@@ -1052,6 +1052,7 @@ transform:translateX(-100%)
 }
 
 .plush-wrapper {
+  max-width: 150px;
 position:fixed;
 top:calc(2rem + 160px);
 left:29%;
@@ -1068,19 +1069,20 @@ opacity:0;
 visibility:hidden
 }
 
-.sycamore-plush {  
-  cursor: pointer;
-  width: clamp(80px, 10vw, 120px);
+.sycamore-plush {
+  width: var(--plush-width, 120px);
   max-width: 100%;
   height: auto;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
   transform-origin: top center;
   opacity: var(--opacity-default);
-  --scale-factor: 1;
   border-radius: var(--border-radius-small);
   animation: swayChime var(--sway-duration) ease-in-out infinite;
   transition: all var(--transition-speed) ease;
-  content: var(--plush-image);
 }
+
 
 @keyframes swayChime {
 0% {
