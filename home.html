@@ -2756,7 +2756,26 @@ function updateThemeUI(theme) {
     }, { passive: true });
   });
 
- /* ──────────────── ✦ PLUSHIE INTERACTIONS ✦ ──────────────── */
+
+  /* ──────────────── ✦ INITIALIZATION ✦ ──────────────── */
+  console.log('South Boulevard script initializing...');
+  contentDiv.style.scrollBehavior = 'smooth';
+  setDynamicAssets(); // New: Load theme assets
+  loadPage('home2.html');
+  startTitleAnimation();
+  startTimeTracking();
+  console.log('South Boulevard script fully loaded and initialized!');
+
+  /* ──────────────── ✦ WINDOW RESIZE HANDLER ✦ ──────────────── */
+  window.addEventListener('resize', () => {
+      
+    document.body.style.backgroundImage = 'none';
+    setTimeout(() => {
+      document.body.style.backgroundImage = getAsset('--bg-image', 'images/iliuliulu.png');
+    }, 0);
+  });
+});
+/* ──────────────── ✦ PLUSHIE INTERACTIONS ✦ ──────────────── */
 const plushImg = document.querySelector('.sycamore-plush');
 
 function triggerPlushInteraction(e) {
@@ -2798,25 +2817,6 @@ function triggerPlushInteraction(e) {
 if (plushImg) {
   plushImg.addEventListener('click', triggerPlushInteraction);
 }
-  /* ──────────────── ✦ INITIALIZATION ✦ ──────────────── */
-  console.log('South Boulevard script initializing...');
-  contentDiv.style.scrollBehavior = 'smooth';
-  setDynamicAssets(); // New: Load theme assets
-  loadPage('home2.html');
-  startTitleAnimation();
-  startTimeTracking();
-  console.log('South Boulevard script fully loaded and initialized!');
-
-  /* ──────────────── ✦ WINDOW RESIZE HANDLER ✦ ──────────────── */
-  window.addEventListener('resize', () => {
-      
-    document.body.style.backgroundImage = 'none';
-    setTimeout(() => {
-      document.body.style.backgroundImage = getAsset('--bg-image', 'images/iliuliulu.png');
-    }, 0);
-  });
-});
-
 /* ──────────────── ✦ TIME-BASED GREETINGS FUNCTION ✦ ──────────────── */
 function setTimeBasedGreeting() {
   const now = new Date();
@@ -2889,7 +2889,6 @@ function updatePlushPosition() {
 window.addEventListener('resize', updatePlushPosition);
 window.addEventListener('scroll', updatePlushPosition);
 updatePlushPosition();
-
 </script>
 </body>
 </html>
