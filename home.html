@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-sycamore">
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="A fan site dedicated to Professor Augustine Sycamore from Pokémon XY">
@@ -115,7 +115,7 @@
   --transition-fast: all 0.3s ease;
   --blur-bg: blur(4px);
   --hover-scale: scale(1.05);
-    --content-bg: #0000001a;
+    --content-bg: #0000001a; /* transparent black */
   --card-shadow: 0 12px 40px #00000080;
   --text-color: #f0f5ffe6;
   --page-padding: 2px;
@@ -280,7 +280,6 @@
   --highlight-hover: #d4f0d4;
   --bg-image: url(images/pastelbonded.png);
   --header-image: url(images/10happy.png);
-  
   
   /* Keep the original glassy container look with slightly more opacity */
   --content-bg: #00000040; /* transparent black with more opacity */
@@ -1053,7 +1052,6 @@ transform:translateX(-100%)
 }
 
 .plush-wrapper {
-  max-width: 150px;
 position:fixed;
 top:calc(2rem + 160px);
 left:29%;
@@ -1071,15 +1069,17 @@ visibility:hidden
 }
 
 .sycamore-plush {
-  width: 120px;
-  height: auto;
-  display: block;
-  border: 2px dashed pink;
+cursor:pointer;
+width: var(--plush-width);
+height:auto;
+transform-origin:top center;
+opacity: var(--opacity-default);
+--scale-factor:1;
+border-radius: var(--border-radius-small);
+animation:swayChime var(--sway-duration) ease-in-out infinite;
+transition:all var(--transition-speed) ease;
+content: var(--plush-image); 
 }
-
-
-
-
 
 @keyframes swayChime {
 0% {
@@ -2121,8 +2121,8 @@ transform:translateX(-50%) translateY(0)
   </div>
 
   <div class="plush-wrapper">
-      <img class="sycamore-plush" src="images/sycamore-plush.png" alt="A swaying Professor Sycamore plushie. Do you dare click?">
     <div id="plush-time-message" class="time-message" hidden></div>
+    <img class="sycamore-plush" alt="A swaying Professor Sycamore plushie. Do you dare click?">
     <div class="star-container" id="star-sparkle-container"></div>
   </div>
 
@@ -2191,7 +2191,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const headerImg = document.querySelector('.header-image');
-    if (headerImg) headerImg.src = getAsset('--header-image', 'images/llight.jpg');
+    if (headerImg) headerImg.src = getAsset('--header-image', 'mages/llight.jpg');
 
 
     const plush = document.querySelector('.sycamore-plush');
@@ -2663,13 +2663,7 @@ const html = document.documentElement;
 if (savedTheme) {
   html.classList.add(`theme-${savedTheme}`);
   updateThemeUI(savedTheme);
-} else {
-  // Default to Mega Evo (Eco)
-  html.classList.add('theme-megaevo');
-  updateThemeUI('megaevo');
 }
-
-
 
 // Theme cycle: megaevo → sycamore → uratane → megaevo...
 themeToggle.addEventListener('click', () => {
@@ -2756,6 +2750,48 @@ function updateThemeUI(theme) {
     }, { passive: true });
   });
 
+  /* ──────────────── ✦ PLUSHIE INTERACTIONS ✦ ──────────────── */
+  const plush = document.querySelector('.sycamore-plush');
+
+  function triggerPlushInteraction(e) {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const timeString = `It's ${hours}:${minutes} right now.`;
+    const message = document.getElementById('plush-time-message');
+
+    if (message) {
+      message.textContent = timeString;
+      message.hidden = false;
+      setTimeout(() => {
+        message.hidden = true;
+      }, 6000);
+    }
+
+    const container = document.getElementById('star-sparkle-container');
+    if (container && plush) {
+      const rect = plush.getBoundingClientRect();
+      const clickX = (e.clientX || rect.left + rect.width / 2) - rect.left;
+      const clickY = (e.clientY || rect.top + rect.height / 2) - rect.top;
+
+      for (let i = 0; i < 5; i++) {
+        const star = document.createElement('div');
+        star.className = 'sparkle-star';
+        const offsetX = Math.random() * 40 - 20;
+        const offsetY = Math.random() * 20 - 10;
+        star.style.left = `${clickX + offsetX}px`;
+        star.style.top = `${clickY + offsetY}px`;
+        container.appendChild(star);
+        setTimeout(() => {
+          star.remove();
+        }, 1500);
+      }
+    }
+  }
+
+  if (plush) {
+    plush.addEventListener('click', triggerPlushInteraction);
+  }
 
   /* ──────────────── ✦ INITIALIZATION ✦ ──────────────── */
   console.log('South Boulevard script initializing...');
@@ -2775,48 +2811,7 @@ function updateThemeUI(theme) {
     }, 0);
   });
 });
-/* ──────────────── ✦ PLUSHIE INTERACTIONS ✦ ──────────────── */
-const plushImg = document.querySelector('.sycamore-plush');
 
-function triggerPlushInteraction(e) {
-  const now = new Date();
-  const hours = now.getHours();
-  const minutes = now.getMinutes().toString().padStart(2, '0');
-  const timeString = `It's ${hours}:${minutes} right now.`;
-  const message = document.getElementById('plush-time-message');
-
-  if (message) {
-    message.textContent = timeString;
-    message.hidden = false;
-    setTimeout(() => {
-      message.hidden = true;
-    }, 6000);
-  }
-
-  const container = document.getElementById('star-sparkle-container');
-  if (container && plushImg) {
-    const rect = plushImg.getBoundingClientRect();
-    const clickX = (e.clientX || rect.left + rect.width / 2) - rect.left;
-    const clickY = (e.clientY || rect.top + rect.height / 2) - rect.top;
-
-    for (let i = 0; i < 5; i++) {
-      const star = document.createElement('div');
-      star.className = 'sparkle-star';
-      const offsetX = Math.random() * 40 - 20;
-      const offsetY = Math.random() * 20 - 10;
-      star.style.left = `${clickX + offsetX}px`;
-      star.style.top = `${clickY + offsetY}px`;
-      container.appendChild(star);
-      setTimeout(() => {
-        star.remove();
-      }, 1500);
-    }
-  }
-}
-
-if (plushImg) {
-  plushImg.addEventListener('click', triggerPlushInteraction);
-}
 /* ──────────────── ✦ TIME-BASED GREETINGS FUNCTION ✦ ──────────────── */
 function setTimeBasedGreeting() {
   const now = new Date();
@@ -2837,7 +2832,7 @@ function setTimeBasedGreeting() {
   }
 }
 
-/* ──────────────── ✦ LAND OF BUBBLES ✦ ──────────────── */
+/* ──────────────── ✦ LAND OF BUBBLES (Use var for interval) ✦ ──────────────── */
 function createBubble() {
   const bubble = document.createElement('div');
   bubble.classList.add('bubble');
@@ -2876,19 +2871,20 @@ function toggleSkitty() {
     isAnimating = false;
   }, 1000);
 }
-/* ──────────────── ✦ PLUSHIE LOVE ✦ ──────────────── */
+/* ──────────────── ✦ PLUSHIE LOVE✦ ──────────────── */
 const header = document.querySelector('.header');
-const plushWrapper = document.querySelector('.plush-wrapper');
+const plush = document.querySelector('.plush-wrapper');
 
 function updatePlushPosition() {
-  if (!header || !plushWrapper) return; // safety check
   const rect = header.getBoundingClientRect();
-  plushWrapper.style.top = `${rect.bottom + 16}px`; 
+  plush.style.top = `${rect.bottom + 16}px`; 
 }
 
 window.addEventListener('resize', updatePlushPosition);
 window.addEventListener('scroll', updatePlushPosition);
 updatePlushPosition();
+
+
 </script>
 </body>
 </html>
