@@ -1054,17 +1054,18 @@ transform:translateX(-100%)
 }
 
 .plush-wrapper {
-position:fixed;
-top:calc(2rem + 160px);
-left:29%;
-transform:translateX(-50%);
-z-index:9999;
-pointer-events:auto;
-backface-visibility:hidden;
-will-change:transform,opacity;
-transition:opacity var(--anim-speed-long) ease,visibility var(--anim-speed-long) ease
-    --plush-width: clamp(80px, 10vw, 120px);
+  position: fixed;
+  top: calc(2rem + 160px);
+  left: 29%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  pointer-events: auto;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  transition: opacity var(--anim-speed-long) ease, visibility var(--anim-speed-long) ease;
+  --plush-width: clamp(80px, 10vw, 120px);
 }
+
 
 .plush-wrapper.fade-out {
 opacity:0;
