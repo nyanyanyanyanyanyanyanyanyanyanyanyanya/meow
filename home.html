@@ -118,7 +118,7 @@
     --content-bg: #0000001a; /* transparent black */
   --card-shadow: 0 12px 40px #00000080;
   --text-color: #f0f5ffe6;
-  --page-padding: 2px;
+  --page-padding: 32px;
 
 
 /* House of Gradients!!! */
@@ -1072,7 +1072,7 @@ visibility:hidden
 
 .sycamore-plush {
 cursor:pointer;
-width: var(--plush-width);
+  width: clamp(80px, 10vw, 120px);
 height:auto;
 transform-origin:top center;
 opacity: var(--opacity-default);
