@@ -447,7 +447,6 @@ padding:0;
 border-radius: var(--border-radius-main);
 opacity: var(--opacity-default);
 transition:filter var(--anim-speed-medium) ease,opacity var(--anim-speed-medium) ease;
-content: var(--header-image); 
 }
 
 .header-image:hover {
@@ -781,7 +780,6 @@ display:block;
 margin:0 auto 15px;
 border-radius:8px;
 animation:gentlePulse var(--gentle-pulse-duration) infinite ease-in-out;
-content: var(--loader-image); 
 }
 
 @keyframes gentlePulse {
@@ -1595,8 +1593,7 @@ cursor:pointer
 
 #skitty {
 height: var(--skitty-size);
-transition:filter var(--anim-speed-short) ease,transform var(--anim-speed-short) ease;
-content: var(--skitty-image); 
+transition:filter var(--anim-speed-short) ease,transform var(--anim-speed-short) ease; 
 }
 
 .skitty-container:hover #skitty {
@@ -1906,7 +1903,6 @@ z-index:2;
 opacity:.85;
 animation:fadeIn 2s ease forwards;
 cursor: var(--cursor-sylveon);
-content: var(--relax-image); 
 }
 
 .breathing-circle {
@@ -2180,9 +2176,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let bubbleInterval;
   let bokehInterval; 
 
-  function getAsset(pathVar, defaultPath) {
-    return getComputedStyle(document.documentElement).getPropertyValue(pathVar).trim() || defaultPath;
+function getAsset(pathVar, defaultPath) {
+  let value = getComputedStyle(document.documentElement).getPropertyValue(pathVar).trim();
+  if (value.startsWith('url(')) {
+    value = value.slice(4, -1).replace(/['"]/g, ''); // Gently unwraps the url() and any quotes
   }
+  return value || defaultPath;
+}
 
 
   function setDynamicAssets() {
@@ -2209,6 +2209,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     console.log('Dynamic assets loaded for theme');
+      function setDynamicAssets() {
+
+    const loaderImg = loader.querySelector('img');
+    if (loaderImg) loaderImg.src = getAsset('--loader-image', 'images/minidance.gif');
+
+    const headerImg = document.querySelector('.header-image');
+    if (headerImg) headerImg.src = getAsset('--header-image', 'images/llight.jpg');
+
+    const plush = document.querySelector('.sycamore-plush');
+    if (plush) plush.src = getAsset('--plush-image', 'images/sycamore-plush.png');
+
+    const footerImg = document.querySelector('.footer img');
+    if (footerImg) footerImg.src = getAsset('--footer-image', 'images/blog/958459epuot7xpev.gif');
+
+    if (relaxButton) {
+      relaxAudio.src = relaxButton.dataset.relaxAudio || getAsset('--relax-audio', 'music/Maromi\'sTheme.mp3');
+      if (relaxImage) relaxImage.src = relaxButton.dataset.relaxImage || getAsset('--relax-image', 'images/hug.png');
+    }
+
+    console.log('Dynamic assets loaded for theme');
+
+    // **NEW: The safety net goes right here! 🐾**
+    const plush = document.querySelector('.sycamore-plush');  // (It's okay to query again—it's quick!)
+    if (plush) {
+      plush.onerror = function() {
+        console.log('Oh no, little plushie couldn\'t load! Check if the file path is right or if the image is okay.');
+        // this.src = 'images/fallback-plush.png';  // Comment this out if no fallback yet, to avoid more errors
+      };
+      plush.onload = function() {
+        console.log('Yay! Plushie loaded happily.');
+        window.dispatchEvent(new Event('resize'));  // Helps with sizing if needed
+      };
+    }
+    // **END NEW STUFF**
+  }
   }
 
   const baseTitles = {
