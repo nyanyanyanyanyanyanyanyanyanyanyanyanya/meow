@@ -80,7 +80,6 @@
 --nav-font-size: 13px;
 --header-height: 120px;
 --main-min-height: 800px;
---page-padding: 30px;
 --h1-size: 50px;
 --h2-size: 40px;
 --h3-size: 25px;
@@ -116,10 +115,13 @@
   --transition-fast: all 0.3s ease;
   --blur-bg: blur(4px);
   --hover-scale: scale(1.05);
+    --content-bg: #0000001a; /* transparent black */
+  --card-shadow: 0 12px 40px #00000080;
+  --text-color: #f0f5ffe6;
+  --page-padding: 2px;
 
 
 /* House of Gradients!!! */
---content-bg: linear-gradient(135deg, #ffffffe6, #e6f0fab3);
 --header-bg: linear-gradient(180deg, #f0f8ff 0%, #d0e6ff 100%);
 --border-gradient: linear-gradient(135deg, #e6f0fa 0%, #3f3a85 100%);
 --nav-bg: linear-gradient(135deg, #fffffff2, #c8dcffd9);
@@ -232,7 +234,7 @@
   --highlight-hover: #333;
   --bg-image: url(images/uratanebg.png);
   --header-image: url(images/tcgmanga/uraheader.png);
-  --content-bg: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  --content-bg: #0000001a;
   --header-bg: linear-gradient(180deg, #ffffff 0%, #e5e5e5 100%);
   --border-gradient: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
   --nav-bg: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
@@ -250,7 +252,7 @@
   --scrollbar-thumb: #666;
   --scrollbar-thumb-hover: #333;
   --border-color: #000;
-  --card-shadow: 2px 2px 4px #00000033;
+  --card-shadow: 0 12px 40px #00000080;
   --bubble-bg: radial-gradient(circle, #fff9, #f0f0f04d);
   --heading-font: 'Pichupuff', sans-serif;
   --footer-font: 'Pichupuff', cursive;
@@ -262,6 +264,62 @@
   --link-color: #000;
   --nav-link-color: #000;
   --tooltip-bg: #f5f5f5;
+  --page-padding: 2px;
+}
+.theme-megaevo {
+  --theme-name: megaevol;
+  --bg-color: #2d5016; /* deep forest green background */
+  --text-color: #f0f8f0; /* soft mint text */
+  --quote-text: #1a3d0a; /* darker green for quotes */
+  --accent-color: #7dd87d; /* bright sage green */
+  --accent-color-dark: #4a7c4a; /* deeper sage */
+  --link-color: #98e598; /* light mint green */
+  --focus-color: #98e598;
+  --reminder-text: #1a3d0a;
+  --highlight-color: #f0f8f0;
+  --highlight-hover: #d4f0d4;
+  --bg-image: url(images/pastelbonded.png);
+  --header-image: url(images/10happy.png);
+  
+  /* Keep the original glassy container look with slightly more opacity */
+  --content-bg: #00000040; /* transparent black with more opacity */
+  --card-shadow: 0 12px 40px #00000080;
+  
+  /* Eco-green gradients */
+  --header-bg: linear-gradient(180deg, #e8f5e8 0%, #c8e6c8 100%);
+  --border-gradient: linear-gradient(135deg, #d4f0d4 0%, #4a7c4a 100%);
+  --nav-bg: linear-gradient(135deg, #f0fff0f2, #c8e6c8d9);
+  --nav-border: linear-gradient(135deg, #d4f0d4 0%, #4a7c4a 100%);
+  --quote-bg: linear-gradient(135deg, #e8ffe8, #d0f0d0);
+  --detail-bg: linear-gradient(135deg, #f7fff7, #e6f8e6);
+  --detail-border: linear-gradient(135deg, #d4f0d4 0%, #4a7c4a 100%);
+  
+  /* Nature-inspired greens for various elements */
+  --loader-gradient: linear-gradient(to bottom, #c8f0c8 10%, #7dd87d 55%, #6bc56b 56%, #5ab35a 80%, #6bc56b 100%);
+  --about-link-gradient: linear-gradient(to bottom, #c8f0c8 10%, #7dd87d 55%, #6bc56b 56%, #5ab35a 80%, #6bc56b 100%);
+  --about-link-hover: linear-gradient(135deg, #98e598, #0d6c20d6);
+  --gentle-message-gradient: linear-gradient(to bottom, #c8f0c8 10%, #7dd87d 55%, #6bc56b 56%, #5ab35a 80%, #6bc56b 100%);
+  --time-greeting-gradient: linear-gradient(to bottom, #c8f0c8 10%, #7dd87d 55%, #6bc56b 56%, #5ab35a 80%, #6bc56b 100%);
+  
+  /* Green scrollbar theme */
+  --scrollbar-track: #7dd87d;
+  --scrollbar-track-border: #4a7c4a;
+  --scrollbar-thumb: #2d5016;
+  --scrollbar-thumb-hover: #1a3d0a;
+  --scrollbar-shadow: inset 0 0 8px rgba(0, 51, 26, 0.2);
+  --scrollbar-thumb-shadow: 0 0 10px rgba(45, 80, 22, 0.7), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  --scrollbar-thumb-hover-shadow: 0 0 15px rgba(45, 80, 22, 0.9), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  
+  /* Keeping consistent styling elements */
+  --border-color: #4a7c4a;
+  --bubble-bg: radial-gradient(circle, #f0fff0, #c8e6c84d);
+  --heading-font: 'Pichupuff', sans-serif;
+  --footer-font: 'Pichupuff', cursive;
+  --message-font: 'Pichupuff', sans-serif;
+  --mark-bg: #98e598; /* light mint highlight */
+  --nav-link-color: #2d5016;
+  --tooltip-bg: #00331abf; /* dark green tooltip */
+  --page-padding: 2px;
 }
 
 * {
@@ -512,17 +570,18 @@ transition:all var(--anim-speed-short) ease
 .main-content {
   flex-grow: 1;
   position: relative;
-  background: #0000001a;
+  background: var(--content-bg);
   border-radius: var(--border-radius-main);
-  padding: 2px;
+  padding: var(--page-padding);
   margin: 5px auto;
   backdrop-filter: var(--blur-default);
   -webkit-backdrop-filter: var(--blur-default);
-  box-shadow: 0 12px 40px #00000080;
+  box-shadow: var(--card-shadow);
   border: var(--main-border);
   min-height: var(--main-min-height); 
   height: auto; 
   overflow-y: visible; 
+  color: var(--text-color);
 }
 
 .page {
@@ -2278,7 +2337,7 @@ fetch(page + cacheBuster)
   function startTitleAnimation() {
     if (isIdle) return;
 
-    // Use var for timing
+
     const idleDelay = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--title-idle-delay').trim().replace('ms', '')) || 15000;
     const cycleInterval = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--title-cycle-interval').trim().replace('ms', '')) || 6000;
 
@@ -2598,35 +2657,50 @@ function exitRelaxMode() {
 /* ──────────────── ✦ THEME SWITCH!? ✦ ──────────────── */
 const themeToggle = document.getElementById('theme-toggle');
 const savedTheme = localStorage.getItem('theme');
+const html = document.documentElement;
 
+// Apply saved theme on load
 if (savedTheme) {
-  document.documentElement.classList.add(`theme-${savedTheme}`);
-  themeToggle.textContent = savedTheme === 'uratane' ? 'URATANE' : 'SYCAMORE';
-  document.title = savedTheme === 'uratane'
-    ? 'XYBREAK! Ura-takes over the site!?'
-    : 'South Boulevard';
+  html.classList.add(`theme-${savedTheme}`);
+  updateThemeUI(savedTheme);
 }
 
-
+// Theme cycle: megaevo → sycamore → uratane → megaevo...
 themeToggle.addEventListener('click', () => {
-  const html = document.documentElement;
+  let currentTheme = html.classList.contains('theme-megaevo')
+    ? 'megaevo'
+    : html.classList.contains('theme-sycamore')
+    ? 'sycamore'
+    : html.classList.contains('theme-uratane')
+    ? 'uratane'
+    : 'megaevo';
 
-  if (html.classList.contains('theme-sycamore')) {
-    html.classList.remove('theme-sycamore');
-    html.classList.add('theme-uratane');
-    localStorage.setItem('theme', 'uratane');
+  let nextTheme =
+    currentTheme === 'megaevo' ? 'sycamore' :
+    currentTheme === 'sycamore' ? 'uratane' :
+    'megaevo';
+
+  html.classList.remove(`theme-${currentTheme}`);
+  html.classList.add(`theme-${nextTheme}`);
+  localStorage.setItem('theme', nextTheme);
+  updateThemeUI(nextTheme);
+  setDynamicAssets(); 
+});
+
+// Update button text and title
+function updateThemeUI(theme) {
+  if (theme === 'uratane') {
     themeToggle.textContent = 'URATANE';
     document.title = 'XYBREAK! Ura-takes over the site!?';
+  } else if (theme === 'megaevo') {
+    themeToggle.textContent = 'MEGA EVO';
+    document.title = 'Mega Evolution, Softly';
   } else {
-    html.classList.remove('theme-uratane');
-    html.classList.add('theme-sycamore');
-    localStorage.setItem('theme', 'sycamore');
     themeToggle.textContent = 'SYCAMORE';
     document.title = 'South Boulevard';
   }
+}
 
-  setDynamicAssets(); // 
-});
 
 
 
@@ -2730,7 +2804,7 @@ themeToggle.addEventListener('click', () => {
 
   /* ──────────────── ✦ WINDOW RESIZE HANDLER ✦ ──────────────── */
   window.addEventListener('resize', () => {
-    // Force background repaint
+      
     document.body.style.backgroundImage = 'none';
     setTimeout(() => {
       document.body.style.backgroundImage = getAsset('--bg-image', 'Images/iliuliulu.png');
@@ -2778,7 +2852,7 @@ function createBubble() {
   document.querySelector('.bubble-background').appendChild(bubble);
 }
 
-// Use var for interval
+
 const bubbleIntervalTime = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bubble-interval').trim().replace('ms', '')) || 800;
 setInterval(createBubble, bubbleIntervalTime);
 
