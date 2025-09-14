@@ -1,79 +1,2895 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>there's a blackout</title>
-    <meta name="description" content="South Boulevard, a fanshrine for Professor Augustine Sycamore, is under construction.">
-    <link rel="icon" type="image/png" href="images/Kalos_Logo.png">
-<style>@font-face {
-  font-family: 'MS Gothic';
-  src: url(fonts/MSGOTHIC.TTF);
+  <meta charset="UTF-8">
+  <meta name="description" content="A fan site dedicated to Professor Augustine Sycamore from Pokémon XY">
+  <meta name="keywords" content="Professor Sycamore, Pokémon XY, fan site, Kalos, shrine, sycamore, professor, pokemon, gen6, augustine sycamore, platane, xybreak, xyz, xy">
+  <title>South Boulevard</title>
+  <link rel="icon" type="image/png" href="images/Kalos_Logo.png?v=1">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+<meta name="theme-color" content="#1F498C">
+  <meta property="og:title" content="You're in the south boulevard of Lumiose City...">
+<meta property="og:description" content="And you see the Sycamore Pokémon Lab! That's exciting!(it's a fan site dedicated to Professor Sycamore from Pokémon XY.)">
+<meta property="og:image" content="images/Kalos_Logo.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="You're in the South Boulevard of Lumiose City...">
+<meta name="twitter:description" content="You see the Sycamore Pokémon Lab! A fan shrine awaits.">
+<meta name="twitter:image" content="images/Kalos_Logo.png">
+<meta name="author" content="Professor Sycamore">
+<meta name="creator" content="PokemonXY">
+<meta name="copyright" content="Um... GameFreak!?">
+<meta http-equiv="Content-Language" content="en">
+<meta name="HandheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="love-and-peace" content="Kindness is a superpower. Love is so punk rock!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<meta property="og:article:author" content="Professor Augustine Sycamore">
+<meta name="pinterest" content="nopin" description="Sorry, Pin-ers! Come to the lab, won't you?">
+<meta property="og:site_name" content="South Boulevard - Lumiose City">
+
+ <style>
+@font-face {
+  font-family: 'Authora Handwriting';
+  src: url(fonts/AuthoraHandwriting-pg71a.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'Pichupuff';
+  src: url(fonts/Pichupuff.ttf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'MSGOTHIC';
+  src: url(fonts/MSGOTHIC.TTF) format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Angelface';
+  src: url(fonts/Angelface.otf) format("opentype");
+}
+
+
 :root {
-  --background: #fff;
-  --text-color: #333;
-  --border-color: #c5e0f0;
-  --header-bg: linear-gradient(135deg, #6a9ccc, #a0c5e8);
+--theme-name: sycamore; 
+--bg-color: #1F498C;
+--body-font: "MS Gothic", monospace, 'MSGOTHIC', 'Gothic A1', 'Lucida Grande', 'Geneva', 'Monaco', sans-serif;
+--body-font-size: 1.125rem;
+    --body-font-weight: 300;
+--body-padding: 0.5rem;
+--text-color: #f0f5ffe6;
+--quote-text: #3f3a85;
+--accent-color: #5a7bff;
+--accent-color-dark: #3f3a85;
+--link-color: #fff394;
+--focus-color: #fff394;
+--reminder-text: #000;
+--highlight-color: #f0f5ffe6;
+--highlight-hover: #dce6ffb3;
+--transition-speed: 0.4s;
+--border-radius-main: 20px;
+--border-radius-small: 12px;
+--card-shadow: 0 4px 20px #00329633, inset 0 2px 4px #ffffff80;
+--nav-height: 37px;
+--nav-font-size: 13px;
+--header-height: 120px;
+--main-min-height: 800px;
+--h1-size: 50px;
+--h2-size: 40px;
+--h3-size: 25px;
+--h4-size: 18px;
+--img-max-width: 200px;
+--pkmn-img-max-width: 150px;
+--loader-width: 200px;
+--loader-height: 150px;
+--loader-img-size: 50px;
+--quote-min-height: 100px;
+--bio-max-width: 600px;
+--timeline-max-width: 600px;
+--merch-img-width: 200px;
+--footer-height: 80px;
+--footer-font-size: 15px;
+--skitty-size: 100px;
+--plush-width: clamp(80px, 10vw, 120px);
+--relax-font-size: 1.2rem;
+--relax-trigger-padding: 5px;
+--relax-trigger-border-radius: 16px;
+--breathing-circle-size: 100px;
+--bubble-size-min: 15px;
+--bubble-size-max: 25px;
+--bokeh-size-min: 15px;
+--bokeh-size-max: 30px;
+  --spacing-lg: 1rem;
+  --padding-sm: 0.5rem;
+  --padding-md: 1rem;
+  --font-size-sm: 0.85rem;
+  --font-ui: 'MS Gothic', sans-serif;
+  --radius-lg: 12px;
+  --shadow-soft: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  --transition-fast: all 0.3s ease;
+  --blur-bg: blur(4px);
+  --hover-scale: scale(1.05);
+    --content-bg: #0000001a; /* transparent black */
+  --card-shadow: 0 12px 40px #00000080;
+  --text-color: #f0f5ffe6;
+  --page-padding: 25px;
+
+
+/* House of Gradients!!! */
+--header-bg: linear-gradient(180deg, #f0f8ff 0%, #d0e6ff 100%);
+--border-gradient: linear-gradient(135deg, #e6f0fa 0%, #3f3a85 100%);
+--nav-bg: linear-gradient(135deg, #fffffff2, #c8dcffd9);
+--nav-border: linear-gradient(135deg, #e6f0fa 0%, #3f3a85 100%);
+--quote-bg: linear-gradient(135deg, #e8f0ff, #d0e0ff);
+--detail-bg: linear-gradient(135deg, #f7faff, #e6f0ff);
+--detail-border: linear-gradient(135deg, #e6f0fa 0%, #3f3a85 100%);
+--loader-gradient: linear-gradient(to bottom, #bddff8 10%, #74b9e7 55%, #59a5db 56%, #4494ce 80%, #5da7db 100%);
+--about-link-gradient: linear-gradient(to bottom, #bddff8 10%, #74b9e7 55%, #59a5db 56%, #4494ce 80%, #5da7db 100%);
+--about-link-hover: linear-gradient(135deg, #7dffc2, #0022d7d6);
+--gentle-message-gradient: linear-gradient(to bottom, #bddff8 10%, #74b9e7 55%, #59a5db 56%, #4494ce 80%, #5da7db 100%);
+--tooltip-bg: #000000bf;
+--time-greeting-gradient: linear-gradient(to bottom, #bddff8 10%, #74b9e7 55%, #59a5db 56%, #4494ce 80%, #5da7db 100%);
+--relax-trigger-bg: linear-gradient(135deg, #ffd1dc, #ffe4e9);
+--relax-overlay-bg: #ffeef5;
+--bokeh-layer-bg: radial-gradient(circle at 20% 30%, #ffb6c1b3 0%, transparent 30%), radial-gradient(circle at 80% 70%, #ffb6c1 99 0%, transparent 30%), radial-gradient(circle at 50% 50%, #ffb6c180 0%, transparent 30%), radial-gradient(circle at 30% 80%, #dda0dd99 0%, transparent 30%), radial-gradient(circle at 70% 20%, #dda0dd80 0%, transparent 30%);
+--bubble-relax-bg: radial-gradient(circle, #ffd1dcb3, #ffd1dc66);
+--bokeh-spot-pink: radial-gradient(circle, #ffb6c1e6, transparent);
+--bokeh-spot-lavender: radial-gradient(circle, #dda0dde6, transparent);
+--breathing-circle-bg: #ffd1dc;
+--header-overlay: repeating-linear-gradient(to bottom, #00000073, #00000026 1px, transparent 1px, transparent 2px);
+--h1-gradient: linear-gradient(135deg, #a1c3ff, #5a7bff);
+  --nav-link-color: #3f3a85;
+
+/* images, assets, and thingies */
+--bg-image: url(images/iliuliulu.png);
+--header-image: url(images/llight.jpg);
+--plush-image: url(images/sycamore-plush.png);
+--loader-image: url(images/minidance.gif);
+--footer-image: url(images/blog/958459epuot7xpev.gif);
+--skitty-image: url(images/skitty1.png);
+--skitty-anim-image: url(images/skitty(2).gif);
+--relax-image: url(images/hug.png);
+--relax-audio: url(music/Maromi'sTheme.mp3);
+--cursor-default: url(images/cursors/hand1.png), auto;
+--cursor-pointer: url(images/cursors/hand22.png), pointer;
+--cursor-coffee: url(images/coffeecup.png), pointer;
+--cursor-sylveon: url(images/cursors/sylveon.cur), auto;
+--nav-button-bg: url(images/icons/button.png);
+--nav-marker-bg: url(images/icons/marked.png);
+--ministar-bg: url(images/ministar.gif);
+
+/* Scrollbars... */
+--scrollbar-width: 14px;
+--scrollbar-track: #0ED6D1;
+--scrollbar-track-border: #0D9488;
+--scrollbar-thumb: #FFEA00;
+--scrollbar-thumb-hover: #FFD700;
+--scrollbar-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+--scrollbar-thumb-shadow: 0 0 10px rgba(255, 234, 0, 0.7), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  --scrollbar-thumb-hover-shadow: 0 0 15px rgba(255, 234, 0, 0.9), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+
+/* Borders and Shadows */
+--border-color: #424242;
+--border-thin: 1px solid #ccc;
+--shadow-light: 1px 1px 5px #0003;
+--shadow-inset-light: inset 0 1px 3px #ffffffe6;
+--shadow-inset-dark: inset 0 -1px 2px #c8dcff99;
+--main-border: 1px solid #fff3;
+--newsbox-border: 1px solid #ccc;
+
+/* Animations */
+--anim-speed-short: 0.3s;
+--anim-speed-medium: 0.6s;
+--anim-speed-long: 1.5s;
+--fade-in-duration: 0.8s;
+--gentle-pulse-duration: 2s;
+--sway-duration: 6s;
+--scroll-text-duration: 20s;
+--title-cycle-interval: 6000ms;
+--title-idle-delay: 15000ms;
+--bubble-interval: 800ms;
+--relax-bubble-interval: 1000ms;
+--bokeh-interval: 1500ms;
+--relax-fade-duration: 2s;
+--shimmer-duration: 10s;
+--breathe-duration: 8s;
+
+/* Media BP*/
+--bp-large: 1200px;
+--bp-medium: 900px;
+--bp-small: 768px;
+--bp-tiny: 480px;
+
+/* Sloppa */
+--bubble-bg: radial-gradient(circle, #fff9, #c8dcff4d);
+--heading-font: 'Pichupuff', sans-serif;
+--footer-font: 'Pichupuff', cursive;
+--message-font: 'Pichupuff', sans-serif;
+--opacity-default: 0.95;
+--blur-default: 3px;
+--backdrop-blur: blur(8px);
+--text-shadow-light: 0 1px 2px #ffffff80;
+--text-shadow-dark: 0 1px 1px #ffffff80;
+--mark-bg: #07F0B4;
 }
 
-[data-theme="xerneas"] {
-  --background: rgba(255, 255, 255, 0.95);
-  --text-color: #6a6a6a;
-  --border-color: #c5e0f0;
-  --header-bg: linear-gradient(135deg, #6a9ccc, #a0c5e8);
+/*uraTAKEOVER Theme*/
+.theme-uratane {
+  --theme-name: uratane;
+  --bg-color: #f5f5f5;
+  --text-color: #000;
+  --quote-text: #000;
+  --accent-color: #333;
+  --accent-color-dark: #222;
+  --link-color: #007bff;
+  --focus-color: #007bff;
+  --reminder-text: #000;
+  --highlight-color: #000;
+  --highlight-hover: #333;
+  --bg-image: url(images/uratanebg.png);
+  --header-image: url(images/tcgmanga/uraheader.png);
+  --content-bg: #0000001a;
+  --header-bg: linear-gradient(180deg, #ffffff 0%, #e5e5e5 100%);
+  --border-gradient: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+  --nav-bg: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  --nav-border: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+  --quote-bg: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  --detail-bg: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  --detail-border: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+  --loader-gradient: linear-gradient(to bottom, #ffffff 10%, #e5e5e5 55%, #d5d5d5 56%, #c5c5c5 80%, #d0d0d0 100%);
+  --about-link-gradient: linear-gradient(to bottom, #ffffff 10%, #e5e5e5 55%, #d5d5d5 56%, #c5c5c5 80%, #d0d0d0 100%);
+  --about-link-hover: linear-gradient(135deg, #e0e0e0, #b0b0b0);
+  --gentle-message-gradient: linear-gradient(to bottom, #ffffff 10%, #e5e5e5 55%, #d5d5d5 56%, #c5c5c5 80%, #d0d0d0 100%);
+  --time-greeting-gradient: linear-gradient(to bottom, #ffffff 10%, #e5e5e5 55%, #d5d5d5 56%, #c5c5c5 80%, #d0d0d0 100%);
+  --scrollbar-track: #e0e0e0;
+  --scrollbar-track-border: #000;
+  --scrollbar-thumb: #666;
+  --scrollbar-thumb-hover: #333;
+  --border-color: #000;
+  --card-shadow: 0 12px 40px #00000080;
+  --bubble-bg: radial-gradient(circle, #fff9, #f0f0f04d);
+  --heading-font: 'Pichupuff', sans-serif;
+  --footer-font: 'Pichupuff', cursive;
+  --message-font: 'Pichupuff', sans-serif;
+  --scrollbar-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+  --scrollbar-thumb-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  --scrollbar-thumb-hover-shadow: 0 0 15px rgba(0, 0, 0, 0.7), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  --mark-bg: #BBC1C0;
+  --link-color: #000;
+  --nav-link-color: #000;
+  --tooltip-bg: #f5f5f5;
+}
+   
+.theme-megaevo {
+  --theme-name: megaevol;
+  --bg-color: #2d5016;
+  --text-color: #f0f8f0; 
+  --quote-text: #1a3d0a; 
+  --accent-color: #7dd87d; 
+  --accent-color-dark: #4a7c4a; 
+  --link-color: #98e598; 
+  --focus-color: #98e598;
+  --reminder-text: #1a3d0a;
+  --highlight-color: #f0f8f0;
+  --highlight-hover: #d4f0d4;
+  --bg-image: url(images/pastelbonded.png);
+  --header-image: url(images/10happy.png);
+  --plush-image: url(images/sycamore-plush.png);
+  
+  /* Keep the original glassy container look with slightly more opacity */
+  --content-bg: #00000040; 
+  --card-shadow: 0 12px 40px #00000080;
+  
+  /* Eco-green gradients */
+  --header-bg: linear-gradient(180deg, #e8f5e8 0%, #c8e6c8 100%);
+  --border-gradient: linear-gradient(135deg, #d4f0d4 0%, #4a7c4a 100%);
+  --nav-bg: linear-gradient(135deg, #f0fff0f2, #c8e6c8d9);
+  --nav-border: linear-gradient(135deg, #d4f0d4 0%, #4a7c4a 100%);
+  --quote-bg: linear-gradient(135deg, #e8ffe8, #d0f0d0);
+  --detail-bg: linear-gradient(135deg, #f7fff7, #e6f8e6);
+  --detail-border: linear-gradient(135deg, #d4f0d4 0%, #4a7c4a 100%);
+  
+  /* Nature-inspired greens for various elements */
+  --loader-gradient: linear-gradient(to bottom, #c8f0c8 10%, #7dd87d 55%, #6bc56b 56%, #5ab35a 80%, #6bc56b 100%);
+  --about-link-gradient: linear-gradient(to bottom, #c8f0c8 10%, #7dd87d 55%, #6bc56b 56%, #5ab35a 80%, #6bc56b 100%);
+  --about-link-hover: linear-gradient(135deg, #98e598, #0d6c20d6);
+  --gentle-message-gradient: linear-gradient(to bottom, #c8f0c8 10%, #7dd87d 55%, #6bc56b 56%, #5ab35a 80%, #6bc56b 100%);
+  --time-greeting-gradient: linear-gradient(to bottom, #c8f0c8 10%, #7dd87d 55%, #6bc56b 56%, #5ab35a 80%, #6bc56b 100%);
+  
+  /* Green scrollbar theme */
+  --scrollbar-track: #7dd87d;
+  --scrollbar-track-border: #4a7c4a;
+  --scrollbar-thumb: #2d5016;
+  --scrollbar-thumb-hover: #1a3d0a;
+  --scrollbar-shadow: inset 0 0 8px rgba(0, 51, 26, 0.2);
+  --scrollbar-thumb-shadow: 0 0 10px rgba(45, 80, 22, 0.7), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  --scrollbar-thumb-hover-shadow: 0 0 15px rgba(45, 80, 22, 0.9), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  
+  /* Keeping consistent styling elements */
+  --border-color: #4a7c4a;
+  --bubble-bg: radial-gradient(circle, #f0fff0, #c8e6c84d);
+  --heading-font: 'Pichupuff', sans-serif;
+  --footer-font: 'Pichupuff', cursive;
+  --message-font: 'Pichupuff', sans-serif;
+  --mark-bg: #98e598; 
+  --nav-link-color: #2d5016;
+  --tooltip-bg: #00331abf; 
+  --plush-width: clamp(80px, 10vw, 120px);
 }
 
-[data-theme="yveltal"] {
-  --background: rgba(34, 34, 34, 0.95);
-  --text-color: #ccc;
-  --border-color: #c33;
-  --header-bg: linear-gradient(135deg, #cc3333, #ff9999);
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 body {
-  margin: 0;
-  padding: 20px;
-  font-family: 'MS Gothic', monospace, sans-serif;
-  background: var(--background);
-  color: var(--text-color);
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  font-size: var(--body-font-size);
+  padding: var(--body-padding);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-family: var(--body-font);
+  color: var(--text-color);
+  cursor: var(--cursor-default);
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+html {
+overflow-y:auto;
+}
+html::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 10px;
+  box-shadow: var(--scrollbar-shadow);
+  border: 2px solid var(--scrollbar-track-border);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border: 2px solid var(--scrollbar-track-border);
+  box-shadow: var(--scrollbar-thumb-shadow);
+  transition: all var(--anim-speed-short) ease;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  box-shadow: var(--scrollbar-thumb-hover-shadow);
+  transform: scale(1.05);
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+body::-webkit-scrollbar-track,
+body::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+
+
+a,button,input[type="submit"],input[type="button"],label,select {
+cursor: var(--cursor-pointer)
+}
+
+p {
+margin-bottom:1rem
 }
 
 .container {
+width:100%;
+max-width:800px;
+gap:1.5rem;
+flex-direction:column;
+position:relative;
+transition:all var(--transition-speed) ease;
+display:flex;
+z-index:1;
+margin-top:4%;
+}
+
+.header {
+margin:0;
+border:none;
+flex-shrink:0;
+position:relative;
+border-radius: var(--border-radius-main) var(--border-radius-main) 0 0;
+align-items:center;
+justify-content:center
+}
+
+.header-image {
+width:100%;
+height: var(--header-height);
+object-fit:cover;
+display:block;
+margin:0;
+padding:0;
+border-radius: var(--border-radius-main);
+opacity: var(--opacity-default);
+transition:filter var(--anim-speed-medium) ease,opacity var(--anim-speed-medium) ease;
+content: var(--header-image); 
+}
+
+.header-image:hover {
+filter:brightness(1.15) contrast(1) saturate(1.3) blur(0);
+opacity:1
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--header-overlay);
+  pointer-events: none;
+  z-index: 1;
+  border-radius: var(--border-radius-main);
+  mix-blend-mode: multiply;
+}
+
+.nav-container {
+  position: fixed;
+  width: fit-content; 
+  z-index: 1000;
+  padding: 0.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding:var(--padding-sm);
+}
+
+.nav-menu li {
+display:block
+}
+
+.nav-menu li a {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--nav-width);
+  height: var(--nav-height);
+  color: var(--nav-link-color); 
+  text-decoration: none;
+  background: var(--nav-bg);
+  border-radius: var(--border-radius-small);
+  text-shadow: var(--text-shadow-dark);
+  transition: all var(--transition-speed) ease;
+  font-variant: small-caps;
+  letter-spacing: 0.5px;
+  backdrop-filter: var(--backdrop-blur);
+  font-size: var(--h4-size);
+    padding:var(--padding-sm);
+      border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--accent-color);
+}
+.nav-menu li a:hover,
+.nav-menu li a:focus {
+  background: var(--about-link-hover);
+  transform: var(--hover-scale);
+}
+.nav-menu li a:active {
+transform:translateY(2px)
+}
+
+.nav-marker {
+position:absolute;
+top:-6px;
+right:-6px;
+width:24px;
+height:24px;
+background: var(--nav-marker-bg) no-repeat center center;
+background-size:contain;
+pointer-events:none;
+opacity:0;
+transition:opacity var(--anim-speed-short) ease
+}
+
+.nav-menu li a.active .nav-marker {
+opacity:1
+}
+
+.tooltip {
+  position: absolute;
+  left: -190px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--tooltip-bg);
+  color: var(--text-color);
+  font-size: 14px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--anim-speed-short) ease;
+  z-index: 999;
+}
+.nav-menu li {
+position:relative
+}
+
+.nav-menu li a:hover .tooltip {
+opacity:1
+}
+
+.nav-container,.container {
+transition:all var(--anim-speed-short) ease
+}
+
+
+
+.main-content {
+  flex-grow: 1;
+  position: relative;
+  background: var(--content-bg);
+  border-radius: var(--border-radius-main);
+  padding: var(--page-padding);
+  margin: 5px auto;
+  backdrop-filter: var(--blur-default);
+  -webkit-backdrop-filter: var(--blur-default);
+  box-shadow: var(--card-shadow);
+  border: var(--main-border);
+  min-height: var(--main-min-height); 
+  height: auto; 
+  overflow-y: visible; 
+  color: var(--text-color);
+}
+
+.page {
+padding: var(--page-padding);
+max-width:800px;
+margin:0 auto;
+border-radius: var(--border-radius-small);
+animation:fadeIn var(--fade-in-duration) ease-in;
+min-height:100%; 
+box-sizing:border-box;
+}
+
+.page::after {
+content:"";
+display:table;
+clear:both
+}
+
+@keyframes subtleFade {
+from {
+opacity:0;
+transform:translateY(10px)
+}
+
+to {
+opacity:1;
+transform:translateY(0)
+}
+}
+
+@keyframes fadeIn {
+from {
+opacity:0
+}
+
+to {
+opacity:1
+}
+}
+
+
+.page h1, .page h2, .page h3, .page h4 {
+  font-family: var(--heading-font);
+  color: var(--text-color);
+  font-weight: 400;
+  text-shadow: var(--text-shadow-light);
+  transition: color 0.5s ease;
+  font-size: var(--h1-size);
+    text-align: center;
+}
+
+.page h1 {
+  font-size: var(--h1-size);
+  text-align: centert;
+  position: relative;
+  background: var(--h1-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page h1::after {
+content:'';
+position:absolute;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+width:100px;
+height:2px;
+background:linear-gradient(90deg,transparent,var(--accent-color),transparent);
+transition:all var(--transition-speed) ease
+}
+
+.page h2 {
+font-size: var(--h2-size)
+}
+
+.page h3 {
+font-size: var(--h3-size)
+}
+
+.page h4 {
+font-size: var(--h4-size)
+}
+
+.page h2 {
+display:flex;
+align-items:center
+}
+
+.page img.right,.page img.left {
+max-width: var(--img-max-width);
+height:auto;
+float:right;
+margin:0 0 15px 15px;
+cursor:pointer;
+border-radius:8px;
+transition:all var(--transition-speed) ease
+}
+
+.page img.left {
+float:left;
+margin:0 15px 15px 0
+}
+
+.page img.right:hover,.page img.left:hover {
+transform:scale(1.05)
+}
+
+.page .pkmn-page img {
+max-width: var(--pkmn-img-max-width);
+height:auto
+}
+
+.centered-image {
+display:block;
+margin:25px auto;
+max-width:100%;
+border-radius:8px
+}
+
+mark {
+background: var(--mark-bg);
+color:#000;
+padding:.2em .4em;
+border-radius:4px
+}
+
+.loader {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1rem;
+  padding: 30px 40px;
+  background: var(--loader-gradient);
+  border-radius: var(--border-radius-small);
+  z-index: 3000;
   border: 1px solid var(--border-color);
-  background: var(--background);
+  width: var(--loader-width);
+  height: var(--loader-height);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-light), 
+              inset 0 1px 3px #ffffffe6, 
+              inset 0 -1px 2px #c8dcff99;
+  backdrop-filter: blur(10px);
+  text-shadow: var(--text-shadow-light);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-speed) ease;
+}
+#theme-toggle {
+  position: fixed;
+  top: var(--spacing-lg, 1rem);
+  right: var(--spacing-lg, 1rem);
+  z-index: var(--z-overlay, 10000);
+  padding: var(--padding-sm, 0.5rem) var(--padding-md, 1rem);
+  font-size: var(--font-size-sm, 0.85rem);
+  font-family: var(--font-ui, 'MS Gothic', sans-serif);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--accent-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: var(--shadow-soft, 1px 1px 4px rgba(0, 0, 0, 0.2));
+  cursor: pointer;
+  transition: var(--transition-fast, all 0.3s ease);
+  backdrop-filter: var(--blur-bg, blur(4px));
+  -webkit-backdrop-filter: var(--blur-bg, blur(4px));
+}
+
+#theme-toggle:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  transform: var(--hover-scale, scale(1.05));
+}
+
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--anim-speed-long) ease, visibility var(--anim-speed-long) ease;
+}
+
+.loader.hidden {
+opacity:0;
+pointer-events:none
+}
+
+.loader img {
+width: var(--loader-img-size);
+height:auto;
+display:block;
+margin:0 auto 15px;
+border-radius:8px;
+animation:gentlePulse var(--gentle-pulse-duration) infinite ease-in-out;
+content: var(--loader-image); 
+}
+
+@keyframes gentlePulse {
+0% {
+transform:scale(1)
+}
+
+50% {
+transform:scale(1.05)
+}
+
+100% {
+transform:scale(1)
+}
+}
+
+@keyframes gentleFadeIn {
+from {
+opacity:0;
+transform:translateY(10px)
+}
+
+to {
+opacity:1;
+transform:translateY(0)
+}
+}
+
+@keyframes gentleFadeOut {
+from {
+opacity:1;
+transform:translateY(0)
+}
+
+to {
+opacity:0;
+transform:translateY(-10px)
+}
+}
+
+.page-enter {
+animation:gentleFadeIn .9s ease-in forwards
+}
+
+.page-exit {
+animation:gentleFadeOut .9s ease-out forwards
+}
+.quote-sycamore {
+  background: var(--loader-gradient);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-small);
   padding: 20px;
   text-align: center;
-  border-radius: 8px;
-  max-width: 500px;
+  position: relative;
+  font-style: italic;
+  box-shadow: var(--shadow-light);
+  backdrop-filter: var(--backdrop-blur);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: var(--quote-min-height);
 }
-
-.container img {
-  max-width: 100%;
-  height: auto;
-}
-
-.container h1 {
-  font-size: 24px;
-}
-
-.container p {
+.quote-sycamore strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-color);
   font-size: 16px;
-}</style>
-</head>
-<body data-theme="xerneas">
-    <div class="container">
-        <img src="images/blackout.jpg" alt="Under Construction">
-        <h1>Under Construction</h1>
-        <p>South Boulevard, the fanshrine for Professor Augustine Sycamore, is being rebuilt to be more accessible. Thank you for your patience.<br><br>Check back soon to see amazing updates!</p>
-    </div>
-</body>
+  font-style: normal;
+  transition: all 0.2s ease;
+}
+.bio .clearfix {
+overflow:auto;
+margin-bottom:25px
+}
 
+.bio p {
+text-align:justify;
+line-height:1.7;
+margin:0 0 15px
+}
+
+.bio h2 {
+text-align:center;
+margin:25px 0
+}
+
+.about-links {
+list-style:none
+}
+
+.about-links li {
+padding:1rem;
+background: var(--about-link-gradient);
+  color: var(--text-color);
+border-radius: var(--border-radius-small);
+font-size:1rem;
+margin-bottom:.5rem;
+border:1px solid var(--border-color);
+box-shadow: var(--shadow-light) inset 0 1px 3px #ffffffe6 inset 0 -1px 2px #c8dcff99;
+backdrop-filter: var(--backdrop-blur);
+text-shadow:0 1px 2px #0003;
+font-weight:600;
+letter-spacing:.5px;
+transition:all var(--transition-speed) ease
+}
+
+.about-links li:hover {
+background: var(--about-link-hover)
+}
+
+.about-links a {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem;
+  text-shadow: var(--text-shadow-dark);
+  transition: all var(--transition-speed) ease;
+}
+
+.about-links a:hover {
+color:#fff;
+letter-spacing:.1em
+}
+
+.about-links a:hover:before {
+  content: "❯";
+  margin-right: 0.5em;
+  color: var(--text-color);
+}
+
+a {
+color:var(--link-color);
+text-decoration:none
+}
+
+@keyframes gentleFloat {
+0% {
+transform:translateY(0px)
+}
+
+50% {
+transform:translateY(-5px)
+}
+
+100% {
+transform:translateY(0px)
+}
+}
+
+.gentle-float {
+animation:gentleFloat 5s infinite ease-in-out
+}
+
+.gentle-reminder {
+border:1px solid var(--border-color);
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background: var(--gentle-message-gradient);
+color:#fff;
+border-radius: var(--border-radius-small);
+padding:1.5rem;
+z-index:2000;
+text-align:center;
+font-size:.9rem;
+max-width:300px;
+box-shadow: var(--shadow-light) inset 0 1px 3px #ffffffe6 inset 0 -1px 2px #c8dcff99;
+backdrop-filter: var(--backdrop-blur);
+animation:fadeInOut 4s ease forwards;
+transition:all var(--transition-speed) ease
+}
+
+.gentle-reminder.visible {
+display:block
+}
+
+.gentle-reminder p {
+  font-family: var(--message-font);
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.gentle-reminder::after {
+content:"♡";
+display:block;
+margin-top:.5rem;
+color: var(--reminder-text);
+font-size:.9rem;
+transition:all var(--transition-speed) ease
+}
+
+.gentle-message {
+  font-family: var(--message-font);
+  text-align: center;
+  color: var(--reminder-text);
+  font-size: 1.5rem;
+  padding: 1rem;
+  background: var(--gentle-message-gradient);
+  border-radius: 8px;
+  box-shadow: var(--shadow-light) inset 0 1px 3px #ffffffe6 inset 0 -1px 2px #c8dcff99;
+  backdrop-filter: var(--backdrop-blur);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--anim-speed-medium) ease;
+  border: 1px solid var(--border-color);
+}
+
+.gentle-message.visible {
+opacity:1;
+transform:translateY(0)
+}
+
+#time-greeting {
+  text-align: center;
+  color: var(--reminder-text);
+  font-size: 1.5rem;
+  padding: 1rem;
+  background: var(--time-greeting-gradient);
+  border-radius: 8px;
+  box-shadow:
+    var(--shadow-light),
+    inset 0 1px 3px #ffffffe6,
+    inset 0 -1px 2px #c8dcff99;
+  backdrop-filter: var(--backdrop-blur);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-track {
+position:absolute;
+width:100%;
+height:70%;
+overflow:hidden
+}
+
+.scroll-text {
+display:inline-block;
+white-space:nowrap;
+animation:scrollText var(--scroll-text-duration) linear infinite
+}
+
+@keyframes scrollText {
+0% {
+transform:translateX(0%)
+}
+
+100% {
+transform:translateX(-100%)
+}
+}
+
+.plush-wrapper {
+  position: fixed;
+  top: calc(2rem + 160px);
+  left: 29%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  pointer-events: auto;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  transition: opacity var(--anim-speed-long) ease, visibility var(--anim-speed-long) ease;
+  --plush-width: clamp(80px, 10vw, 120px);
+}
+
+
+.plush-wrapper.fade-out {
+opacity:0;
+visibility:hidden
+}
+.sycamore-plush {
+  display: block; /* fixes inline image quirks in Edge */
+  max-width: var(--plush-width); /* ceiling from your variable */
+  width: 100%; /* scale within that ceiling */
+  height: auto;
+
+  cursor: pointer;
+  transform-origin: top center;
+  opacity: var(--opacity-default);
+  --scale-factor: 1;
+  border-radius: var(--border-radius-small);
+  animation: swayChime var(--sway-duration) ease-in-out infinite;
+  transition: all var(--transition-speed) ease;
+  content: var(--plush-image); /* harmless, but won't affect <img> */
+}
+
+
+@keyframes swayChime {
+0% {
+transform:rotate(0deg) scale(var(--scale-factor))
+}
+
+25% {
+transform:rotate(2deg) scale(var(--scale-factor))
+}
+
+50% {
+transform:rotate(0deg) scale(var(--scale-factor))
+}
+
+75% {
+transform:rotate(-2deg) scale(var(--scale-factor))
+}
+
+100% {
+transform:rotate(0deg) scale(var(--scale-factor))
+}
+}
+
+.time-message {
+position:fixed;
+top:calc(2rem + 50px);
+left:-66%;
+transform:translateX(-50%);
+background: var(--content-bg);
+border-radius: var(--border-radius-small);
+padding:.7rem 1.2rem;
+font-size:.9rem;
+color: var(--reminder-text);
+z-index:9999;
+box-shadow: var(--card-shadow);
+backdrop-filter: var(--backdrop-blur);
+animation:fadeInOut 6s ease forwards;
+transition:all var(--transition-speed) ease
+}
+
+@keyframes fadeInOut {
+0% {
+opacity:0;
+transform:translateX(-50%) translateY(10px)
+}
+
+10% {
+opacity:1;
+transform:translateX(-50%) translateY(0)
+}
+
+90% {
+opacity:1
+}
+
+100% {
+opacity:0;
+transform:translateX(-50%) translateY(-10px)
+}
+}
+
+.plush-wrapper .star-container {
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:9999
+}
+
+.sparkle-star {
+position:absolute;
+width:20px;
+height:20px;
+background-image: var(--ministar-bg);
+background-size:contain;
+background-repeat:no-repeat;
+animation:floatAway var(--anim-speed-long) ease-out forwards;
+filter:brightness(1.2) sepia(0.4) hue-rotate(220deg) saturate(1.5);
+opacity:.9
+}
+
+@keyframes floatAway {
+0% {
+opacity:1;
+transform:translateY(0) scale(1)
+}
+
+100% {
+opacity:0;
+transform:translateY(-40px) scale(1.2)
+}
+}
+
+.clearfix {
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+.figure-right,.figure-left {
+margin:0 0 10px 10px;
+text-align:center;
+max-width:150px
+}
+
+.figure-left {
+float:left;
+margin:0 10px 10px 0
+}
+
+.figure-right img,.figure-left img {
+display:block;
+width:150px;
+height:auto;
+cursor:pointer;
+border-radius:8px;
+transition:all var(--transition-speed) ease
+}
+
+.figure-right img:hover,.figure-left img:hover {
+transform:scale(1.05)
+}
+
+.figure-right figcaption,.figure-left figcaption {
+display:block;
+font-style:italic;
+font-size:16px;
+color:var(--text-color);
+margin-top:5px;
+text-align:center;
+padding:0 5px;
+max-width:150px;
+line-height:1.3;
+text-shadow: var(--text-shadow-dark)
+}
+
+.newsbox-container {
+display:flex;
+flex-direction:row;
+flex-wrap:wrap;
+justify-content:center
+}
+.newsbox-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: var(--body-font);
+  color: var(--text-color);
+}
+.newsbox {
+  width: 500px;
+  height: 300px;
+  overflow-y: auto;
+  border: var(--newsbox-border);
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: var(--border-radius-main)
+}
+.newsbox-inner {
+  font-size: 0.75rem;
+}
+
+.sandbox a {
+all:unset;
+display:block
+}
+
+.sandbox a:hover,.sandbox a:focus {
+all:unset;
+display:block
+}
+
+.sandbox .thumbnail img {
+all:unset;
+width:100%;
+height:100px;
+object-fit:cover;
+display:block;
+border:1px solid #000;
+border-radius:8px;
+box-shadow:none;
+outline:none
+}
+
+.sandbox .thumbnail-grid {
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(100px,1fr));
+gap:8px;
+padding:8px;
+justify-content:center
+}
+
+.sandbox .thumbnail {
+position:relative;
+overflow:hidden;
+border-radius:8px;
+transition:transform var(--anim-speed-short) ease,box-shadow var(--anim-speed-short) ease;
+cursor: var(--cursor-coffee)
+}
+
+.timeline {
+position:relative;
+padding:10px 0;
+width:100%;
+max-width: var(--timeline-max-width);
+margin:0 auto
+}
+
+.timeline::before {
+content:'';
+position:absolute;
+left:50%;
+top:0;
+bottom:0;
+width:1px;
+background-size:20px 20px;
+background-repeat:repeat-y;
+transform:translateX(-50%)
+}
+
+.timeline-event {
+position:relative;
+width:48%;
+margin:15px 0;
+padding:8px;
+box-sizing:border-box
+}
+
+.timeline-event::after {
+content:'';
+position:absolute;
+top:-2px;
+bottom:-2px;
+left:-2px;
+right:-2px;
+border:1px solid var(--accent-color-dark);
+border-radius:10px;
+z-index:-1
+}
+
+.timeline-event:nth-child(odd) {
+left:0;
+margin-right:52%
+}
+
+.timeline-event:nth-child(even) {
+left:52%
+}
+
+.timeline-event::before {
+content:'';
+position:absolute;
+top:5px;
+width:20px;
+height:20px;
+z-index:2
+}
+
+.timeline-event:nth-child(odd)::before {
+right:-30px
+}
+
+.timeline-event:nth-child(even)::before {
+left:-30px
+}
+
+.timeline-event h3 {
+margin:0 0 8px;
+color:var(--accent-color);
+font-size:16px;
+text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff;
+letter-spacing:1px
+}
+
+.timeline-event p {
+margin:0;
+font-size:12px;
+padding:6px;
+border-radius:6px;
+color:var(--text-color)
+}
+
+.timeline-image {
+position:absolute;
+width:150px;
+height:auto;
+border:1px solid var(--accent-color-dark);
+top:50%;
+transform:translateY(-50%) rotate(-2deg)
+}
+
+.timeline-event:nth-child(odd) .timeline-image {
+right:-299px
+}
+
+.timeline-event:nth-child(even) .timeline-image {
+left:-291px;
+transform:translateY(-50%) rotate(2deg)
+}
+
+.timeline-divider {
+text-align:center;
+margin:10px 0;
+font-size:24px;
+color:var(--accent-color);
+text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff;
+font-weight:700;
+letter-spacing:2px;
+position:relative;
+width:100%
+}
+
+.timeline-divider::before,.timeline-divider::after {
+content:'';
+position:absolute;
+top:50%;
+width:35%;
+height:5px
+}
+
+.timeline-divider::before {
+left:5%;
+background-size:16px 16px,auto;
+background-repeat:repeat-x
+}
+
+.timeline-divider::after {
+right:5%;
+background-size:16px 16px,auto;
+background-repeat:repeat-x
+}
+
+.bio {
+max-width: var(--bio-max-width);
+margin:0 auto;
+padding:10px;
+box-sizing:border-box
+}
+
+.nav-bar {
+text-align:center;
+font-size:12px;
+margin-bottom:10px
+}
+
+.nav-bar a {
+color:var(--accent-color);
+text-decoration:none;
+margin:0 5px
+}
+
+.nav-bar a:hover {
+text-decoration:underline
+}
+
+.clearfix {
+overflow:auto;
+margin-bottom:20px
+}
+
+.figure-right,.figure-left {
+float:right;
+margin:0 0 10px 10px;
+text-align:center;
+max-width:250px
+}
+
+.figure-left {
+float:left;
+margin:0 10px 10px 0;
+max-width:200px
+}
+
+.figure-right img,.figure-left img {
+display:block;
+width:100%;
+height:auto;
+border-radius:6px;
+box-shadow: var(--card-shadow);
+transition:transform var(--transition-speed)
+}
+
+.figure-right img:hover,.figure-left img:hover {
+transform:scale(1.02)
+}
+
+.figure-right figcaption,.figure-left figcaption {
+display:block;
+font-style:italic;
+font-size:12px;
+color:var(--text-color);
+margin-top:6px;
+text-align:center;
+padding:0 5px;
+line-height:1.3
+}
+
+.bio .clearfix p {
+text-align:justify;
+margin:0;
+line-height:1.5;
+color:var(--text-color)
+}
+
+.merch-grid {
+text-align:center;
+margin:20px 0
+}
+
+.merch-grid img {
+width: var(--merch-img-width);
+height:auto;
+margin:10px;
+display:inline-block;
+vertical-align:top;
+border-radius:6px;
+box-shadow: var(--card-shadow);
+transition:transform var(--transition-speed)
+}
+
+.merch-grid img:hover {
+transform:scale(1.03)
+}
+
+.newsbox-container {
+display:flex;
+flex-direction:row;
+gap:1rem;
+padding:1rem
+}
+
+.bubble-background {
+position:fixed;
+inset:0;
+z-index:-1;
+overflow:hidden;
+pointer-events:none
+}
+
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background: var(--bubble-bg);
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: blur(1px);
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+0% {
+transform:translateY(0) scale(1);
+opacity:.6
+}
+
+100% {
+transform:translateY(-100vh) scale(1.1);
+opacity:0
+}
+}
+
+.bubble.pop {
+animation:popBubble 1s ease-out forwards
+}
+
+@keyframes popBubble {
+0% {
+transform:scale(1);
+opacity:.6
+}
+
+50% {
+transform:scale(1.5);
+opacity:1
+}
+
+100% {
+transform:scale(0);
+opacity:0
+}
+}
+
+.footer {
+height: var(--footer-height);
+display:flex;
+align-items:center;
+justify-content:center
+}
+
+.footer-text {
+  font-family: var(--footer-font);
+  font-size: var(--footer-font-size);
+  color: var(--text-color);
+  text-shadow: var(--text-shadow-dark);
+  margin: 0;
+}
+
+.skitty-container img {
+height: var(--skitty-size);
+cursor:pointer;
+transition:opacity var(--anim-speed-short) ease
+}
+
+.skitty-container {
+position:relative;
+height: var(--skitty-size);
+width: var(--skitty-size);
+cursor:pointer
+}
+
+#skitty {
+width: var(--skitty-size);
+height: var(--skitty-size);
+background-image: var(--skitty-image);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+transition: filter var(--anim-speed-short) ease, transform var(--anim-speed-short) ease;
+} 
+   
+.skitty-container:hover #skitty {
+filter:drop-shadow(0 0 6px #fff9) drop-shadow(0 0 12px #ffc0cb66);
+animation:wiggle .6s ease-in-out infinite
+}
+
+@keyframes wiggle {
+0% {
+transform:rotate(0deg)
+}
+
+25% {
+transform:rotate(3deg)
+}
+
+50% {
+transform:rotate(-3deg)
+}
+
+75% {
+transform:rotate(3deg)
+}
+
+100% {
+transform:rotate(0deg)
+}
+}
+
+.shared-image {
+width:100%;
+height:120px;
+object-fit:cover;
+display:block;
+opacity: var(--opacity-default);
+transition:filter var(--anim-speed-medium) ease,opacity var(--anim-speed-medium) ease
+}
+
+.top-crop {
+border-radius: var(--border-radius-main) var(--border-radius-main) 0 0
+}
+
+.bottom-crop {
+object-position:bottom;
+border-radius:0 0 var(--border-radius-main) var(--border-radius-main)
+}
+
+@keyframes fadeInBreath {
+0% {
+opacity:0;
+transform:scale(0.95)
+}
+
+50% {
+opacity:.8;
+transform:scale(1.02)
+}
+
+100% {
+opacity:1;
+transform:scale(1)
+}
+}
+
+.welcome-message {
+animation:fadeInBreath 2.5s ease-out forwards;
+opacity:0;
+text-align:center
+}
+
+@keyframes bounce {
+0% {
+transform:translateY(0)
+}
+
+30% {
+transform:translateY(-8px)
+}
+
+50% {
+transform:translateY(0)
+}
+
+70% {
+transform:translateY(-4px)
+}
+
+100% {
+transform:translateY(0)
+}
+}
+
+.pixel-buddy:hover {
+animation:bounce .6s ease
+}
+
+pichupuff-line {
+font-family:'Pichupuff',sans-serif;
+font-size:1.2rem
+}
+
+Angelface-line {
+font-family:'Angelface',sans-serif;
+font-size:1.2rem
+}
+
+.secret-link {
+all:unset;
+display:inline-block;
+cursor:pointer
+}
+
+.secret-link:focus,.secret-link:hover,.secret-link:visited,.secret-link:active {
+all:unset;
+display:inline-block;
+cursor:pointer
+}
+
+.relax-trigger {
+position:fixed;
+bottom:calc(20px + env(safe-area-inset-bottom,0px));
+left:calc(20px + env(safe-area-inset-left,0px));
+background: var(--relax-trigger-bg);
+color:#9C055B;
+border:2px solid #dda0dd;
+padding: var(--relax-trigger-padding);
+border-radius: var(--relax-trigger-border-radius);
+font-size:1rem;
+font-family:'Pichupuff',sans-serif;
+cursor: var(--cursor-sylveon);
+box-shadow:0 2px 8px #dda0dd4d 0 0 12px #ffd1dc66;
+transition:transform var(--anim-speed-short) ease,background var(--anim-speed-short) ease,box-shadow var(--anim-speed-short) ease,opacity var(--anim-speed-short) ease;
+z-index:1000
+}
+
+.relax-trigger:focus {
+outline:2px solid #dda0dd;
+outline-offset:2px;
+box-shadow:0 0 12px #dda0dd80
+}
+
+.relax-overlay {
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+background: var(--relax-overlay-bg);
+overflow:hidden;
+display:none;
+justify-content:center;
+align-items:center;
+z-index:3000;
+opacity:0;
+animation:fadeInOverlay var(--relax-fade-duration) ease forwards
+}
+
+.relax-overlay.visible {
+display:flex;
+flex-direction:column;
+cursor: var(--cursor-sylveon)
+}
+
+.relax-overlay.fade-out {
+animation:fadeOutOverlay var(--anim-speed-long) ease forwards
+}
+
+@keyframes fadeInOverlay {
+from {
+opacity:0
+}
+
+to {
+opacity:1
+}
+}
+
+@keyframes fadeOutOverlay {
+from {
+opacity:1
+}
+
+to {
+opacity:0
+}
+}
+
+.bokeh-layer {
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image: var(--bokeh-layer-bg);
+z-index:4;
+pointer-events:none;
+animation:shimmer var(--shimmer-duration) ease-in-out infinite;
+mix-blend-mode:overlay
+}
+
+@keyframes shimmer {
+0%,100% {
+opacity:.7;
+transform:scale(1);
+filter:blur(2px)
+}
+
+50% {
+opacity:1;
+transform:scale(1.05);
+filter:blur(1px)
+}
+}
+
+.bokeh-spot {
+position:absolute;
+border-radius:50%;
+background: var(--bokeh-spot-pink);
+pointer-events:none;
+animation:bokehShimmer var(--breathe-duration) ease-in-out forwards
+}
+
+.bokeh-spot.lavender {
+background: var(--bokeh-spot-lavender)
+}
+
+@keyframes bokehShimmer {
+0% {
+opacity:0;
+transform:translateY(0) scale(1)
+}
+
+50% {
+opacity:.9;
+transform:translateY(-20px) scale(1.1)
+}
+
+100% {
+opacity:0;
+transform:translateY(-40px) scale(1.2)
+}
+}
+
+.bubble-layer {
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:3;
+pointer-events:none
+}
+
+.bubble-relax {
+position:absolute;
+bottom:-50px;
+background: var(--bubble-relax-bg);
+border-radius:50%;
+opacity:.8;
+filter:blur(1px);
+animation:floatUp 10s linear forwards;
+width: clamp(var(--bubble-size-min), 3vw, var(--bubble-size-max));
+height: clamp(var(--bubble-size-min), 3vw, var(--bubble-size-max))
+}
+
+@keyframes floatUp {
+0% {
+transform:translateY(0) scale(1);
+opacity:.8
+}
+
+100% {
+transform:translateY(-100vh) scale(1.1);
+opacity:0
+}
+}
+
+.bubble-relax.pop {
+animation:popBubble 1s ease-out forwards
+}
+
+@keyframes popBubble {
+0% {
+transform:scale(1);
+opacity:.8
+}
+
+50% {
+transform:scale(1.5);
+opacity:1
+}
+
+100% {
+transform:scale(0);
+opacity:0
+}
+}
+
+.relax-image {
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:2;
+opacity:.85;
+animation:fadeIn 2s ease forwards;
+cursor: var(--cursor-sylveon);
+content: var(--relax-image); 
+}
+
+.breathing-circle {
+position:absolute;
+bottom:calc(40px + env(safe-area-inset-bottom,0px));
+right:calc(40px + env(safe-area-inset-right,0px));
+width: var(--breathing-circle-size);
+height: var(--breathing-circle-size);
+border-radius:50%;
+background: var(--breathing-circle-bg);
+opacity:.6;
+animation:breathe var(--breathe-duration) ease-in-out infinite;
+box-shadow:0 0 12px #fff6;
+z-index:6;
+pointer-events:none
+}
+
+.breathing-circle::after {
+content:'breathe';
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:.9rem;
+color:#800040;
+font-family:'Pichupuff',sans-serif;
+text-shadow: var(--text-shadow-dark);
+animation:breatheText var(--breathe-duration) ease-in-out infinite
+}
+
+@keyframes breathe {
+0%,100% {
+transform:scale(1);
+opacity:.6
+}
+
+50% {
+transform:scale(1.4);
+opacity:1
+}
+}
+
+.relax-text {
+position:absolute;
+top:calc(40px + env(safe-area-inset-top,0px));
+left:calc(40px + env(safe-area-inset-left,0px));
+font-size: var(--relax-font-size);
+color:#800040;
+padding:.6rem 1rem;
+border-radius: var(--border-radius-small);
+font-family:'Pichupuff',sans-serif;
+z-index:6;
+animation:fadeIn 3s ease forwards;
+text-shadow: var(--text-shadow-dark)
+}
+
+.exit-whisper {
+position:absolute;
+bottom:calc(20px + env(safe-area-inset-bottom,0px));
+left:50%;
+transform:translateX(-50%);
+font-size:1rem;
+color:#800040;
+padding:.6rem 1rem;
+border-radius: var(--border-radius-small);
+font-family:'Pichupuff',sans-serif;
+z-index:6;
+opacity:0;
+display:none;
+animation:whisperFade 1.5s ease forwards
+}
+
+.exit-whisper.visible {
+display:block
+}
+
+@keyframes whisperFade {
+from {
+opacity:0;
+transform:translateX(-50%) translateY(10px)
+}
+
+to {
+opacity:1;
+transform:translateX(-50%) translateY(0)
+}
+}
+   
+.container {
+  min-width: 0;
+}
+
+.main-content {
+  min-width: 0; 
+  max-width: 100%;
+  width: 100%;
+}
+
+.page {
+  min-width: 0;  
+}
+
+@media (max-width: var(--bp-small)) {
+  :root {
+    --main-min-width: 0px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .main-content {
+    min-width: unset !important; 
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .container {
+    width: 99%;
+    max-width: 90vw;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .page {
+    padding: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .page img {
+    max-width: 100%;
+    height: auto;
+     }
+      .nav-menu {
+    display: none;
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+}
+
+
+  </style>
+</head>
+  
+<button id="theme-toggle">theme</button>
+    <div class="bubble-background"></div>
+
+
+<button id="relax-button" class="relax-trigger" aria-label="take a rest. opens overlay with music and breathing prompt" data-relax-audio="music/Maromi'sTheme.mp3" data-relax-image="images/hug.png">
+  take a rest
+</button>
+
+<div id="sycamore-relax" class="relax-overlay">
+  <div class="bokeh-layer"></div>
+  <div class="bubble-layer"></div>
+  <img class="relax-image" alt="Professor Sycamore in a relaxing pose. click to exit relax mode">
+  <div class="breathing-circle"></div>
+  <div class="relax-text">Take a rest...</div>
+  <audio id="relax-audio" loop></audio>
+  <div class="exit-whisper">Come back anytime.</div>
+</div>
+
+
+<div class="nav-container">
+  <nav role="navigation" aria-label="Main navigation">
+    <ul class="nav-menu">
+        <li>
+<a href="#" data-page="home2.html" class="active" aria-current="page" title="Home" aria-label="Home, Welcome to South Boulevard">
+  Home
+  <span class="tooltip">Welcome to South Boulevard!</span>
+  <span class="nav-marker"></span>
+</a>
+        </li>
+        <li>
+          <a href="#" data-page="abt.html" title="Canon" aria-label="Canon, Discover and learn about XY's professor">
+            Canon
+            <span class="tooltip">Discover XY's professor.</span>
+              <span class="nav-marker"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-page="media.html" title="Media" aria-label="Media, A collection of Sycamore themed media and games">
+            Media
+            <span class="tooltip">Sycamore media and games!</span>
+              <span class="nav-marker"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-page="research.html" title="Research" aria-label="Research,A deeper dive into theories and ideas">
+            Research
+            <span class="tooltip">A deeper dive into theories and ideas...</span>
+              <span class="nav-marker"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" data-page="site.html" title="Site" aria-label="Site, More about South Boulevard">
+            Site
+            <span class="tooltip">More about South Boulevard</span>
+              <span class="nav-marker"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+  </div>
+
+  <div class="plush-wrapper">
+    <div id="plush-time-message" class="time-message" hidden></div>
+    <img class="sycamore-plush" alt="A swaying Professor Sycamore plushie. Do you dare click?">
+    <div class="star-container" id="star-sparkle-container"></div>
+  </div>
+
+  <div class="gentle-reminder" id="gentle-reminder">
+    <p>Remember to rest your eyes and take a break if needed.</p>
+  </div>
+      <div class="loader hidden">
+        <img alt="A tiny dancing chibi wiggles exuberantly as the page loads!" onerror="this.src='images/pokeball.gif'; this.alt='Loading fallback';">
+        <p>Loading, please wait! ♡</p>
+      </div>
+  <div class="container">
+<header class="header">
+<img class="header-image" alt="Header image">
+</header>
+
+    <main class="main-content" id="content-area">
+
+      <div class="page"></div>
+    </main>
+
+  </div>
+<footer class="footer">
+<p class="footer-text">south boulevard<br>made with love</p>  
+<div class="skitty-container" onclick="toggleSkitty()">
+    <div id="skitty"></div>
+</div>
+</footer>
+
+<script>
+/* ──────────────── ✦ SOUTH BOULEVARD - PROFESSOR SYCAMORE ✦ SCRIPMANIA! (Themed Version) ─*/
+
+document.addEventListener('DOMContentLoaded', () => {
+  /* ──────────────── ✦ GLOBAL VARIABLES & DOM ELEMENTS ✦ ──────────────── */
+  const navLinks = document.querySelectorAll('.nav-menu a');
+  const contentDiv = document.querySelector('.page');
+  const loader = document.querySelector('.loader');
+  const gentleReminder = document.getElementById('gentle-reminder');
+  const relaxButton = document.getElementById('relax-button');
+  const relaxOverlay = document.getElementById('sycamore-relax');
+  const relaxAudio = document.getElementById('relax-audio');
+  const relaxImage = document.querySelector('.relax-image');
+  const exitWhisper = document.querySelector('.exit-whisper');
+  let titleTimeout;
+  let titleInterval;
+  let currentTitleIndex = 0;
+  let isIdle = false;
+  let currentPage = 'home2.html';
+  let scrollTimeout;
+  let hasShownThankYou = false;
+  let hasShownWelcome = false;
+  let timeSpentOnPage = 0;
+  let timeSpentTimer;
+  let pageStartTime = Date.now();
+  let bubbleInterval;
+  let bokehInterval; 
+
+  function getAsset(pathVar, defaultPath) {
+    return getComputedStyle(document.documentElement).getPropertyValue(pathVar).trim() || defaultPath;
+  }
+
+
+  function setDynamicAssets() {
+
+    const loaderImg = loader.querySelector('img');
+    if (loaderImg) loaderImg.src = getAsset('--loader-image', 'images/minidance.gif');
+
+
+    const headerImg = document.querySelector('.header-image');
+    if (headerImg) headerImg.src = getAsset('--header-image', 'images/llight.jpg');
+
+
+    const plush = document.querySelector('.sycamore-plush');
+    if (plush) plush.src = getAsset('--plush-image', 'images/sycamore-plush.png');
+
+
+    const footerImg = document.querySelector('.footer img');
+    if (footerImg) footerImg.src = getAsset('--footer-image', 'images/blog/958459epuot7xpev.gif');
+
+
+    if (relaxButton) {
+      relaxAudio.src = relaxButton.dataset.relaxAudio || getAsset('--relax-audio', 'music/Maromi\'sTheme.mp3');
+      if (relaxImage) relaxImage.src = relaxButton.dataset.relaxImage || getAsset('--relax-image', 'images/hug.png');
+    }
+
+    console.log('Dynamic assets loaded for theme');
+  }
+
+  const baseTitles = {
+    'home2.html': 'South Boulevard',
+    'abt.html': 'Canon',
+    'media.html': 'Media',
+    'research.html': 'Research',
+    'site.html': 'Site'
+  };
+
+  const sycamoreQuotes = [
+    '"Well now, you do have a certain je ne sais quoi!"',
+    '"The bond between Pokémon and Trainer is truly something special."',
+    '"Ah, the wonders of Pokémon never cease to amaze me!"',
+    '"Every day brings new discoveries!"',
+    '"You have such a wonderful way with Pokémon."',
+    '"Fascinating! Simply fascinating!"'
+  ];
+
+  /* ──────────────── ✦ CORE PAGE LOADING SYSTEM ✦ ──────────────── */
+  function loadPage(page) {
+    console.log(`Loading page: ${page}`);
+    if (checkMondayClosure()) {
+      console.log('Site closed on Monday');
+      return;
+    }
+
+    const startTime = Date.now();
+    currentPage = page;
+    resetTitleAnimation();
+    resetPageTracking();
+
+
+    contentDiv.style.height = 'auto';
+    contentDiv.style.overflow = 'visible';
+    contentDiv.classList.remove('page-enter', 'page-exit', 'pkmn-page');
+
+    setTimeout(() => {
+      loader.classList.remove('hidden');
+      console.log('Loader displayed');
+      contentDiv.innerHTML = '';
+
+const cacheBuster = `?_=${Math.random().toString(36).substring(2)}`;
+fetch(page + cacheBuster)
+        .then(response => {
+          if (!response.ok) throw new Error(`Page not found: ${page}`);
+          return response.text();
+        })
+        .then(data => {
+          const elapsed = (Date.now() - startTime) / 1000;
+          const minDisplayTime = 1;
+          const delay = Math.max(0, minDisplayTime - elapsed);
+
+          setTimeout(() => {
+            loader.classList.add('hidden');
+            console.log('Loader hidden, content loaded');
+            contentDiv.innerHTML = data;
+
+
+            contentDiv.removeAttribute('style');
+            contentDiv.style.scrollBehavior = 'smooth';
+
+
+            const scripts = contentDiv.getElementsByTagName('script');
+            for (let i = 0; i < scripts.length; i++) {
+              try {
+                const newScript = document.createElement('script');
+                for (let attr of scripts[i].attributes) {
+                  newScript.setAttribute(attr.name, attr.value);
+                }
+                newScript.textContent = scripts[i].textContent;
+                document.head.appendChild(newScript);
+
+                setTimeout(() => newScript.remove(), 0);
+              } catch (error) {
+                console.log("Couldn't run a script...");
+              }
+            }
+
+            contentDiv.classList.add('page-enter');
+
+            if (page === 'pkmn.html') {
+              contentDiv.classList.add('pkmn-page');
+            }
+
+            startTitleAnimation();
+            initializePageFeatures();
+            checkReturningVisitor();
+
+            window.dispatchEvent(new Event('resize'));
+          }, delay * 1000);
+        })
+        .catch(error => {
+          console.error('Error loading page:', error);
+          handleLoadError(startTime);
+        });
+    }, 400);
+  }
+
+  function handleLoadError(startTime) {
+    const elapsed = (Date.now() - startTime) / 1000;
+    const delay = Math.max(0, 1 - elapsed);
+
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      contentDiv.innerHTML = '<p style="text-align: center; color: var(--text-color);">Sorry, something went wrong. Please try again! ♡</p>';
+      contentDiv.style.scrollBehavior = 'smooth';
+      contentDiv.classList.remove('page-exit');
+      contentDiv.offsetHeight;
+      contentDiv.classList.add('page-enter');
+      startTitleAnimation();
+
+      window.dispatchEvent(new Event('resize'));
+    }, delay * 1000);
+  }
+
+  /* ──────────────── ✦ DYNAMIC TITLE ANIMATION SYSTEM ✦ ──────────────── */
+  function resetTitleAnimation() {
+    clearTimeout(titleTimeout);
+    clearInterval(titleInterval);
+    isIdle = false;
+    currentTitleIndex = 0;
+    document.title = baseTitles[currentPage] || 'South Boulevard';
+    console.log('Title animation reset');
+  }
+
+  function startTitleAnimation() {
+    if (isIdle) return;
+
+
+    const idleDelay = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--title-idle-delay').trim().replace('ms', '')) || 15000;
+    const cycleInterval = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--title-cycle-interval').trim().replace('ms', '')) || 6000;
+
+    titleTimeout = setTimeout(() => {
+      isIdle = true;
+      console.log('Starting title animation cycle');
+      cycleTitles();
+
+      titleInterval = setInterval(() => {
+        cycleTitles();
+      }, cycleInterval);
+    }, idleDelay);
+  }
+
+  function cycleTitles() {
+    const titles = [
+      'A Professor Sycamore Fansite',
+      sycamoreQuotes[Math.floor(Math.random() * sycamoreQuotes.length)],
+      baseTitles[currentPage] || 'South Boulevard'
+    ];
+
+    setTimeout(() => {
+      document.title = titles[currentTitleIndex];
+      currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+      console.log(`Title changed to: ${document.title}`);
+    }, 100);
+  }
+
+  /* ──────────────── ✦ USER EXPERIENCE ENHANCEMENTS ✦ ──────────────── */
+  function resetPageTracking() {
+    hasShownThankYou = false;
+    hasShownWelcome = false;
+    clearInterval(timeSpentTimer);
+    timeSpentOnPage = 0;
+    pageStartTime = Date.now();
+    console.log('Page tracking reset');
+    startTimeTracking();
+  }
+
+  function initializePageFeatures() {
+    console.log('Initializing page features...');
+    setTimeBasedGreeting();
+    setupScrollTracking();
+    console.log('Page features initialized');
+  }
+
+  function setupScrollTracking() {
+    document.removeEventListener('scroll', handleScroll);
+    window.removeEventListener('scroll', handleScroll);
+    contentDiv.removeEventListener('scroll', handleScroll);
+
+    function handleScroll() {
+      clearTimeout(scrollTimeout);
+
+      scrollTimeout = setTimeout(() => {
+        const contentScroll = window.scrollY;
+        const contentHeight = document.documentElement.scrollHeight;
+        const contentClientHeight = window.innerHeight;
+        const contentAtBottom = contentScroll + contentClientHeight >= contentHeight - 50;
+        const isLengthy = contentHeight > contentClientHeight * 1.5;
+
+        if (contentAtBottom && isLengthy && !hasShownThankYou) {
+          hasShownThankYou = true;
+          console.log('User scrolled to bottom... showing thank you message');
+          showGentleMessage('Thank you for reading!', '#424242');
+        }
+      }, 150);
+    }
+
+    setTimeout(() => {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      console.log('Scroll tracking setup complete');
+    }, 1000);
+  }
+
+  function startTimeTracking() {
+    clearInterval(timeSpentTimer);
+    timeSpentOnPage = 0;
+
+    timeSpentTimer = setInterval(() => {
+      timeSpentOnPage += 30000;
+      if (timeSpentOnPage >= 900000) {
+        console.log('Showing break reminder after 15 minutes');
+        setTimeout(() => showGentleReminder('Remember to rest your eyes and take a break if needed!'), 500);
+        timeSpentOnPage = 0;
+      }
+    }, 30000);
+
+    console.log('Time tracking started');
+  }
+
+  function showGentleMessage(text, color = '#424242') {
+    console.log(`Showing gentle message: ${text}`);
+    const message = document.createElement('p');
+    message.className = 'gentle-message';
+    message.textContent = text;
+    message.style.color = color;
+    contentDiv.appendChild(message);
+    setTimeout(() => {
+      message.classList.add('visible');
+    }, 100);
+  }
+
+  function showGentleReminder(text) {
+    console.log(`Displaying gentle reminder popup: ${text}`);
+    if (gentleReminder) {
+      gentleReminder.querySelector('p').textContent = text;
+      gentleReminder.classList.add('visible');
+      if (text.includes('Welcome back')) {
+        gentleReminder.classList.add('welcome-reminder');
+      } else {
+        gentleReminder.classList.remove('welcome-reminder');
+      }
+      setTimeout(() => {
+        gentleReminder.classList.remove('visible', 'welcome-reminder');
+      }, 4000);
+    }
+  }
+
+  /* ──────────────── ✦ SPECIAL FEATURES ✦ ──────────────── */
+  function checkMondayClosure() {
+    const now = new Date();
+    const day = now.getDay();
+    if (day === 1) {
+      console.log('Site closed for Monday - hiding navbar');
+
+      const navContainer = document.querySelector('.nav-container');
+      const plushWrapper = document.querySelector('.plush-wrapper');
+
+      if (navContainer) navContainer.style.display = 'none';
+      if (plushWrapper) plushWrapper.style.display = 'none';
+
+      const mondayMessage = `
+        <div class="monday-closure" style="
+          text-align: center;
+          padding: 0.5rem 0.2rem;
+          max-width: 600px;
+          margin: 0 auto;
+          line-height: 1;
+          border-radius: var(--border-radius-small);
+          backdrop-filter: var(--backdrop-blur);
+        ">
+          <h1 style="color: var(--accent-color); margin-bottom: 0.3rem; font-size: 1.5rem;">
+            Welcome to South Boulevard!<br> But... the Sycamore Pokémon Lab is closed on Mondays!
+          </h1>
+          <div class="quote-sycamore" style="
+            background: var(--quote-bg);
+            border-radius: 10px;
+            color: var(--text-color);
+            padding: 0.5rem;
+            text-align: justify;
+            box-shadow: var(--card-shadow);
+            backdrop-filter: var(--backdrop-blur);
+          ">
+            <strong>Note from Professor Sycamore</strong><br>
+            <img src="images/qt2.png" alt="Mini Sycamore" style="
+              float: right;
+              max-width: 120px;
+              border-radius: 8px;
+            ">
+            "Discovery happens not just in research! Take today to explore the world beyond the screen. Spend time with friends or enjoy a quiet moment! The lab will always be here tomorrow, ready for new adventures!"
+          </div>
+          <p style="margin-top: 0.2rem; color: var(--text-color);">
+            The site will return <strong>Tuesday at midnight</strong>.<br>
+            See you soon!
+          </p>
+          <div style="margin-top: 0.5rem;">
+            <img src="images/minisycadopt.png" alt="Mini Sycamore">
+          </div>
+        </div>
+      `;
+
+      if (contentDiv) {
+        contentDiv.innerHTML = mondayMessage;
+      }
+      return true;
+    }
+    return false;
+  }
+
+  function checkReturningVisitor() {
+    try {
+      const lastVisit = localStorage.getItem('southBoulevardLastVisit');
+      const now = Date.now();
+      if (lastVisit && (now - parseInt(lastVisit)) > 86400000 && !hasShownWelcome) {
+        hasShownWelcome = true;
+        console.log('Welcoming returning visitor');
+        setTimeout(() => {
+          showGentleReminder('Welcome back to the lab! ♡');
+        }, 2000);
+      }
+      localStorage.setItem('southBoulevardLastVisit', now.toString());
+    } catch (e) {
+      console.log('localStorage not available, skipping returning visitor check');
+    }
+  }
+
+  /* ──────────────── ✦ RELAX MODE (Updated for dynamic assets) ✦ ──────────────── */
+  function createRelaxBubble() {
+    if (document.querySelectorAll('.bubble-relax').length > 20) return;
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble-relax');
+    const size = Math.random() * (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--bubble-size-max').trim()) - parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--bubble-size-min').trim())) + parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--bubble-size-min').trim());
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.left = `${Math.random() * 100}%`;
+    const duration = Math.random() * 8 + 8;
+    bubble.style.animationDuration = `${duration}s`;
+    bubble.style.animationDelay = `${Math.random() * 5}s`;
+
+    setTimeout(() => {
+      bubble.classList.add('pop');
+      setTimeout(() => bubble.remove(), 1000);
+    }, duration * 1000 - 1000);
+
+    document.querySelector('.bubble-layer').appendChild(bubble);
+  }
+
+  function startRelaxBubbles() {
+
+    const interval = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--relax-bubble-interval').trim().replace('ms', '')) || 1000;
+    bubbleInterval = setInterval(createRelaxBubble, interval);
+  }
+
+  function stopRelaxBubbles() {
+    clearInterval(bubbleInterval);
+    document.querySelectorAll('.bubble-relax').forEach(bubble => bubble.remove());
+  }
+
+  function createBokehSpot() {
+    if (document.querySelectorAll('.bokeh-spot').length > 10) return;
+    const spot = document.createElement('div');
+    spot.classList.add('bokeh-spot');
+    if (Math.random() > 0.5) spot.classList.add('lavender');
+    const size = Math.random() * (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--bokeh-size-max').trim()) - parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--bokeh-size-min').trim())) + parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--bokeh-size-min').trim());
+    spot.style.width = `${size}px`;
+    spot.style.height = `${size}px`;
+    spot.style.left = `${Math.random() * 100}%`;
+    spot.style.top = `${Math.random() * 100}%`;
+    document.querySelector('.bokeh-layer').appendChild(spot);
+    setTimeout(() => spot.remove(), 8000);
+  }
+
+  function startBokehSpots() {
+
+    const interval = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bokeh-interval').trim().replace('ms', '')) || 1500;
+    bokehInterval = setInterval(createBokehSpot, interval);
+  }
+
+  function stopBokehSpots() {
+    clearInterval(bokehInterval);
+    document.querySelectorAll('.bokeh-spot').forEach(spot => spot.remove());
+  }
+
+function enterRelaxMode() {
+  console.log('Entering Relax Mode');
+  relaxOverlay.classList.add('visible');
+  relaxOverlay.classList.remove('fade-out');
+  relaxAudio.volume = 0.2;
+  relaxAudio.play().catch(e => console.log('Audio playback failed:', e));
+  startRelaxBubbles();
+  startBokehSpots();
+  exitWhisper.classList.remove('visible');
+
+  const plushWrapper = document.querySelector('.plush-wrapper');
+  const themeToggle = document.getElementById('theme-toggle');
+
+  if (plushWrapper) {
+    plushWrapper.classList.add('fade-out');
+  }
+  if (themeToggle) {
+    themeToggle.classList.add('fade-out');
+
+    }
+}
+  
+function exitRelaxMode() {
+  console.log('Exiting Relax Mode');
+  relaxOverlay.classList.add('fade-out');
+  exitWhisper.classList.add('visible');
+  stopRelaxBubbles();
+  stopBokehSpots();
+  relaxAudio.volume = 0.2;
+
+  const plushWrapper = document.querySelector('.plush-wrapper');
+  const themeToggle = document.getElementById('theme-toggle');
+
+  setTimeout(() => {
+    relaxOverlay.classList.remove('visible', 'fade-out');
+    relaxAudio.pause();
+    relaxAudio.currentTime = 0;
+    exitWhisper.classList.remove('visible');
+
+    if (plushWrapper) {
+      plushWrapper.classList.remove('fade-out');
+    }
+    if (themeToggle) {
+      themeToggle.classList.remove('fade-out');
+    }
+  }, 1500);
+}
+
+
+  if (relaxButton) {
+    relaxButton.addEventListener('click', enterRelaxMode);
+  }
+
+  if (relaxImage) {
+    relaxImage.addEventListener('click', exitRelaxMode);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && relaxOverlay.classList.contains('visible')) {
+      exitRelaxMode();
+    }
+  });
+/* ──────────────── ✦ THEME SWITCH!? ✦ ──────────────── */
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme');
+const html = document.documentElement;
+
+// Apply saved theme on load
+if (savedTheme) {
+  html.classList.add(`theme-${savedTheme}`);
+  updateThemeUI(savedTheme);
+} else {
+  // Set default to megaevo if no saved theme
+  html.classList.add('theme-megaevo');
+  updateThemeUI('megaevo');
+  localStorage.setItem('theme', 'megaevo');
+}
+
+// Theme cycle: megaevo → sycamore → uratane → megaevo...
+themeToggle.addEventListener('click', () => {
+  let currentTheme = html.classList.contains('theme-megaevo')
+    ? 'megaevo'
+    : html.classList.contains('theme-sycamore')
+    ? 'sycamore'
+    : html.classList.contains('theme-uratane')
+    ? 'uratane'
+    : 'megaevo';
+
+  let nextTheme =
+    currentTheme === 'megaevo' ? 'sycamore' :
+    currentTheme === 'sycamore' ? 'uratane' :
+    'megaevo';
+
+  html.classList.remove(`theme-${currentTheme}`);
+  html.classList.add(`theme-${nextTheme}`);
+  localStorage.setItem('theme', nextTheme);
+  updateThemeUI(nextTheme);
+  setDynamicAssets(); 
+});
+
+// Update button text and title
+function updateThemeUI(theme) {
+  if (theme === 'uratane') {
+    themeToggle.textContent = 'URATANE';
+    document.title = 'XYBREAK! Ura-takes over the site!?';
+  } else if (theme === 'megaevo') {
+    themeToggle.textContent = 'MEGA EVO';
+    document.title = 'Mega Evolution, Softly';
+  } else {
+    themeToggle.textContent = 'SYCAMORE';
+    document.title = 'South Boulevard';
+  }
+}
+
+
+
+
+  /* ──────────────── ✦ EVENT LISTENERS ✦ ──────────────── */
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const page = link.getAttribute('data-page');
+      console.log(`Navigation clicked: ${page}`);
+      loadPage(page);
+
+      navLinks.forEach(l => {
+        l.classList.remove('active');
+        l.removeAttribute('aria-current');
+      });
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    });
+  });
+
+  contentDiv.addEventListener('click', (e) => {
+    const link = e.target.closest('a.nav-link');
+    if (link && link.getAttribute('data-page')) {
+      e.preventDefault();
+      const page = link.getAttribute('data-page');
+      console.log(`Dynamic navigation clicked: ${page}`);
+      loadPage(page);
+    }
+    const topic = e.target.closest('.topic');
+    if (topic) {
+      e.preventDefault();
+      const onclickAttr = topic.getAttribute('onclick');
+      if (onclickAttr) {
+        const dropdownId = onclickAttr.match(/'([^']+)'/)?.[1];
+        if (dropdownId) {
+          toggleDropdown(dropdownId);
+        }
+      }
+    }
+  });
+
+  const activityEvents = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click'];
+  activityEvents.forEach(event => {
+    document.addEventListener(event, () => {
+      resetTitleAnimation();
+      startTitleAnimation();
+    }, { passive: true });
+  });
+
+  /* ──────────────── ✦ PLUSHIE INTERACTIONS ✦ ──────────────── */
+  const plush = document.querySelector('.sycamore-plush');
+
+  function triggerPlushInteraction(e) {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const timeString = `It's ${hours}:${minutes} right now.`;
+    const message = document.getElementById('plush-time-message');
+
+    if (message) {
+      message.textContent = timeString;
+      message.hidden = false;
+      setTimeout(() => {
+        message.hidden = true;
+      }, 6000);
+    }
+
+    const container = document.getElementById('star-sparkle-container');
+    if (container && plush) {
+      const rect = plush.getBoundingClientRect();
+      const clickX = (e.clientX || rect.left + rect.width / 2) - rect.left;
+      const clickY = (e.clientY || rect.top + rect.height / 2) - rect.top;
+
+      for (let i = 0; i < 5; i++) {
+        const star = document.createElement('div');
+        star.className = 'sparkle-star';
+        const offsetX = Math.random() * 40 - 20;
+        const offsetY = Math.random() * 20 - 10;
+        star.style.left = `${clickX + offsetX}px`;
+        star.style.top = `${clickY + offsetY}px`;
+        container.appendChild(star);
+        setTimeout(() => {
+          star.remove();
+        }, 1500);
+      }
+    }
+  }
+
+  if (plush) {
+    plush.addEventListener('click', triggerPlushInteraction);
+  }
+
+  /* ──────────────── ✦ INITIALIZATION ✦ ──────────────── */
+  console.log('South Boulevard script initializing...');
+  contentDiv.style.scrollBehavior = 'smooth';
+  setDynamicAssets(); // New: Load theme assets
+  loadPage('home2.html');
+  startTitleAnimation();
+  startTimeTracking();
+  console.log('South Boulevard script fully loaded and initialized!');
+
+  /* ──────────────── ✦ WINDOW RESIZE HANDLER ✦ ──────────────── */
+  window.addEventListener('resize', () => {
+      
+    document.body.style.backgroundImage = 'none';
+    setTimeout(() => {
+      document.body.style.backgroundImage = getAsset('--bg-image', 'images/iliuliulu.png');
+    }, 0);
+  });
+});
+
+/* ──────────────── ✦ TIME-BASED GREETINGS FUNCTION ✦ ──────────────── */
+function setTimeBasedGreeting() {
+  const now = new Date();
+  const hour = now.getHours();
+  let greeting;
+
+  if (hour < 12) {
+    greeting = "Good morning! I'm looking forward to seeing what sort of people and Pokémon we encounter today.";
+  } else if (hour < 18) {
+    greeting = "Research is my passion—the more things I have to study, the more excited I get!";
+  } else {
+    greeting = "I think it might be time for bed! I hope your day tomorrow is just as special as today!";
+  }
+
+  const scrollText = document.querySelector('.scroll-text');
+  if (scrollText) {
+    scrollText.textContent = greeting;
+  }
+}
+
+/* ──────────────── ✦ LAND OF BUBBLES (Use var for interval) ✦ ──────────────── */
+function createBubble() {
+  const bubble = document.createElement('div');
+  bubble.classList.add('bubble');
+  const size = Math.random() * 20 + 10;
+  bubble.style.width = `${size}px`;
+  bubble.style.height = `${size}px`;
+  bubble.style.left = `${Math.random() * 100}%`;
+  const duration = Math.random() * 10 + 10;
+  bubble.style.animationDuration = `${duration}s`;
+  bubble.style.animationDelay = `${Math.random() * 5}s`;
+
+  setTimeout(() => {
+    bubble.classList.add('pop');
+    setTimeout(() => bubble.remove(), 1000);
+  }, duration * 1000 - 1000);
+
+  document.querySelector('.bubble-background').appendChild(bubble);
+}
+
+
+const bubbleIntervalTime = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bubble-interval').trim().replace('ms', '')) || 800;
+setInterval(createBubble, bubbleIntervalTime);
+
+/* ──────────────── ✦ SKITTYHOP ✦ ──────────────── */
+function toggleSkitty() {
+  window.open('https://aidn.jp/wowa/959131631', '_blank');
+}
+/* ──────────────── ✦ PLUSHIE LOVE✦ ──────────────── */
+const header = document.querySelector('.header');
+const plush = document.querySelector('.plush-wrapper');
+
+function updatePlushPosition() {
+  const rect = header.getBoundingClientRect();
+  plush.style.top = `${rect.bottom + 16}px`; 
+}
+
+window.addEventListener('resize', updatePlushPosition);
+window.addEventListener('scroll', updatePlushPosition);
+updatePlushPosition();
+
+
+</script>
+</body>
 </html>
